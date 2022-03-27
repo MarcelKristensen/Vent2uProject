@@ -1,0 +1,7 @@
+{
+  "name": "Vent2uProject",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
