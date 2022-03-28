@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'thank-you',
     loadChildren: () => import('./thank-you/thank-you.module').then( m => m.ThankYouPageModule)
   },
+  {
+    path: 'energy',
+    loadChildren: () => import('./energy/energy.module').then( m => m.EnergyPageModule),
+  },
 ];
 
 @NgModule({
