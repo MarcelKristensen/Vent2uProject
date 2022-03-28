@@ -10,9 +10,12 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'energy',
-    loadChildren: () => import('./energy/energy.module').then( m => m.EnergyPageModule)
+    path: 'gender',
+    loadChildren: () => import('./energy/energy.module').then( m => m.EnergyPageModule),
+    loadChildren: () => import('./gender/gender.module').then( m => m.GenderPageModule)
   },
 
 ];
