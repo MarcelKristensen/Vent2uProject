@@ -12,12 +12,17 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'energy',
     path: 'gender',
-    loadChildren: () => import('./energy/energy.module').then( m => m.EnergyPageModule),
     loadChildren: () => import('./gender/gender.module').then( m => m.GenderPageModule)
   },
-
+  {
+    path: 'thank-you',
+    loadChildren: () => import('./thank-you/thank-you.module').then( m => m.ThankYouPageModule)
+  },
+  {
+    path: 'energy',
+    loadChildren: () => import('./energy/energy.module').then( m => m.EnergyPageModule),
+  },
 ];
 
 @NgModule({
