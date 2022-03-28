@@ -1,9 +1,40 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>gender</ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-img
+    style="width: 200px; height: auto; margin: auto"
+    src="/assets/logo.svg"
+    alt="logo"
+  ></ion-img>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <h1>What gender do you identify with?</h1>
+    <ion-row>
+      <ion-col size="12" class="ion-no-padding">
+        <ion-button no-padding-class expand="full">
+          <ion-img src="/assets/male.svg"></ion-img>
+          Male</ion-button
+        >
+      </ion-col>
+      <ion-col size="12" class="ion-no-padding">
+        <ion-button expand="full">
+          <ion-img src="/assets/female.svg"></ion-img>Female</ion-button
+        >
+      </ion-col>
+      <ion-col size="12" class="ion-no-padding">
+        <ion-button expand="full"
+          ><ion-img src="/assets/non-binary.svg"></ion-img
+          >Non-binary</ion-button
+        >
+      </ion-col>
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col size="12" class="ion-no-padding">
+            <ion-button style="width: 49%" color="secondary">Return</ion-button>
+            <ion-button style="width: 49%">Continue</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-row>
+  </ion-grid>
 </ion-content>
