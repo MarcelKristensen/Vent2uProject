@@ -1,0 +1,56 @@
+ion-card p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+ion-card {
+  padding: 20px;
+  border-radius: 0;
+  margin: 10px 0;
+}
+
+.male {
+  border: 1px solid #2c682b;
+}
+
+.male:hover,
+ion-activated.male,
+.male:active {
+  background-color: #2c682b;
+}
+
+.female {
+  border: 1px solid #c70a0a;
+}
+
+.female:hover,
+ion-activated.female,
+.female:active {
+  background-color: #c70a0a;
+}
+
+.non-binary {
+  border: 1px solid #77592a;
+}
+
+.non-binary:hover,
+ion-activated.non-binary,
+.non-binary:active {
+  background-color: #77592a;
+}
+
+.male:hover p,
+.female:hover p,
+.non-binary:hover p {
+  color: #fff;
+}
+
+.buttons-gender {
+  margin-top: 20px;
+}
+
+.buttons-gender {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
