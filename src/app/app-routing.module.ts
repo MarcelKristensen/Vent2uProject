@@ -24,9 +24,13 @@ const routes: Routes = [
     loadChildren: () => import('./energy/energy.module').then( m => m.EnergyPageModule),
   },
   {
+    path: 'humidity',
+    loadChildren: () => import('./humidity/humidity.module').then( m => m.HumidityPageModule)
+  },
+  {
     path: 'temperature',
     loadChildren: () => import('./temperature/temperature.module').then( m => m.TemperaturePageModule)
-  },
+  }
 
 ];
 

@@ -1,0 +1,65 @@
+ion-title.title-large {
+    color: black;
+    font-size: 40px;
+  }
+
+.withered {
+    border: 2px solid #C70A0A;
+  }
+
+  .withered:hover,
+ion-activated.withered,
+.withered:active {
+  background-color: #C70A0A;
+}
+
+.hot {
+    border: 2px solid #FB6D0C;
+  }
+
+  .hot:hover,
+ion-activated.hot,
+.hot:active {
+  background-color: #FB6D0C;
+}
+
+.uncomfortable {
+    border: 2px solid #29ED25;
+}
+
+.uncomfortable:hover,
+ion-activated.uncomfortable,
+.uncomfortable:active {
+  background-color: #29ED25;
+}
+
+.damp {
+    border: 2px solid #FFDD0A;
+}
+
+.damp:hover,
+ion-activated.damp,
+.damp:active {
+  background-color: #FFDD0A;
+}
+
+.itchy {
+    border: 2px solid #4FC3F7;
+}
+
+.itchy:hover,
+ion-activated.itchy,
+.itchy:active {
+  background-color: #4FC3F7;
+}
+
+.dry {
+    border: 2px solid #1C78C9;
+}
+
+.dry:hover,
+ion-activated.dry,
+.dry:active {
+  background-color: #1C78C9;
+} 
+
