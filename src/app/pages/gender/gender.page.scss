@@ -3,7 +3,7 @@ ion-card {
 }
 
 .male {
-  border: 1px solid #2c682b;
+  border-color: #2c682b;
 }
 
 .male:hover,
@@ -13,7 +13,7 @@ ion-activated.male,
 }
 
 .female {
-  border: 1px solid #c70a0a;
+  border-color: #c70a0a;
 }
 
 .female:hover,
@@ -23,7 +23,7 @@ ion-activated.female,
 }
 
 .non-binary {
-  border: 1px solid #77592a;
+  border-color: #77592a;
 }
 
 .non-binary:hover,

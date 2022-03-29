@@ -41,7 +41,7 @@ p {
 }
 
 .firstBox {
-  border: 2px solid #c70a0a;
+  border-color: #c70a0a;
 }
 
 .firstBox:hover {
@@ -49,7 +49,7 @@ p {
 }
 
 .secondBox {
-  border: 2px solid #fb6d0c;
+  border-color: #fb6d0c;
 }
 
 .secondBox:hover {
@@ -57,7 +57,7 @@ p {
 }
 
 .thirdBox {
-  border: 2px solid #29ed25;
+  border-color: #29ed25;
 }
 
 .thirdBox:hover {
@@ -65,7 +65,7 @@ p {
 }
 
 .fourthBox {
-  border: 2px solid #ffdd0a;
+  border-color: #ffdd0a;
 }
 
 .fourthBox:hover {
@@ -73,7 +73,7 @@ p {
 }
 
 .fifthBox {
-  border: 2px solid #4fc3f7;
+  border-color: #4fc3f7;
 }
 
 .fifthBox:hover {
@@ -81,7 +81,7 @@ p {
 }
 
 .sixthBox {
-  border: 2px solid #1c78c9;
+  border-color: #1c78c9;
 }
 
 .sixthBox:hover {
@@ -96,6 +96,8 @@ ion-card p {
 ion-card {
   padding: 20px;
   border-radius: 0;
+  border-width: 2px;
+  border-style: solid;
 }
 
 .buttons-bottom {
