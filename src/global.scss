@@ -39,3 +39,71 @@ p {
   color: #000;
   font-weight: 500;
 }
+
+.firstBox {
+  border: 2px solid #c70a0a;
+}
+
+.firstBox:hover {
+  background-color: #c70a0a;
+}
+
+.secondBox {
+  border: 2px solid #fb6d0c;
+}
+
+.secondBox:hover {
+  background-color: #fb6d0c;
+}
+
+.thirdBox {
+  border: 2px solid #29ed25;
+}
+
+.thirdBox:hover {
+  background-color: #29ed25;
+}
+
+.fourthBox {
+  border: 2px solid #ffdd0a;
+}
+
+.fourthBox:hover {
+  background-color: #ffdd0a;
+}
+
+.fifthBox {
+  border: 2px solid #4fc3f7;
+}
+
+.fifthBox:hover {
+  background-color: #4fc3f7;
+}
+
+.sixthBox {
+  border: 2px solid #1c78c9;
+}
+
+.sixthBox:hover {
+  background-color: #1c78c9;
+}
+
+ion-card p {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+ion-card {
+  padding: 20px;
+  border-radius: 0;
+}
+
+.buttons-bottom {
+  margin-top: 20px;
+}
+
+.buttons-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
