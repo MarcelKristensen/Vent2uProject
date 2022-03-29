@@ -1,9 +1,91 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>humidity</ion-title>
+    <ion-title size="large">Humidity</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid class="ion-no-padding"> 
+    <h1>How does your skin surface feels</h1>
+    <p>
+      Answer acording to your current humidity level.
+    </p>
 
+    <ion-row>
+      <ion-col class="ion-no-padding">        
+        <ion-card 
+        button="true" class="withered" >
+          <ion-img src="\assets\humidity-withered.svg" style="height: 50px"></ion-img>
+          <div class="ion-text-center">
+            <p>Withered</p>
+          </div>
+        </ion-card>
+      </ion-col>
+
+      <ion-col class="ion-no-padding">        
+        <ion-card button="true" class="hot">
+          <ion-img src="\assets\humidity-hot.svg" style="height: 50px"></ion-img>
+          <div class="ion-text-center">
+            <p>Hot</p>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">        
+        <ion-card button="true" class="uncomfortable">
+          <ion-img src="\assets\humidity-uncomfortable.svg" style="height: 50px"></ion-img>
+          <div class="ion-text-center">
+            <p>Uncomfortable</p>
+          </div>
+        </ion-card>
+      </ion-col>
+
+      <ion-col class="ion-no-padding">        
+        <ion-card button="true" class="damp">
+          <ion-img src="\assets\humidity-damp.svg" style="height: 50px"></ion-img>
+          <div class="ion-text-center">
+            <p>Damp</p>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">        
+        <ion-card button="true" class="itchy">
+          <ion-img src="\assets\humidity-itchy.svg" style="height: 50px"></ion-img>
+          <div class="ion-text-center">
+            <p>Itchy</p>
+          </div>
+        </ion-card>
+      </ion-col>
+
+      <ion-col class="ion-no-padding">        
+        <ion-card button="true" class="dry">
+          <ion-img src="\assets\humidity-dry.svg" style="height: 50px"></ion-img>
+          <div class="ion-text-center">
+            <p>Dry</p>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-no-padding">  
+        <ion-button color="secondary" href="/energy">
+          <span>Return</span>
+          <ion-img src="/assets/energy_return.svg" style="height: 30px"></ion-img>
+        </ion-button>
+      </ion-col>
+
+      <ion-col class="ion-no-padding">
+        <ion-button href="/location">
+          <span>Continue</span>
+          <ion-img src="/assets/energy_continue.svg" style="height: 30px"></ion-img>
+        </ion-button>
+      </ion-col>
+    </ion-row> 
+  </ion-grid>
 </ion-content>
