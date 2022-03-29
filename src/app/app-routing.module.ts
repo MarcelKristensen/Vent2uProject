@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'energy',
     loadChildren: () => import('./energy/energy.module').then( m => m.EnergyPageModule),
   },
+  {
+    path: 'temperature',
+    loadChildren: () => import('./temperature/temperature.module').then( m => m.TemperaturePageModule)
+  },
+
 ];
 
 @NgModule({
