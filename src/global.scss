@@ -57,19 +57,19 @@ p {
 }
 
 .thirdBox {
-  border-color: #29ed25;
-}
-
-.thirdBox:hover {
-  background-color: #29ed25;
-}
-
-.fourthBox {
   border-color: #ffdd0a;
 }
 
-.fourthBox:hover {
+.thirdBox:hover {
   background-color: #ffdd0a;
+}
+
+.fourthBox {
+  border-color: #29ed25;
+}
+
+.fourthBox:hover {
+  background-color: #29ed25;
 }
 
 .fifthBox {
@@ -111,15 +111,30 @@ ion-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 ion-button {
   --border-radius: 0;
   margin: 0;
   --padding-bottom: 18px;
+  --border-style: solid;
+  --border-color: black;
   --padding-top: 18px;
   --padding-left: 20px;
   --padding-right: 20px;
+}
+
+.return-box {
+  --background: white;
+}
+
+.continue-text {
+  color: white;
+}
+
+.return-text {
+  color: black;
 }
 
 .return ion-img {
