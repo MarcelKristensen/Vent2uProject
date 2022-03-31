@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  AppComponent</li>
+  ThankYouPage</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,12 +64,18 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/app.component.ts</code>
+    <code>src/app/pages/thank-you/thank-you.page.ts</code>
 </p>
 
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -89,19 +95,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-root</code></td>
+                <td class="col-md-9"><code>app-thank-you</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>app.component.scss</code></td>
+                <td class="col-md-9"><code>./thank-you.page.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>app.component.html</code></td>
+                <td class="col-md-9"><code>./thank-you.page.html</code></td>
             </tr>
 
 
@@ -115,6 +121,33 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
 
     <section>
     <h3 id="constructor">Constructor</h3>
@@ -127,7 +160,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/app.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/pages/thank-you/thank-you.page.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -139,37 +172,106 @@
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">src/app/pages/thank-you/thank-you.page.ts:12</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-root&#x27;,
-  templateUrl: &#x27;app.component.html&#x27;,
-  styleUrls: [&#x27;app.component.scss&#x27;],
+  selector: &#x27;app-thank-you&#x27;,
+  templateUrl: &#x27;./thank-you.page.html&#x27;,
+  styleUrls: [&#x27;./thank-you.page.scss&#x27;],
 })
-export class AppComponent {
-  constructor() {}
+export class ThankYouPage implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ion-app&gt;
-  &lt;ion-router-outlet&gt;&lt;/ion-router-outlet&gt;
-&lt;/ion-app&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header class&#x3D;&quot;ion-no-border&quot;&gt;
+  &lt;ion-img
+    style&#x3D;&quot;width: 200px; height: auto; margin: auto&quot;
+    src&#x3D;&quot;/assets/logo.svg&quot;
+    alt&#x3D;&quot;logo&quot;
+  &gt;&lt;/ion-img&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content&gt;
+  &lt;ion-grid&gt;
+    &lt;h1&gt;Thank you!&lt;/h1&gt;
+    &lt;p&gt;Your choices have been received and we will adjust the classroom climate for your zone shortly.&lt;/p&gt;
+  &lt;/ion-grid&gt;
+&lt;/ion-content&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>app.component.scss</code>
+                    <code>./thank-you.page.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">ion-content {
+  position: relative;
+}
+
+ion-grid {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -197,10 +299,10 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-app>  <ion-router-outlet></ion-router-outlet></ion-app></div>'
+        var COMPONENT_TEMPLATE = '<div><ion-header class="ion-no-border">  <ion-img    style="width: 200px; height: auto; margin: auto"    src="/assets/logo.svg"    alt="logo"  ></ion-img></ion-header><ion-content>  <ion-grid>    <h1>Thank you!</h1>    <p>Your choices have been received and we will adjust the classroom climate for your zone shortly.</p>  </ion-grid></ion-content></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EnergyPage', 'selector': 'app-energy'},{'name': 'GenderPage', 'selector': 'app-gender'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'HumidityPage', 'selector': 'app-humidity'},{'name': 'TemperaturePage', 'selector': 'app-temperature'},{'name': 'ThankYouPage', 'selector': 'app-thank-you'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
+    var ACTUAL_COMPONENT = {'name': 'ThankYouPage'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -246,7 +348,7 @@ export class AppComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ThankYouPage.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

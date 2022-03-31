@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/home/home.page.ts</code>
+    <code>src/app/pages/home/home.page.ts</code>
 </p>
 
 
@@ -127,7 +127,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/home/home.page.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/pages/home/home.page.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -161,60 +161,56 @@ export class HomePage {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ion-header [translucent]&#x3D;&quot;true&quot;&gt;
-  &lt;ion-toolbar&gt;
-    &lt;ion-title&gt;
-      Blank
-    &lt;/ion-title&gt;
-  &lt;/ion-toolbar&gt;
-&lt;/ion-header&gt;
-
-&lt;ion-content [fullscreen]&#x3D;&quot;true&quot;&gt;
-  &lt;ion-header collapse&#x3D;&quot;condense&quot;&gt;
-    &lt;ion-toolbar&gt;
-      &lt;ion-title size&#x3D;&quot;large&quot;&gt;Blank&lt;/ion-title&gt;
-    &lt;/ion-toolbar&gt;
-  &lt;/ion-header&gt;
-
-  &lt;div id&#x3D;&quot;container&quot;&gt;
-    &lt;strong&gt;Ready to create an app?&lt;/strong&gt;
-    &lt;p&gt;Start with Ionic &lt;a target&#x3D;&quot;_blank&quot; rel&#x3D;&quot;noopener noreferrer&quot; href&#x3D;&quot;https://ionicframework.com/docs/components&quot;&gt;UI Components&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/ion-content&gt;
-</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;ion-content&gt;
+  &lt;ion-grid&gt;
+    &lt;ion-img
+      style&#x3D;&quot;width: 200px; height: auto; margin: auto&quot;
+      src&#x3D;&quot;/assets/logo.svg&quot;
+      alt&#x3D;&quot;logo&quot;
+    &gt;&lt;/ion-img&gt;
+    &lt;h1&gt;Ready to get started?&lt;/h1&gt;
+    &lt;h2&gt;
+      &lt;ion-img style&#x3D;&quot;width: 40px&quot; src&#x3D;&quot;/assets/walkin.svg&quot;&gt;&lt;/ion-img&gt;
+      &lt;ion-text style&#x3D;&quot;font-size: 18px; font-variant: small-caps&quot;
+        &gt;Get moving&lt;/ion-text
+      &gt;
+      &lt;ion-img style&#x3D;&quot;width: 40px&quot; src&#x3D;&quot;/assets/walkin.svg&quot;&gt;&lt;/ion-img&gt;
+    &lt;/h2&gt;
+    &lt;p&gt;
+      &lt;ion-text style&#x3D;&quot;font-weight: bold&quot;&gt;Location: &lt;/ion-text&gt;Room D3.05, Zone
+      6
+    &lt;/p&gt;
+    &lt;ion-button type&#x3D;&quot;button&quot; href&#x3D;&quot;/gender&quot;&gt;I&#x27;m ready&lt;/ion-button&gt;
+  &lt;/ion-grid&gt;
+&lt;/ion-content&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>home.page.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">#container {
-  text-align: center;
-
+                <pre class="line-numbers"><code class="language-scss">ion-grid {
   position: absolute;
-  left: 0;
-  right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-grid {
+  text-align: center;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-content h2 {
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  align-items: center;
+  justify-content: space-evenly;
+  max-width: 70%;
+  margin: auto;
+  gap: 10px;
 }
-
-#container a {
-  text-decoration: none;
-}</code></pre>
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -242,8 +238,8 @@ export class HomePage {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-header [translucent]="true">  <ion-toolbar>    <ion-title>      Blank    </ion-title>  </ion-toolbar></ion-header><ion-content [fullscreen]="true">  <ion-header collapse="condense">    <ion-toolbar>      <ion-title size="large">Blank</ion-title>    </ion-toolbar>  </ion-header>  <div id="container">    <strong>Ready to create an app?</strong>    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>  </div></ion-content></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomePage', 'selector': 'app-home'}];
+        var COMPONENT_TEMPLATE = '<div><ion-content>  <ion-grid>    <ion-img      style="width: 200px; height: auto; margin: auto"      src="/assets/logo.svg"      alt="logo"    ></ion-img>    <h1>Ready to get started?</h1>    <h2>      <ion-img style="width: 40px" src="/assets/walkin.svg"></ion-img>      <ion-text style="font-size: 18px; font-variant: small-caps"        >Get moving</ion-text      >      <ion-img style="width: 40px" src="/assets/walkin.svg"></ion-img>    </h2>    <p>      <ion-text style="font-weight: bold">Location: </ion-text>Room D3.05, Zone      6    </p>    <ion-button type="button" href="/gender">I\'m ready</ion-button>  </ion-grid></ion-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EnergyPage', 'selector': 'app-energy'},{'name': 'GenderPage', 'selector': 'app-gender'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'HumidityPage', 'selector': 'app-humidity'},{'name': 'TemperaturePage', 'selector': 'app-temperature'},{'name': 'ThankYouPage', 'selector': 'app-thank-you'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomePage'};
 </script>

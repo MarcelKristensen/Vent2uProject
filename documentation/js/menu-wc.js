@@ -71,16 +71,56 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppRoutingModule.html" data-type="entity-link" >AppRoutingModule</a>
                             </li>
                             <li class="link">
-                                <a href="modules/HomePageModule.html" data-type="entity-link" >HomePageModule</a>
+                                <a href="modules/EnergyPageModule.html" data-type="entity-link" >EnergyPageModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-HomePageModule-505138d4b0b902820bf04bf9e711dc5c228dc709f7eb29e730938c67b74c1e14c0502b3e3088157496bc55ca02f2a16dd453cf16dfda29790b02c7c447c557e6"' : 'data-target="#xs-components-links-module-HomePageModule-505138d4b0b902820bf04bf9e711dc5c228dc709f7eb29e730938c67b74c1e14c0502b3e3088157496bc55ca02f2a16dd453cf16dfda29790b02c7c447c557e6"' }>
+                                            'data-target="#components-links-module-EnergyPageModule-fc1d41e2e3615f89892186137faf7e6d7305f9e2a6fba5db58eeb1549e5e3104c48c749010400f557ea205d4b5d0cb11fbd88d5cbebd9ebbb3ce285e1d340a58"' : 'data-target="#xs-components-links-module-EnergyPageModule-fc1d41e2e3615f89892186137faf7e6d7305f9e2a6fba5db58eeb1549e5e3104c48c749010400f557ea205d4b5d0cb11fbd88d5cbebd9ebbb3ce285e1d340a58"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-HomePageModule-505138d4b0b902820bf04bf9e711dc5c228dc709f7eb29e730938c67b74c1e14c0502b3e3088157496bc55ca02f2a16dd453cf16dfda29790b02c7c447c557e6"' :
-                                            'id="xs-components-links-module-HomePageModule-505138d4b0b902820bf04bf9e711dc5c228dc709f7eb29e730938c67b74c1e14c0502b3e3088157496bc55ca02f2a16dd453cf16dfda29790b02c7c447c557e6"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-EnergyPageModule-fc1d41e2e3615f89892186137faf7e6d7305f9e2a6fba5db58eeb1549e5e3104c48c749010400f557ea205d4b5d0cb11fbd88d5cbebd9ebbb3ce285e1d340a58"' :
+                                            'id="xs-components-links-module-EnergyPageModule-fc1d41e2e3615f89892186137faf7e6d7305f9e2a6fba5db58eeb1549e5e3104c48c749010400f557ea205d4b5d0cb11fbd88d5cbebd9ebbb3ce285e1d340a58"' }>
+                                            <li class="link">
+                                                <a href="components/EnergyPage.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >EnergyPage</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/EnergyPageRoutingModule.html" data-type="entity-link" >EnergyPageRoutingModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/GenderPageModule.html" data-type="entity-link" >GenderPageModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-GenderPageModule-57b06ddc3cb408d329a34749b3df62f20f8c8bf243761f0c99949a650d2a7dc2186642b8cf8cf2c02a8c532d69e5287c6f2b7bbd24f222bc3b571da258b7c1c8"' : 'data-target="#xs-components-links-module-GenderPageModule-57b06ddc3cb408d329a34749b3df62f20f8c8bf243761f0c99949a650d2a7dc2186642b8cf8cf2c02a8c532d69e5287c6f2b7bbd24f222bc3b571da258b7c1c8"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-GenderPageModule-57b06ddc3cb408d329a34749b3df62f20f8c8bf243761f0c99949a650d2a7dc2186642b8cf8cf2c02a8c532d69e5287c6f2b7bbd24f222bc3b571da258b7c1c8"' :
+                                            'id="xs-components-links-module-GenderPageModule-57b06ddc3cb408d329a34749b3df62f20f8c8bf243761f0c99949a650d2a7dc2186642b8cf8cf2c02a8c532d69e5287c6f2b7bbd24f222bc3b571da258b7c1c8"' }>
+                                            <li class="link">
+                                                <a href="components/GenderPage.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >GenderPage</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/GenderPageRoutingModule.html" data-type="entity-link" >GenderPageRoutingModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/HomePageModule.html" data-type="entity-link" >HomePageModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-HomePageModule-a622f51e2915ea3e16fc40a842960d1ca845304d39c14600bcf0ba297c8ed8eb6d6d1843422f45b5c1895d7cb2f13cceb8431061bc8ce9d7f63a78dd447f56e4"' : 'data-target="#xs-components-links-module-HomePageModule-a622f51e2915ea3e16fc40a842960d1ca845304d39c14600bcf0ba297c8ed8eb6d6d1843422f45b5c1895d7cb2f13cceb8431061bc8ce9d7f63a78dd447f56e4"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-HomePageModule-a622f51e2915ea3e16fc40a842960d1ca845304d39c14600bcf0ba297c8ed8eb6d6d1843422f45b5c1895d7cb2f13cceb8431061bc8ce9d7f63a78dd447f56e4"' :
+                                            'id="xs-components-links-module-HomePageModule-a622f51e2915ea3e16fc40a842960d1ca845304d39c14600bcf0ba297c8ed8eb6d6d1843422f45b5c1895d7cb2f13cceb8431061bc8ce9d7f63a78dd447f56e4"' }>
                                             <li class="link">
                                                 <a href="components/HomePage.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >HomePage</a>
                                             </li>
@@ -89,6 +129,66 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="modules/HomePageRoutingModule.html" data-type="entity-link" >HomePageRoutingModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/HumidityPageModule.html" data-type="entity-link" >HumidityPageModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-HumidityPageModule-cee94c9269ebf8ffc389b5ee59fcaa6807cab464049939a63fef7d63fb98314e2f3ee8ccd04387954cd49c312898f475cad0ddb3cbc7f742b29c8811441d999f"' : 'data-target="#xs-components-links-module-HumidityPageModule-cee94c9269ebf8ffc389b5ee59fcaa6807cab464049939a63fef7d63fb98314e2f3ee8ccd04387954cd49c312898f475cad0ddb3cbc7f742b29c8811441d999f"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-HumidityPageModule-cee94c9269ebf8ffc389b5ee59fcaa6807cab464049939a63fef7d63fb98314e2f3ee8ccd04387954cd49c312898f475cad0ddb3cbc7f742b29c8811441d999f"' :
+                                            'id="xs-components-links-module-HumidityPageModule-cee94c9269ebf8ffc389b5ee59fcaa6807cab464049939a63fef7d63fb98314e2f3ee8ccd04387954cd49c312898f475cad0ddb3cbc7f742b29c8811441d999f"' }>
+                                            <li class="link">
+                                                <a href="components/HumidityPage.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >HumidityPage</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/HumidityPageRoutingModule.html" data-type="entity-link" >HumidityPageRoutingModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/TemperaturePageModule.html" data-type="entity-link" >TemperaturePageModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-TemperaturePageModule-0ceea39c6ae27a613d14c544c25074f6ebdf867b5f23cd1c1c2addc31ee562d5d6e5395ba6e8e1725ea8fcdc78c752e2f10b47ac189068730b6de98f3de21ab2"' : 'data-target="#xs-components-links-module-TemperaturePageModule-0ceea39c6ae27a613d14c544c25074f6ebdf867b5f23cd1c1c2addc31ee562d5d6e5395ba6e8e1725ea8fcdc78c752e2f10b47ac189068730b6de98f3de21ab2"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-TemperaturePageModule-0ceea39c6ae27a613d14c544c25074f6ebdf867b5f23cd1c1c2addc31ee562d5d6e5395ba6e8e1725ea8fcdc78c752e2f10b47ac189068730b6de98f3de21ab2"' :
+                                            'id="xs-components-links-module-TemperaturePageModule-0ceea39c6ae27a613d14c544c25074f6ebdf867b5f23cd1c1c2addc31ee562d5d6e5395ba6e8e1725ea8fcdc78c752e2f10b47ac189068730b6de98f3de21ab2"' }>
+                                            <li class="link">
+                                                <a href="components/TemperaturePage.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TemperaturePage</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/TemperaturePageRoutingModule.html" data-type="entity-link" >TemperaturePageRoutingModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/ThankYouPageModule.html" data-type="entity-link" >ThankYouPageModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-ThankYouPageModule-5740f9fca6b5cfa58ca1e553f14e9776872925984852b2cc4262166fbba603b5d443ec12a3682a6918e5714011570176008e8c1755ace42398247758c6ca1b37"' : 'data-target="#xs-components-links-module-ThankYouPageModule-5740f9fca6b5cfa58ca1e553f14e9776872925984852b2cc4262166fbba603b5d443ec12a3682a6918e5714011570176008e8c1755ace42398247758c6ca1b37"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ThankYouPageModule-5740f9fca6b5cfa58ca1e553f14e9776872925984852b2cc4262166fbba603b5d443ec12a3682a6918e5714011570176008e8c1755ace42398247758c6ca1b37"' :
+                                            'id="xs-components-links-module-ThankYouPageModule-5740f9fca6b5cfa58ca1e553f14e9776872925984852b2cc4262166fbba603b5d443ec12a3682a6918e5714011570176008e8c1755ace42398247758c6ca1b37"' }>
+                                            <li class="link">
+                                                <a href="components/ThankYouPage.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ThankYouPage</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/ThankYouPageRoutingModule.html" data-type="entity-link" >ThankYouPageRoutingModule</a>
                             </li>
                 </ul>
                 </li>
