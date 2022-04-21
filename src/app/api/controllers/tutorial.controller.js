@@ -5,9 +5,10 @@ const Op = db.Sequelize.Op;
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
   // Validate request
+  console.log(req.body,"Why doesnt she text me?")
   if (!req.body.title) {
     res.status(400).send({
-      message: "Content can not be empty!"
+      message: "Co"
     });
     return;
   }
