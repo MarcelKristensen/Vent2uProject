@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
     <li>Modules</li>
-    <li >HomePageRoutingModule</li>
+    <li >EnergyPageRoutingModule</li>
 </ol>
 
 
@@ -55,7 +55,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/pages/home/home-routing.module.ts</code>
+            <code>src/app/pages/energy/energy-routing.module.ts</code>
         </p>
 
 
@@ -73,21 +73,22 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
-import { HomePage } from &#x27;./home.page&#x27;;
+import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
+
+import { EnergyPage } from &#x27;./energy.page&#x27;;
 
 const routes: Routes &#x3D; [
   {
     path: &#x27;&#x27;,
-    component: HomePage,
+    component: EnergyPage
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomePageRoutingModule {}
+export class EnergyPageRoutingModule {}
 </code></pre>
     </div>
 </div>
@@ -134,7 +135,7 @@ export class HomePageRoutingModule {}
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'HomePageRoutingModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'EnergyPageRoutingModule.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
