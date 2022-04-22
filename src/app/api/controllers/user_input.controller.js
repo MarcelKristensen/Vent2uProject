@@ -1,5 +1,5 @@
 const db = require("../models");
-const UserInput = db.mental_shower;
+const UserInput = db.userInput;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new User Input
@@ -139,19 +139,3 @@ exports.deleteAll = (req, res) => {
         });
     
 };
-
-/* Find all published Rooms
-exports.findAllPublished = (req, res) => {
-    UserInput.findAll({ where: { published: true } })
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving user inputs."
-      });
-    });
-
-};
-*/

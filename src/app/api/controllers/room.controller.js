@@ -1,5 +1,5 @@
 const db = require("../models");
-const Room = db.mental_shower;
+const Room = db.room;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Room
@@ -34,6 +34,7 @@ exports.create = (req, res) => {
 
 // Retrieve all Rooms from the database.
 exports.findAll = (req, res) => {
+  console.log(Op.like, "op here")
     const name = req.query.name;
     var condition = name ? { name: { [Op.like]: `%${name}%` } } : null;
   
@@ -135,19 +136,3 @@ exports.deleteAll = (req, res) => {
         });
     
 };
-
-// Find all published Rooms
-/*exports.findAllPublished = (req, res) => {
-    Room.findAll({ where: { published: true } })
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving Rooms."
-      });
-    });
-
-};
-*/
