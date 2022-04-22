@@ -4,8 +4,6 @@ import {
   HttpHeaders,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Room } from './room';
 
 @Injectable({
   providedIn: 'root',
@@ -19,5 +17,9 @@ export class CrudService {
 
   getRooms() {
     return this.httpClient.get(`${this.apiURL}/api/rooms`);
+  }
+
+  getAllUsedZones() {
+    return this.httpClient.get(`${this.apiURL}/api/userinputs`);
   }
 }
