@@ -26,8 +26,9 @@ app.get("/", (req, res) => {
 });
 
 require("./src/app/api/routes/room.routes")(app);
+require("./src/app/api/routes/user_input.routes")(app);
 // set port, listen for requests
-const PORT = 3306;
+const PORT = 3316;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

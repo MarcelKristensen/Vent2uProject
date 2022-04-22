@@ -6,22 +6,21 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
   // Validate request
   console.log(req.body)
-  if (!req.body.title) {
+  if (!req.body.name) {
     res.status(400).send({
-      message: "Co"
+      message: "Content cannot be empty"
     });
     return;
   }
 
   // Create a Room
-  const userinput = {
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published ? req.body.published : false
+  const room = {
+    name: req.body.name,
+    zone: req.body.zone,
   };
 
   // Save Room in the database
-  Room.create(userinput)
+  Room.create(room)
     .then(data => {
       res.send(data);
     })
@@ -35,8 +34,8 @@ exports.create = (req, res) => {
 
 // Retrieve all Rooms from the database.
 exports.findAll = (req, res) => {
-    const title = req.query.title;
-    var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
+    const name = req.query.name;
+    var condition = name ? { name: { [Op.like]: `%${name}%` } } : null;
   
     Room.findAll({ where: condition })
       .then(data => {
@@ -138,7 +137,7 @@ exports.deleteAll = (req, res) => {
 };
 
 // Find all published Rooms
-exports.findAllPublished = (req, res) => {
+/*exports.findAllPublished = (req, res) => {
     Room.findAll({ where: { published: true } })
     .then(data => {
       res.send(data);
@@ -151,3 +150,4 @@ exports.findAllPublished = (req, res) => {
     });
 
 };
+*/

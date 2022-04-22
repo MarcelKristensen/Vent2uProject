@@ -10,7 +10,7 @@ module.exports = app => {
     router.get("/", Rooms.findAll);
   
     // Retrieve all published Rooms
-    router.get("/published", Rooms.findAllPublished);
+    //router.get("/published", Rooms.findAllPublished);
   
     // Retrieve a single Room with id
     router.get("/:id", Rooms.findOne);
@@ -24,5 +24,5 @@ module.exports = app => {
     // Create a new Room
     router.delete("/", Rooms.deleteAll);
   
-    app.use('/api/Rooms', router);
+    app.use('/api/rooms', router);
   };
