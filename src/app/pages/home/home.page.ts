@@ -31,7 +31,7 @@ export class HomePage implements OnInit {
       this.getUniqueLocation();
     });
     const UserId = '#' + Math.random().toString(36).slice(2, 9);
-
+console.log(UserId)
   }
 
 
