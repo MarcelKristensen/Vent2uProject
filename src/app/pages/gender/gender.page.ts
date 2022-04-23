@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-gender',
@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gender.page.scss'],
 })
 export class GenderPage implements OnInit {
+
+  @Output() genderChoice = new EventEmitter<string>();
+  addGender(value: string){
+    this.genderChoice.emit(value);
+  console.log(value)
+
+  }
+
 
   constructor() { }
 

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  choices=[]
   constructor() {}
+
+  userInputs(userChoices: string){
+    this.choices.push(userChoices);
+    console.log(this.choices)
+  }
 }
+
