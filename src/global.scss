@@ -39,3 +39,110 @@ p {
   color: #000;
   font-weight: 500;
 }
+
+.firstBox {
+  border-color: #c70a0a;
+}
+
+.firstBox:hover {
+  background-color: #c70a0a;
+}
+
+.secondBox {
+  border-color: #fb6d0c;
+}
+
+.secondBox:hover {
+  background-color: #fb6d0c;
+}
+
+.thirdBox {
+  border-color: #ffdd0a;
+}
+
+.thirdBox:hover {
+  background-color: #ffdd0a;
+}
+
+.fourthBox {
+  border-color: #29ed25;
+}
+
+.fourthBox:hover {
+  background-color: #29ed25;
+}
+
+.fifthBox {
+  border-color: #4fc3f7;
+}
+
+.fifthBox:hover {
+  background-color: #4fc3f7;
+}
+
+.sixthBox {
+  border-color: #1c78c9;
+}
+
+.sixthBox:hover {
+  background-color: #1c78c9;
+}
+
+ion-card p {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+ion-card {
+  padding: 20px;
+  border-radius: 0;
+  border-width: 2px;
+  border-style: solid;
+  height: 100%;
+  display: flex;
+}
+
+.buttons-bottom {
+  margin-top: 20px;
+}
+
+.buttons-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+ion-button {
+  --border-radius: 0;
+  margin: 0;
+  --padding-bottom: 18px;
+  --border-style: solid;
+  --border-color: black;
+  --padding-top: 18px;
+  --padding-left: 20px;
+  --padding-right: 20px;
+}
+
+.return-box {
+  --background: white;
+}
+
+.continue-text {
+  color: white;
+}
+
+.return-text {
+  color: black;
+}
+
+.return ion-img {
+  margin-right: 4px;
+  width: 22px;
+}
+
+.continue ion-img {
+  margin-left: 4px;
+  width: 22px;
+}

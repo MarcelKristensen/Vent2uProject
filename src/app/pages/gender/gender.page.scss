@@ -1,0 +1,35 @@
+.male {
+  border-color: #2c682b;
+}
+
+.male:hover,
+ion-activated.male,
+.male:active {
+  background-color: #2c682b;
+}
+
+.female {
+  border-color: #c70a0a;
+}
+
+.female:hover,
+ion-activated.female,
+.female:active {
+  background-color: #c70a0a;
+}
+
+.non-binary {
+  border-color: #77592a;
+}
+
+.non-binary:hover,
+ion-activated.non-binary,
+.non-binary:active {
+  background-color: #77592a;
+}
+
+.male:hover p,
+.female:hover p,
+.non-binary:hover p {
+  color: #fff;
+}

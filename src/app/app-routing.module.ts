@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -13,19 +13,24 @@ const routes: Routes = [
   },
   {
     path: 'gender',
-    loadChildren: () => import('./gender/gender.module').then( m => m.GenderPageModule)
+    loadChildren: () => import('./pages/gender/gender.module').then( m => m.GenderPageModule)
   },
   {
     path: 'thank-you',
-    loadChildren: () => import('./thank-you/thank-you.module').then( m => m.ThankYouPageModule)
+    loadChildren: () => import('./pages/thank-you/thank-you.module').then( m => m.ThankYouPageModule)
   },
   {
     path: 'energy',
-    loadChildren: () => import('./energy/energy.module').then( m => m.EnergyPageModule),
-  },  {
-    path: 'humidity',
-    loadChildren: () => import('./humidity/humidity.module').then( m => m.HumidityPageModule)
+    loadChildren: () => import('./pages/energy/energy.module').then( m => m.EnergyPageModule),
   },
+  {
+    path: 'humidity',
+    loadChildren: () => import('./pages/humidity/humidity.module').then( m => m.HumidityPageModule)
+  },
+  {
+    path: 'temperature',
+    loadChildren: () => import('./pages/temperature/temperature.module').then( m => m.TemperaturePageModule)
+  }
 
 ];
 
