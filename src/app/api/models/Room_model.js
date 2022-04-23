@@ -1,6 +1,4 @@
-const { rooms } = require("./rooms.json");
 module.exports = (sequelize, Sequelize) => {
-  const room = rooms.map((room) => room.name);
   const Room = sequelize.define("Room", {
     id: {
       type: Sequelize.INTEGER,
