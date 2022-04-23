@@ -1,20 +1,28 @@
 module.exports = (sequelize, Sequelize) => {
-    const UserInput = sequelize.define("UserInput", {
+  const UserInput = sequelize.define("UserInput", {
+    id: {
+      type: Sequelize.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    userId: {
+      type: Sequelize.INTEGER,
+    },
     gender: {
-    type: Sequelize.STRING
+      type: Sequelize.STRING,
     },
     zone: {
-    type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
     },
     temperature: {
-    type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
     },
     energy: {
-    type: Sequelize.INTEGER
+      type: Sequelize.INTEGER,
     },
     humidity: {
-    type: Sequelize.INTEGER
-    }   
-    });
-    return UserInput;
-   };
+      type: Sequelize.INTEGER,
+    },
+  });
+  return UserInput;
+};
