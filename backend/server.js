@@ -1,10 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const db = require("./src/app/api/models");
-const { room } = require("./src/app/api/models");
+const db = require("./models");
+const { room } = require("./models");
 const app = express();
-const { rooms } = require("./src/app//api/models/rooms.json");
+const { rooms } = require("./models/rooms.json");
 
 const corsOptions = {
   origin: "http://localhost:3316",
@@ -20,8 +20,8 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to Vent2U application." });
 });
 
-require("./src/app/api/routes/room.routes")(app);
-require("./src/app/api/routes/user_input.routes")(app);
+require("./routes/room.routes")(app);
+require("./routes/user_input.routes")(app);
 
 const PORT = 3316;
 app.listen(PORT, () => {
