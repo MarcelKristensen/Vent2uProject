@@ -11,7 +11,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.mental_shower = require("./Room_model.js")(sequelize, Sequelize);
-db.mental_shower = require("./user_input_model.js")(sequelize, Sequelize);
+db.room = require("./room_model.js")(sequelize, Sequelize);
+db.userInput = require("./user_input_model.js")(sequelize, Sequelize);
 
 module.exports = db;
