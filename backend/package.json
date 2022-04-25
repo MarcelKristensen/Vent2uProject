@@ -15,7 +15,10 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.19.0"
+    "node": "^17.7.2",
+    "npm": "^8.7.0",
+    "sequelize": "^6.19.0",
+    "tedious": "^14.4.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",

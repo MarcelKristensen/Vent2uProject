@@ -7,7 +7,7 @@ const app = express();
 const { rooms } = require("./models/rooms.json");
 
 const corsOptions = {
-  origin: `http://localhost:${process.env.PORT || 3306}`,
+  origin: `http://localhost:${process.env.PORT || 3316}`,
 };
 app.use(cors(corsOptions));
 
