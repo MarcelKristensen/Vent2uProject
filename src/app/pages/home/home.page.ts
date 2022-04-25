@@ -20,7 +20,7 @@ export class HomePage implements OnInit {
     });
 
     this.crudService.getAllUsedZones().subscribe((res) => {
-      this.zones = Object.values(res).map((zone) => zone.zone);
+      this.zones = Object.values(res).map((zone) => zone);
       this.getUniqueLocation();
     });
   }

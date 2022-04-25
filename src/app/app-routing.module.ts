@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'temperature',
     loadChildren: () => import('./pages/temperature/temperature.module').then( m => m.TemperaturePageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
   }
 
 ];

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>List of User Inputs</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let userinput of userinputs">
+      <ion-label>
+        <h5>Id: {{userinput.id}} - Gender: {{userinput.gender}} - Zone: {{userinput.zone}}</h5> 
+        <h5>Temperature: {{userinput.temperature}} - Energy: {{userinput.energy}} - Humidity: {{userinput.humidity}}</h5> 
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

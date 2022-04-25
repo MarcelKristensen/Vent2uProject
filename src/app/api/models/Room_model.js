@@ -8,10 +8,10 @@ module.exports = (sequelize, Sequelize) => {
       autoIncrement: true,
     },
     name: {
-      type: Sequelize.STRING(20),
+      type: Sequelize.STRING(20)
     },
     zone: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.INTEGER
     },
   });
 

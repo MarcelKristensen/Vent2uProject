@@ -1,3 +1,5 @@
+
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import {
   HttpClient,
@@ -19,7 +21,12 @@ export class CrudService {
     return this.httpClient.get(`${this.apiURL}/api/rooms`);
   }
 
+  getRoomId(id: any): Observable<any> {
+    return this.httpClient.get(`${this.apiURL}/api/rooms/${id}`);
+  }
+
   getAllUsedZones() {
     return this.httpClient.get(`${this.apiURL}/api/userinputs`);
   }
+
 }
