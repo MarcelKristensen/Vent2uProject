@@ -10,12 +10,25 @@
 </ion-header>
 
 <ion-content>
-  <ion-card-content>
-    <h1>Login into the admin page.</h1>
-    <ion-item>
-      <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
-    </ion-item>
-      <ion-button  href="admin">Log in</ion-button>
-  </ion-card-content>
-
+  <div class="ion-padding">
+    <form novalidate>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked" color="primary">Username</ion-label>
+          <ion-input [(ngModel)]="login.username" name="username" type="text" required>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="primary">Password</ion-label>
+          <ion-input [(ngModel)]="login.password" name="password" type="password" required>
+          </ion-input>
+        </ion-item>
+      </ion-list>
+        <ion-col>
+          <ion-button (click)="loginadmin()" type="submit" expand="block">
+           Login
+         </ion-button>
+        </ion-col>
+    </form>
+  </div>
 </ion-content>
