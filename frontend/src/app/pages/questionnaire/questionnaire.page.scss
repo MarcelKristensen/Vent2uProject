@@ -33,3 +33,7 @@ ion-activated.non-binary,
 .non-binary:hover p {
   color: #fff;
 }
+
+ion-grid:not(:last-child) {
+  margin-bottom: 30px;
+}

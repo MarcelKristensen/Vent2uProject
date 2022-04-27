@@ -26,25 +26,6 @@ const routes: Routes = [
         (m) => m.ThankYouPageModule
       ),
   },
-  {
-    path: 'energy',
-    loadChildren: () =>
-      import('./pages/energy/energy.module').then((m) => m.EnergyPageModule),
-  },
-  {
-    path: 'humidity',
-    loadChildren: () =>
-      import('./pages/humidity/humidity.module').then(
-        (m) => m.HumidityPageModule
-      ),
-  },
-  {
-    path: 'temperature',
-    loadChildren: () =>
-      import('./pages/temperature/temperature.module').then(
-        (m) => m.TemperaturePageModule
-      ),
-  },
 ];
 
 @NgModule({
