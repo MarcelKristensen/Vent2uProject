@@ -31,7 +31,7 @@ ion-activated.non-binary,
 .male:hover p,
 .female:hover p,
 .non-binary:hover p {
-  color: #fff;
+  color: var(--ion-color-primary-contrast);
 }
 
 ion-grid {
@@ -59,7 +59,7 @@ ion-footer {
 }
 
 ion-footer .submit p {
-  color: #fff;
+  color: var(--ion-color-primary-contrast);
   font-weight: 700;
 }
 
