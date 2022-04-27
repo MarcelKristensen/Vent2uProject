@@ -31,6 +31,8 @@
 
 ion-app {
   margin: 30px;
+  margin-bottom: 0;
+  max-width: 1000px;
 }
 
 h1 {
@@ -124,4 +126,10 @@ ion-button {
   --padding-top: 18px;
   --padding-left: 20px;
   --padding-right: 20px;
+}
+
+@media screen and (min-width: 700px) {
+  ion-app {
+    margin: 30px auto;
+  }
 }
