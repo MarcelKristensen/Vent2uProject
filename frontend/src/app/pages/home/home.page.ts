@@ -26,7 +26,9 @@ export class HomePage implements OnInit {
   }
 
   getUniqueLocation() {
-    const freeZone = this.roomZones.find((roomZone) => roomZone !== this.zones);
+    const freeZone = this.roomZones.find(
+      (roomZone) => !this.zones.includes(roomZone)
+    );
     console.log(freeZone);
     if (freeZone >= 1 && freeZone <= 8) {
       this.assignedLocation = `Room D3.05, Zone ${freeZone}`;
