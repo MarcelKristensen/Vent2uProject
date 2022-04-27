@@ -128,6 +128,15 @@ ion-button {
   font-weight: 600;
 }
 
+.centerScreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 350px;
+}
+
 @media screen and (min-width: 600px) {
   .maxSize {
     max-width: 1000px;
