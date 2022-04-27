@@ -7,270 +7,277 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <h1>What gender do you identify with?</h1>
-    <ion-row>
-      <ion-col size="12" style="margin-bottom: 15px">
-        <ion-card
-          class="male"
-          button="true"
-          type="button"
-          style="box-shadow: none"
-        >
-          <ion-img src="/assets/male.svg" style="height: 50px"></ion-img>
-          <p>Male</p>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" style="margin-bottom: 15px">
-        <ion-card class="female" button="true" style="box-shadow: none">
-          <ion-img src="/assets/female.svg" style="height: 50px"></ion-img>
-          <p>Female</p>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12">
-        <ion-card class="non-binary" button="true" style="box-shadow: none">
-          <ion-img src="/assets/non-binary.svg" style="height: 50px"></ion-img>
-          <p>Non-binary</p>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-grid>
-    <h1>What describes you best?</h1>
-    <p>Answer according to your current body temperature.</p>
-
-    <ion-grid class="double">
-      <ion-row>
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="firstBox">
-            <ion-img
-              src="\assets\Temperature_icons\melting.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>I'm melting</p>
-            </div>
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="secondBox">
-            <ion-img
-              src="\assets\Temperature_icons\sweating.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>I'm sweating</p>
-            </div>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="thirdBox">
-            <ion-img
-              src="\assets\Temperature_icons\warm.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>I'm warm</p>
-            </div>
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="fourthBox">
-            <ion-img
-              src="\assets\Temperature_icons\chilly.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>I'm chilly</p>
-            </div>
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="fifthBox">
-            <ion-img
-              src="\assets\Temperature_icons\cold.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>I'm cold</p>
-            </div>
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="sixthBox">
-            <ion-img
-              src="\assets\Temperature_icons\freezing.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>I'm freezing</p>
-            </div>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-grid>
-  <ion-grid class="double">
-    <h1>How is your energy level?</h1>
-    <p>Answer in comparison with your energy on a normal day.</p>
+  <div class="maxSize">
     <ion-grid>
-      <ion-row>
+      <h1>What gender do you identify with?</h1>
+      <ion-row class="genders">
         <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="firstBox">
-            <ion-img
-              src="\assets\energy_fully_charged.svg"
-              style="height: 30px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Fully charged</p>
-            </div>
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="secondBox">
-            <ion-img
-              src="\assets\energy_energized.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Energized</p>
-            </div>
+          <ion-card
+            class="male"
+            button="true"
+            type="button"
+            style="box-shadow: none"
+          >
+            <ion-img src="/assets/male.svg" style="height: 50px"></ion-img>
+            <p>Male</p>
           </ion-card>
         </ion-col>
         <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="thirdBox">
-            <ion-img
-              src="\assets\energy_refreshed.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Refreshed</p>
-            </div>
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="fourthBox">
-            <ion-img
-              src="\assets\energy_low.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Low</p>
-            </div>
+          <ion-card class="female" button="true" style="box-shadow: none">
+            <ion-img src="/assets/female.svg" style="height: 50px"></ion-img>
+            <p>Female</p>
           </ion-card>
         </ion-col>
         <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="fifthBox">
+          <ion-card class="non-binary" button="true" style="box-shadow: none">
             <ion-img
-              src="\assets\energy_low.svg"
+              src="/assets/non-binary.svg"
               style="height: 50px"
             ></ion-img>
-            <div class="ion-text-center">
-              <p>Very low</p>
-            </div>
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="sixthBox">
-            <ion-img
-              src="\assets\energy_exhausted.svg"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Exhausted</p>
-            </div>
+            <p>Non-binary</p>
           </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-grid>
-  <ion-grid>
-    <h1>How does your skin feel?</h1>
-    <p>Answer in comparison to how your skin usually feels on a normal day.</p>
+    <ion-grid>
+      <h1>What describes you best?</h1>
+      <p>Answer according to your current body temperature.</p>
 
+      <ion-grid class="double">
+        <ion-row>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="firstBox">
+              <ion-img
+                src="\assets\Temperature_icons\melting.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>I'm melting</p>
+              </div>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="secondBox">
+              <ion-img
+                src="\assets\Temperature_icons\sweating.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>I'm sweating</p>
+              </div>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="thirdBox">
+              <ion-img
+                src="\assets\Temperature_icons\warm.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>I'm warm</p>
+              </div>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="fourthBox">
+              <ion-img
+                src="\assets\Temperature_icons\chilly.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>I'm chilly</p>
+              </div>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="fifthBox">
+              <ion-img
+                src="\assets\Temperature_icons\cold.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>I'm cold</p>
+              </div>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="sixthBox">
+              <ion-img
+                src="\assets\Temperature_icons\freezing.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>I'm freezing</p>
+              </div>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
     <ion-grid class="double">
-      <ion-row>
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="firstBox">
-            <ion-img
-              src="\assets\Humidity_icons\sweatyGuy.png"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Sweaty</p>
-            </div>
-          </ion-card>
-        </ion-col>
+      <h1>How is your energy level?</h1>
+      <p>Answer in comparison with your energy on a normal day.</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="firstBox">
+              <ion-img
+                src="\assets\energy_fully_charged.svg"
+                style="height: 30px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Fully charged</p>
+              </div>
+            </ion-card>
+          </ion-col>
 
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="secondBox">
-            <ion-img
-              src="\assets\Humidity_icons\WarmGuy.png"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Hot</p>
-            </div>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="thirdBox">
-            <ion-img
-              src="\assets\Humidity_icons\UncomfortableGuy.png"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Uncomfortable</p>
-            </div>
-          </ion-card>
-        </ion-col>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="secondBox">
+              <ion-img
+                src="\assets\energy_energized.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Energized</p>
+              </div>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="thirdBox">
+              <ion-img
+                src="\assets\energy_refreshed.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Refreshed</p>
+              </div>
+            </ion-card>
+          </ion-col>
 
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="fourthBox">
-            <ion-img
-              src="\assets\Humidity_icons\Damp.png"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Damp</p>
-            </div>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="fifthBox">
-            <ion-img
-              src="\assets\Humidity_icons\ItchyGuy.png"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Itchy</p>
-            </div>
-          </ion-card>
-        </ion-col>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="fourthBox">
+              <ion-img
+                src="\assets\energy_low.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Low</p>
+              </div>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="fifthBox">
+              <ion-img
+                src="\assets\energy_low.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Very low</p>
+              </div>
+            </ion-card>
+          </ion-col>
 
-        <ion-col>
-          <ion-card style="box-shadow: none" button="true" class="sixthBox">
-            <ion-img
-              src="\assets\Humidity_icons\DryHand.png"
-              style="height: 50px"
-            ></ion-img>
-            <div class="ion-text-center">
-              <p>Dry</p>
-            </div>
-          </ion-card>
-        </ion-col>
-      </ion-row>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="sixthBox">
+              <ion-img
+                src="\assets\energy_exhausted.svg"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Exhausted</p>
+              </div>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-grid>
-  </ion-grid>
+    <ion-grid>
+      <h1>How does your skin feel?</h1>
+      <p>
+        Answer in comparison to how your skin usually feels on a normal day.
+      </p>
+
+      <ion-grid class="double">
+        <ion-row>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="firstBox">
+              <ion-img
+                src="\assets\Humidity_icons\sweatyGuy.png"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Sweaty</p>
+              </div>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="secondBox">
+              <ion-img
+                src="\assets\Humidity_icons\WarmGuy.png"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Hot</p>
+              </div>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="thirdBox">
+              <ion-img
+                src="\assets\Humidity_icons\UncomfortableGuy.png"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Uncomfortable</p>
+              </div>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="fourthBox">
+              <ion-img
+                src="\assets\Humidity_icons\Damp.png"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Damp</p>
+              </div>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="fifthBox">
+              <ion-img
+                src="\assets\Humidity_icons\ItchyGuy.png"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Itchy</p>
+              </div>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card style="box-shadow: none" button="true" class="sixthBox">
+              <ion-img
+                src="\assets\Humidity_icons\DryHand.png"
+                style="height: 50px"
+              ></ion-img>
+              <div class="ion-text-center">
+                <p>Dry</p>
+              </div>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
+  </div>
 </ion-content>
-<ion-footer>
+<ion-footer class="maxSize">
   <ion-button class="submit" href="/thank-you">
     <p class="continue-text">SUBMIT YOUR ANSWERS</p>
   </ion-button>

@@ -42,6 +42,12 @@ ion-grid:not(:last-child) {
   margin-bottom: 30px;
 }
 
+.genders {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
 .double ion-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -67,11 +73,20 @@ ion-footer .submit p {
   .double ion-row {
     grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
   }
+
+  ion-footer .submit {
+    margin-right: 8px;
+  }
+
+  .genders {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
 }
 
 @media screen and (max-width: 600px) {
   ion-footer {
     padding-left: 0;
+    padding-bottom: 0;
   }
   ion-footer .submit {
     width: 100%;
