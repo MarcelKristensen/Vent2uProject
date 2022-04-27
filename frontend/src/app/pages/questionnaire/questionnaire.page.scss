@@ -42,6 +42,10 @@ ion-grid:not(:last-child) {
   margin-bottom: 30px;
 }
 
+ion-card p {
+  margin-bottom: 0;
+}
+
 .genders {
   display: grid;
   grid-template-columns: 1fr;
@@ -86,7 +90,6 @@ ion-footer .submit p {
 @media screen and (max-width: 600px) {
   ion-footer {
     padding-left: 0;
-    padding-bottom: 0;
   }
   ion-footer .submit {
     width: 100%;
