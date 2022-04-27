@@ -34,6 +34,20 @@ ion-activated.non-binary,
   color: #fff;
 }
 
+ion-grid {
+  padding: 0;
+}
+
 ion-grid:not(:last-child) {
   margin-bottom: 30px;
+}
+
+.double ion-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.double ion-row:not(:last-child) {
+  margin-bottom: 15px;
 }
