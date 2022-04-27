@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { GenderPageRoutingModule } from './gender-routing.module';
+import { QuestionnairePageRoutingModule } from './questionnaire-routing.module';
 
-import { GenderPage } from './gender.page';
+import { QuestionnairePage } from './questionnaire.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GenderPageRoutingModule
+    QuestionnairePageRoutingModule,
   ],
-  declarations: [GenderPage]
+  declarations: [QuestionnairePage],
 })
-export class GenderPageModule {}
+export class QuestionnairePageModule {}

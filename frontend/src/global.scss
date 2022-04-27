@@ -25,8 +25,11 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-ion-app {
+* {
   box-sizing: border-box;
+}
+
+ion-app {
   max-width: 300px;
   margin: 60px auto;
 }
@@ -103,17 +106,6 @@ ion-card {
   display: flex;
 }
 
-.buttons-bottom {
-  margin-top: 20px;
-}
-
-.buttons-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
 ion-button {
   --border-radius: 0;
   margin: 0;
@@ -123,26 +115,4 @@ ion-button {
   --padding-top: 18px;
   --padding-left: 20px;
   --padding-right: 20px;
-}
-
-.return-box {
-  --background: white;
-}
-
-.continue-text {
-  color: white;
-}
-
-.return-text {
-  color: black;
-}
-
-.return ion-img {
-  margin-right: 4px;
-  width: 22px;
-}
-
-.continue ion-img {
-  margin-left: 4px;
-  width: 22px;
 }
