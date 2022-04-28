@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Routes } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute} from '@angular/router';
 import { Router } from '@angular/router';
-import { AdminPage } from '../admin/admin.page';
 
-//https://edupala.com/ionic-two-way-data-binding/
 @Component({
   selector: 'app-adminlogin',
   templateUrl: './adminlogin.page.html',
@@ -13,15 +11,18 @@ import { AdminPage } from '../admin/admin.page';
 export class AdminloginPage implements OnInit {
 
   login:any={username:'',password:''}
+  formGrp:FormGroup
+  username_error:String
 
 
-  constructor(private router: Router, private route:ActivatedRoute) { }
-
+  constructor(private router: Router, private route:ActivatedRoute, formBuilder:FormBuilder){ 
+    this.formGrp=formBuilder.group({
+      username_error:['',Validators.required]
+    })
+  }
 
   loginadmin(){
-    console.log('username:',this.login.username);
-    console.log('admin password',this.login.password);
-    if (this.login.username =='admin' && this.login.password =='12345')
+    if (this.login.username =='admin' && this.login.password =='password')
     {this.router.navigateByUrl('/admin')}
   }
 
@@ -29,3 +30,4 @@ export class AdminloginPage implements OnInit {
   ngOnInit() {
   }
 }
+

@@ -4,9 +4,6 @@
     src="/assets/logo.svg"
     alt="logo"
   ></ion-img>
-  <ion-button slot="start">
-  <ion-back-button defaulthref="Login" text=""></ion-back-button>
-  </ion-button>
 </ion-header>
 
 <ion-content>
@@ -15,12 +12,12 @@
       <ion-list>
         <ion-item>
           <ion-label position="stacked" color="primary">Username</ion-label>
-          <ion-input [(ngModel)]="login.username" name="username" type="text" required>
+          <ion-input [(ngModel)]="login.username" name="username" type="text" fromControleName="username_error" required>
           </ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked" color="primary">Password</ion-label>
-          <ion-input [(ngModel)]="login.password" name="password" type="password" required>
+          <ion-input [(ngModel)]="login.password" name="password" type="password" forcontrolname="password" required>
           </ion-input>
         </ion-item>
       </ion-list>
