@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+import { UserIdService } from 'src/app/services/user-id.service';
 
 @Component({
   selector: 'app-gender',
@@ -6,10 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gender.page.scss'],
 })
 export class GenderPage implements OnInit {
+  constructor(public storage: Storage, public userId: UserIdService) {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
