@@ -19,7 +19,7 @@ export class UserIdService {
 
     if (!getExpiration) {
       const expire = new Date();
-      expire.setHours(getCurrentTime.getHours() + 12);
+      expire.setHours(getCurrentTime.getHours() + 1);
       this.storage.set('expire', expire);
       console.log('first if');
     } else {
@@ -29,11 +29,14 @@ export class UserIdService {
     const getId = await this.storage.get('id');
     console.log(getId);
 
-    if (!getId) {
+    console.log(getCurrentTime);
+
+    if (!getId || getCurrentTime > getExpiration) {
       console.log('ioioio');
       this.storage.set('id', userId);
     } else {
       console.log('ID already assigned');
     }
+    //console.log(getCurrentTime + ' ' + getExpiration);
   }
 }
