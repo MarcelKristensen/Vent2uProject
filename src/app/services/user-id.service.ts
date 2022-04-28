@@ -14,19 +14,17 @@ export class UserIdService {
     this._storage = storage;
 
     const userId = Math.random().toString(36).slice(2, 9);
-
     const getCurrentTime = new Date();
+    const getExpiration = await this.storage.get('expire');
 
-    /*if (!this.storage.hasOwnProperty('expire')) {
-        const expire = new Date();
-        expire.setHours(getCurrentTime.getHours() + 12);
-        this.storage.set('expire', expire);
-        console.log('first if');
-      } else {
-        console.log('blbala');
-      }*/
-
-    //console.log(!this.storage.hasOwnProperty('expire'));
+    if (!getExpiration) {
+      const expire = new Date();
+      expire.setHours(getCurrentTime.getHours() + 12);
+      this.storage.set('expire', expire);
+      console.log('first if');
+    } else {
+      console.log('blbala');
+    }
 
     const getId = await this.storage.get('id');
     console.log(getId);
@@ -38,20 +36,4 @@ export class UserIdService {
       console.log('ID already assigned');
     }
   }
-
-  /*
-    getUserId() {
-      this.storage.get('id').then((val) => {
-        console.log(val);
-      });
-  
-      this.storage.get('startHour').then((d) => {
-        console.log('StartTime ' + d);
-      });
-  
-      this.storage.get('expireHour').then((f) => {
-        console.log('Expire ' + f);
-      });
-    }
-    */
 }
