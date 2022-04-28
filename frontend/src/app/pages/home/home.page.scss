@@ -1,21 +1,17 @@
-ion-grid {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-}
-
-ion-grid {
-  text-align: center;
-}
-
-ion-content h2 {
+.location {
   display: grid;
   grid-template-columns: 40px auto 40px;
-  align-items: center;
   justify-content: space-evenly;
-  max-width: 70%;
+  align-items: center;
   margin: auto;
+  max-width: fit-content;
+  max-width: -moz-fit-content;
   gap: 10px;
+}
+
+.ready {
+  margin: auto;
+  text-align: center;
+  display: block;
+  max-width: fit-content;
 }

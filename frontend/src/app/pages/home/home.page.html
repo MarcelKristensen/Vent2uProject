@@ -1,22 +1,26 @@
 <ion-content>
-  <ion-grid>
-    <ion-img
-      style="width: 200px; height: auto; margin: auto"
-      src="/assets/logo.svg"
-      alt="logo"
-    ></ion-img>
+  <ion-grid class="centerScreen">
+    <a href="/home">
+      <ion-img
+        style="width: 200px; height: auto; margin: auto"
+        src="/assets/logo.svg"
+        alt="logo"
+      ></ion-img>
+    </a>
     <h1>Ready to get started?</h1>
-    <h2>
+    <div class="location">
       <ion-img style="width: 40px" src="/assets/walkin.svg"></ion-img>
-      <ion-text style="font-size: 18px; font-variant: small-caps"
-        >Get moving</ion-text
-      >
+      <p>
+        <ion-text style="font-weight: bold">Location: </ion-text
+        >{{assignedLocation}}
+      </p>
       <ion-img style="width: 40px" src="/assets/walkin.svg"></ion-img>
-    </h2>
+    </div>
     <p>
-      <ion-text style="font-weight: bold">Location: </ion-text
-      >{{assignedLocation}}
+      Click the button below when you’ve sat down at the location given above.
     </p>
-    <ion-button type="button" href="/gender">I'm ready</ion-button>
+    <ion-button type="button" class="ready" href="/questionnaire"
+      >I'M READY</ion-button
+    >
   </ion-grid>
 </ion-content>

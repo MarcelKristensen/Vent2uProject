@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TemperaturePageRoutingModule } from './temperature-routing.module';
+import { QuestionnairePageRoutingModule } from './questionnaire-routing.module';
 
-import { TemperaturePage } from './temperature.page';
+import { QuestionnairePage } from './questionnaire.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TemperaturePageRoutingModule
+    QuestionnairePageRoutingModule,
   ],
-  declarations: [TemperaturePage]
+  declarations: [QuestionnairePage],
 })
-export class TemperaturePageModule {}
+export class QuestionnairePageModule {}
