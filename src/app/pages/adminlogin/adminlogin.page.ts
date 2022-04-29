@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute} from '@angular/router';
 import { Router } from '@angular/router';
+import { Adminloginpageform } from './adminlogin.page.form';
 
 @Component({
   selector: 'app-adminlogin',
@@ -10,24 +11,22 @@ import { Router } from '@angular/router';
 })
 export class AdminloginPage implements OnInit {
 
-  login:any={username:'',password:''}
-  formGrp:FormGroup
-  username_error:String
+  login:any={admin:'',password:''}
 
+  form:FormGroup
 
-  constructor(private router: Router, private route:ActivatedRoute, formBuilder:FormBuilder){ 
-    this.formGrp=formBuilder.group({
-      username_error:['',Validators.required]
-    })
-  }
+  constructor(private router: Router,private formBuilder:FormBuilder){}
 
   loginadmin(){
-    if (this.login.username =='admin' && this.login.password =='password')
+    if (this.login.admin =='admin' && this.login.password =='password')
     {this.router.navigateByUrl('/admin')}
+  else{
+    
   }
-
-
+  }
+  
   ngOnInit() {
+    this.form=new Adminloginpageform (this.formBuilder).createForm(); 
   }
 }
 
