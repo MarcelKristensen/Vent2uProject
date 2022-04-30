@@ -1,0 +1,145 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+* {
+  box-sizing: border-box;
+}
+
+ion-app {
+  margin: 30px;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+p {
+  color: var(--ion-color-primary);
+  font-weight: 500;
+}
+
+.firstBox {
+  border-color: #c70a0a;
+}
+
+.firstBox:hover {
+  background-color: #c70a0a;
+}
+
+.secondBox {
+  border-color: #fb6d0c;
+}
+
+.secondBox:hover {
+  background-color: #fb6d0c;
+}
+
+.thirdBox {
+  border-color: #ffdd0a;
+}
+
+.thirdBox:hover {
+  background-color: #ffdd0a;
+}
+
+.fourthBox {
+  border-color: #29ed25;
+}
+
+.fourthBox:hover {
+  background-color: #29ed25;
+}
+
+.fifthBox {
+  border-color: #4fc3f7;
+}
+
+.fifthBox:hover {
+  background-color: #4fc3f7;
+}
+
+.sixthBox {
+  border-color: #1c78c9;
+}
+
+.sixthBox:hover {
+  background-color: #1c78c9;
+}
+
+ion-card p {
+  text-align: center;
+  font-size: 16px;
+}
+
+ion-col {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+ion-card {
+  padding: 20px;
+  border-radius: 0;
+  border-width: 2px;
+  border-style: solid;
+  height: 100%;
+  display: flex;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+ion-button {
+  --border-radius: 0;
+  margin: 0;
+  --padding-bottom: 18px;
+  --border-style: solid;
+  --border-color: black;
+  --padding-top: 18px;
+  --padding-left: 20px;
+  --padding-right: 20px;
+  font-weight: 600;
+}
+
+.centerScreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 350px;
+}
+
+@media screen and (min-width: 600px) {
+  .maxSize {
+    max-width: 1000px;
+    margin: auto;
+  }
+}

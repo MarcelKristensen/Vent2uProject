@@ -1,0 +1,17 @@
+.thankYou {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  height: 80%;
+  max-width: 430px;
+  margin: auto;
+}
+
+.thankYou p {
+  margin-top: 0;
+}
+
+ion-content {
+  --overflow: hidden;
+}

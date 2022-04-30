@@ -1,0 +1,17 @@
+.location {
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  max-width: fit-content;
+  max-width: -moz-fit-content;
+  gap: 10px;
+}
+
+.ready {
+  margin: auto;
+  text-align: center;
+  display: block;
+  max-width: fit-content;
+}
