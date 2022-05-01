@@ -19,7 +19,7 @@ describe('adminloginpageform',() =>{
         expect(form.get('admin').valid).toBeFalsy();
         expect(form.get('password')).not.toBeNull();
         expect(form.get('password').value).toEqual("");
-        expect(form.get('apassword').valid).toBeFalsy();
+        expect(form.get('password').valid).toBeFalsy();
         
     })
     it('should have admin invalid if admin is not valid',()=>{

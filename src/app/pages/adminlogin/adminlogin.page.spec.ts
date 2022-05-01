@@ -22,7 +22,7 @@ describe('AdminloginPage', () => {
     component.ngOnInit();
     expect(component.form).not.toBeUndefined();
 
-  })
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

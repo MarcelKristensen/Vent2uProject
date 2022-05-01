@@ -15,7 +15,6 @@
             <ion-input [(ngModel)]="login.admin" name="admin" type="admin" formControlName="admin"></ion-input>
           </ion-item>
           <ion-label  color="danger" *ngIf="form.get('admin').touched && form.get('admin').errors?.required">Username is mandatory</ion-label>
-          <ion-label  color="danger" *ngIf="form.get('admin').touched && form.get('admin').errors?.admin">Username is not valid</ion-label>
           <ion-item>
             <ion-label position="stacked" color="primary">Password</ion-label>
             <ion-input [(ngModel)]="login.password" name="password" type="password" formControlName="password"> </ion-input>
