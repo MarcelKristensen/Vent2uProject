@@ -21,13 +21,11 @@ export class UserIdService {
       const expire = new Date();
       expire.setHours(getCurrentTime.getHours() + 1);
       this.storage.set('expire', expire);
-      console.log('first if');
     } else {
       console.log('Expire datealready assigned.');
     }
 
     if (!getId || getCurrentTime > getExpiration) {
-      console.log('ioioio');
       this.storage.set('id', userId);
     } else {
       console.log('ID already assigned.');
