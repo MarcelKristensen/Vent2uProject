@@ -17,26 +17,20 @@ export class UserIdService {
     const getCurrentTime = new Date();
     const getExpiration = await this.storage.get('expire');
 
-    if (!getExpiration) {
+    if (!getExpiration || getCurrentTime > getExpiration) {
       const expire = new Date();
       expire.setHours(getCurrentTime.getHours() + 1);
       this.storage.set('expire', expire);
       console.log('first if');
     } else {
-      console.log('blbala');
+      console.log('Expire datealready assigned.');
     }
-
-    const getId = await this.storage.get('id');
-    console.log(getId);
-
-    console.log(getCurrentTime);
 
     if (!getId || getCurrentTime > getExpiration) {
       console.log('ioioio');
       this.storage.set('id', userId);
     } else {
-      console.log('ID already assigned');
+      console.log('ID already assigned.');
     }
-    //console.log(getCurrentTime + ' ' + getExpiration);
   }
 }

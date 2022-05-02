@@ -10,5 +10,7 @@ import { UserIdService } from 'src/app/services/user-id.service';
 export class GenderPage implements OnInit {
   constructor(public storage: Storage, public userId: UserIdService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userId.init();
+  }
 }
