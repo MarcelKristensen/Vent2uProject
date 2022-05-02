@@ -19,7 +19,7 @@ export class UserIdService {
 
     if (!getExpiration || getCurrentTime > getExpiration) {
       const expire = new Date();
-      expire.setHours(getCurrentTime.getHours() + 1);
+      expire.setHours(getCurrentTime.getHours() + 12);
       this.storage.set('expire', expire);
     } else {
       console.log('Expire datealready assigned.');
