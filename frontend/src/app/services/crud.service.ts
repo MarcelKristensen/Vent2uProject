@@ -4,12 +4,13 @@ import {
   HttpHeaders,
   HttpErrorResponse,
 } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CrudService {
-  apiURL = 'http://localhost:3316';
+  apiURL = environment.server_url;
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
