@@ -1,5 +1,6 @@
+import { UserinputService } from './../../services/userinput.service';
 import { Component, OnInit } from '@angular/core';
-import { CrudService } from 'src/app/services/crud.service';
+import { RoomService } from 'src/app/services/room.service';
 
 @Component({
   selector: 'app-home',
@@ -11,15 +12,15 @@ export class HomePage implements OnInit {
   zones: any = [];
   roomZones: any = [];
   assignedLocation = '';
-  constructor(private crudService: CrudService) {}
+  constructor(private roomService: RoomService, private userinputService: UserinputService) {}
 
   ngOnInit() {
-    this.crudService.getRooms().subscribe((res) => {
+    this.roomService.getAllRooms().subscribe((res) => {
       this.rooms = res;
       this.roomZones = Object.values(res).map((zone) => zone.zone);
     });
 
-    this.crudService.getAllUsedZones().subscribe((res) => {
+    this.userinputService.getAllUsedZones().subscribe((res) => {
       this.zones = Object.values(res).map((zone) => zone.zone);
       this.getUniqueLocation();
     });
