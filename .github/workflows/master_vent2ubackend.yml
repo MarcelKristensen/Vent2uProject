@@ -14,6 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+       task: Npm@1
+       inputs:
+        command: 'custom'
+        workingDir: '$(Build.SourcesDirectory)/backend'
+        customCommand: 'run test'
+
+  continueOnError: true
       - uses: actions/checkout@v2
 
       - name: Set up Node.js version
