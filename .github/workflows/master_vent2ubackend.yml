@@ -23,7 +23,6 @@ jobs:
           persist-credentials: false
       - name: Reconfigure git to use HTTP authentication
         run: git config --global url."https://panopticonism@github.com/".insteadOf ssh://git@github.com/
-      - run: npm ci
 
       - name: npm install, build, and test
         run: |
