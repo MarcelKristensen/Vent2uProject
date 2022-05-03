@@ -30,8 +30,8 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: Vent2U
-          path: ./backend
+          name: node-app
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +53,4 @@ jobs:
           app-name: "Vent2Ubackend"
           slot-name: "Production"
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2830E98F06324C8AB8CC8854143D8E28 }}
-          package: .
+          package: ./backend
