@@ -19,8 +19,7 @@ jobs:
         command: 'custom'
         workingDir: '$(Build.SourcesDirectory)/backend'
         customCommand: 'run test'
-
-  continueOnError: true
+        continueOnError: true
       - uses: actions/checkout@v2
 
       - name: Set up Node.js version
