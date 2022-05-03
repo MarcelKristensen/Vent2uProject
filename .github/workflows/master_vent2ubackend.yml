@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "16.x"
+          persist-credentials: false
+      - name: Reconfigure git to use HTTP authentication
+        run: git config --global url."https://panopticonism@github.com/".insteadOf ssh://git@github.com/
+      - run: npm ci
 
       - name: npm install, build, and test
         run: |
@@ -32,11 +36,6 @@ jobs:
         with:
           name: node-app
           path: .
-          persist-credentials: false
-      - name: Reconfigure git to use HTTP authentication
-        run: >
-        git config --global url."https://github.com/".insteadOf
-        ssh://git@github.com/
 
   deploy:
     runs-on: ubuntu-latest
