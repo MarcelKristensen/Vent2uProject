@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
+import { UserIdService } from 'src/app/services/userId.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomePage implements OnInit {
   takenZones: any = [];
   roomZones: any = [];
   assignedLocation = '';
-  constructor(private crudService: CrudService) {}
+  constructor(private crudService: CrudService, public userId: UserIdService) {}
 
   ngOnInit() {
     this.crudService.getRooms().subscribe((res) => {
