@@ -34,10 +34,9 @@ exports.create = (req, res) => {
 
 // Retrieve all Rooms from the database.
 exports.findAll = (req, res) => {
-  console.log(Op.like, "op here")
     const name = req.query.name;
     var condition = name ? { name: { [Op.like]: `%${name}%` } } : null;
-  
+    console.log(Op.like, "getAll requested")
     Room.findAll({ where: condition })
       .then(data => {
         res.send(data);
@@ -48,7 +47,7 @@ exports.findAll = (req, res) => {
             err.message || "Some error occurred while retrieving Rooms."
         });
       });
-  
+
 };
 
 // Find a single Room with an id
@@ -64,7 +63,7 @@ exports.findOne = (req, res) => {
           message: "Error retrieving Room with id=" + id
         });
       });
-  
+
 };
 
 // Update a Room by the id in the request
@@ -90,7 +89,7 @@ exports.update = (req, res) => {
           message: "Error updating Room with id=" + id
         });
       });
-  
+
 };
 
 // Delete a Room with the specified id in the request
@@ -116,7 +115,7 @@ exports.delete = (req, res) => {
           message: "Could not delete Room with id=" + id
         });
       });
-  
+
 };
 
 // Delete all Rooms from the database.
@@ -134,5 +133,5 @@ exports.deleteAll = (req, res) => {
               err.message || "Some error occurred while removing all Rooms."
           });
         });
-    
+
 };

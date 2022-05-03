@@ -9,26 +9,26 @@ import {
   providedIn: 'root',
 })
 export class RoomService {
-  apiURL = 'http://localhost:3316/api/rooms';
+  apiURL = 'http://localhost:3316';
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) {}
 
   getAllRooms() {
-    return this.httpClient.get(this.apiURL);
+    return this.httpClient.get(`${this.apiURL}/api/rooms`);
   }
 
   getSpecificRoom(id: any) {
-    return this.httpClient.get(`${this.apiURL}/${id}`);
+    return this.httpClient.get(`${this.apiURL}/api/rooms/${id}`);
   }
 
   createRoom(data: any) {
-    return this.httpClient.post(this.apiURL, data);
+    return this.httpClient.post(`${this.apiURL}/api/rooms`, data);
   }
 
   updateRoom(id: any, data: any) {
-    return this.httpClient.post(`${this.apiURL}/${id}`, data);
+    return this.httpClient.post(`${this.apiURL}/api/rooms/${id}`, data);
   }
 
   deleteRoom(id: any) {

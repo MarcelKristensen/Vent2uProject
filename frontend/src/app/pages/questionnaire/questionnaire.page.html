@@ -14,12 +14,7 @@
       <h1>What gender do you identify with?</h1>
       <ion-row class="genders">
         <ion-col>
-          <ion-card
-            class="male"
-            button="true"
-            type="button"
-            style="box-shadow: none"
-          >
+          <ion-card class="male" button="true" type="button" style="box-shadow: none">
             <ion-img src="/assets/male.svg" style="height: 50px"></ion-img>
             <p>Male</p>
           </ion-card>
@@ -280,7 +275,7 @@
   </div>
 </ion-content>
 <ion-footer class="maxSize">
-  <ion-button class="submit" href="/thank-you">
+  <ion-button class="submit" (click)="saveUserinput()">
     <p class="continue-text">SUBMIT YOUR ANSWERS</p>
   </ion-button>
 </ion-footer>
