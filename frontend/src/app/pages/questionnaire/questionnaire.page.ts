@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-questionnaire',
@@ -6,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./questionnaire.page.scss'],
 })
 export class QuestionnairePage implements OnInit {
-  constructor() {}
+  private _storage: Storage | null = null;
+  constructor(private storage: Storage) {}
 
-  ngOnInit() {}
+  async ngOnInit() {
+    const storage = await this.storage.create();
+    this._storage = storage;
+
+    const getId = await this.storage.get('id');
+    console.log(getId);
+  }
 }
