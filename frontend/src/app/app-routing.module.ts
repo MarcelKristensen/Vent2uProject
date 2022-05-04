@@ -28,10 +28,11 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: () => 
+    loadChildren: () =>
     import('./pages/admin/admin.module').then(
        m => m.AdminPageModule)
-  },  {
+  },
+  {
     path: 'questionaire-crud-test',
     loadChildren: () => import('./pages/questionaire-crud-test/questionaire-crud-test.module').then( m => m.QuestionaireCrudTestPageModule)
   },
