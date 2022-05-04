@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Vent2U application." });
+  res.json({ message: "Welcome to Vent2UProject application." });
 });
 
 require("./routes/room.routes")(app);
