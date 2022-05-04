@@ -7,8 +7,8 @@
 <ion-content> 
   
   <h1>Rooms</h1>
-  <li *ngFor="let room of rooms">
-    <b>{{room.name}} - zone {{room.zone}}</b>
+  <li *ngFor="let room of uniqueRoom">
+    <b>{{room}} - zone {{room.zone}}</b>
   </li>
 
 </ion-content>
