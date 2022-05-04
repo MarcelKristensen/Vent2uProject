@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-
 @Component({
   selector: 'app-questionnaire',
   templateUrl: './questionnaire.page.html',
