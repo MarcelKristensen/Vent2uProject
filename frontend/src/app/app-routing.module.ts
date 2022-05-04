@@ -36,8 +36,9 @@ const routes: Routes = [
     path: 'questionaire-crud-test',
     loadChildren: () => import('./pages/questionaire-crud-test/questionaire-crud-test.module').then( m => m.QuestionaireCrudTestPageModule)
   },
-
-
+  {
+  path: 'adminlogin',
+    loadChildren: () => import('./pages/adminlogin/adminlogin.module').then( m => m.AdminloginPageModule)}
 ];
 
 @NgModule({

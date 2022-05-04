@@ -1,5 +1,6 @@
 import { UserinputService } from './../../services/userinput.service';
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-questionnaire',
@@ -7,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./questionnaire.page.scss'],
 })
 export class QuestionnairePage implements OnInit {
-
   userinput = {
     gender: '',
     temperature: '',
@@ -15,9 +15,11 @@ export class QuestionnairePage implements OnInit {
     humidity: ''
   };
   submitted = false;
+  private _storage: Storage | null = null;
 
   constructor(
-    private userinputService: UserinputService
+    private userinputService: UserinputService,
+    private storage: Storage
     ) {
   }
   saveUserinput() {
@@ -38,5 +40,11 @@ export class QuestionnairePage implements OnInit {
       });
   }
 
-  ngOnInit() {}
+  async ngOnInit() {
+    const storage = await this.storage.create();
+    this._storage = storage;
+
+    const getId = await this.storage.get('id');
+    console.log(getId);
+  }
 }
