@@ -30,7 +30,7 @@ export class AdminloginPage implements OnInit {
   loginadmin(){
 
     if (this.login.admin =='admin' && this.login.password =='password')
-    {this.router.navigateByUrl('/admin')}
+    {this.router.navigateByUrl('/home')}
   else{this.showAlert()
   }
   }
