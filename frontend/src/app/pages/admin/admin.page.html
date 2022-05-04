@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  
+  <h1>Rooms</h1>
+  <li *ngFor="let room of rooms">
+    <b>{{room.name}} - zone {{room.zone}}</b>
+  </li>
+
+</ion-content>
