@@ -6,7 +6,7 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
   // Validate request
   console.log(req.body)
-  if (!req.body.title) {
+  if (!req.body) {
     res.status(400).send({
       message: "Content cannot be empty"
     });
@@ -16,7 +16,6 @@ exports.create = (req, res) => {
   // Create a User Input
   const userinput = {
     gender: req.body.gender,
-    location: req.body.location,
     temperature: req.body.temperature,
     energy: req.body.energy,
     humidity: req.body.humidity
@@ -39,7 +38,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     const input = req.query.input;
     var condition = input ? { input: { [Op.like]: `%${input}%` } } : null;
-  
+
     UserInput.findAll({ where: condition })
       .then(data => {
         res.send(data);
@@ -50,7 +49,7 @@ exports.findAll = (req, res) => {
             err.message || "Some error occurred while retrieving the user inputs."
         });
       });
-  
+
 };
 
 // Find a single user input with an id
@@ -66,7 +65,7 @@ exports.findOne = (req, res) => {
           message: "Error retrieving user input with id=" + id
         });
       });
-  
+
 };
 
 // Update a user input by the id in the request
@@ -93,7 +92,7 @@ exports.update = (req, res) => {
           message: "Error updating user input with id=" + id
         });
       });
-  
+
 };
 
 // Delete an user input with the specified id in the request
@@ -119,7 +118,7 @@ exports.delete = (req, res) => {
           message: "Could not delete user input with id=" + id
         });
       });
-  
+
 };
 
 // Delete all user inputs from the database.
@@ -137,5 +136,5 @@ exports.deleteAll = (req, res) => {
               err.message || "Some error occurred while removing all user inputs."
           });
         });
-    
+
 };

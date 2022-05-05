@@ -6,25 +6,140 @@
 
 <ion-content>
   <ion-list>
-    <ion-radio-group value="biff">
+    <ion-radio-group [(ngModel)]="genderInput">
       <ion-list-header>
-        <ion-label>Name</ion-label>
+        <ion-label>Gender</ion-label>
       </ion-list-header>
 
       <ion-item>
-        <ion-label>Biff</ion-label>
-        <ion-radio slot="start" value="biff"></ion-radio>
+        <ion-label>Male</ion-label>
+        <ion-radio value="Male"></ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>Griff</ion-label>
-        <ion-radio slot="start" value="griff"></ion-radio>
+        <ion-label>Female</ion-label>
+        <ion-radio value="Female"></ion-radio>
       </ion-item>
 
       <ion-item>
-        <ion-label>Buford</ion-label>
-        <ion-radio slot="start" value="buford"></ion-radio>
+        <ion-label>Non-binary</ion-label>
+        <ion-radio value="Nonbinary"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="temperatureInput">
+      <ion-list-header>
+        <ion-label>Temperature</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>I'm melting</ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>I'm sweating</ion-label>
+        <ion-radio value="2"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>I'm warm</ion-label>
+        <ion-radio value="3"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>I'm chilly</ion-label>
+        <ion-radio value="4"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>I'm cold</ion-label>
+        <ion-radio value="5"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>I'm freezing</ion-label>
+        <ion-radio value="6"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="energyInput">
+      <ion-list-header>
+        <ion-label>Energy</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Fully Charged</ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Energized</ion-label>
+        <ion-radio value="2"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Refreshed</ion-label>
+        <ion-radio value="3"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Low</ion-label>
+        <ion-radio value="4"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Very low</ion-label>
+        <ion-radio value="5"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Exhausted</ion-label>
+        <ion-radio value="6"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="humidityInput">
+      <ion-list-header>
+        <ion-label>Humidity</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Sweaty</ion-label>
+        <ion-radio value="1"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Hot</ion-label>
+        <ion-radio value="2"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Uncomfortable</ion-label>
+        <ion-radio value="3"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Damp</ion-label>
+        <ion-radio value="4"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Itchy</ion-label>
+        <ion-radio value="5"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Dry</ion-label>
+        <ion-radio value="6"></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>
 </ion-content>
+  <ion-button (click)="postDataAPI()" [disabled]="!genderInput + !temperatureInput + !energyInput + !humidityInput" href="/thank-you">submit data</ion-button>

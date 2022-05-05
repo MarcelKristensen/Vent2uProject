@@ -7,7 +7,7 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 
-const apiURL = 'http://localhost:3316/api/userinput';
+const apiURL = 'http://localhost:3316/api/userinputs';
 
 @Injectable({
   providedIn: 'root',

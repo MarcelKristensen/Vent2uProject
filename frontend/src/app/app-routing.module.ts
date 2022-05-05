@@ -33,7 +33,7 @@ const routes: Routes = [
        m => m.AdminPageModule)
   },
   {
-    path: 'questionaire-crud-test',
+    path: 'qc',
     loadChildren: () => import('./pages/questionaire-crud-test/questionaire-crud-test.module').then( m => m.QuestionaireCrudTestPageModule)
   },
   {

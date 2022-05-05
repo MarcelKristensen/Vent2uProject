@@ -10,10 +10,10 @@ import { Adminloginpageform } from './adminlogin.page.form';
   styleUrls: ['./adminlogin.page.scss'],
 })
 export class AdminloginPage implements OnInit {
-  login:any={admin:'',password:''}
-  form:FormGroup
+  login: any={admin:'',password:''};
+  form: FormGroup;
 
-  constructor(private router: Router,private formBuilder:FormBuilder, public alertController:AlertController){}
+  constructor(private router: Router,private formBuilder: FormBuilder, public alertController: AlertController){}
 
   showAlert(){
     this.alertController.create({
@@ -23,20 +23,20 @@ export class AdminloginPage implements OnInit {
       buttons:['OK']
     }).then(res=>{
       res.present();
-    })
+    });
   }
 
 
   loginadmin(){
 
-    if (this.login.admin =='admin' && this.login.password =='password')
-    {this.router.navigateByUrl('/admin')}
-  else{this.showAlert()
-  }
-  }
-  
-  
+    if (this.login.admin ==='admin' && this.login.password ==='password')
+    {this.router.navigateByUrl('/admin');
+  } else {
+    this.showAlert();
+  }}
+
+
   ngOnInit() {
-    this.form=new Adminloginpageform (this.formBuilder).createForm(); 
+    this.form=new Adminloginpageform (this.formBuilder).createForm();
   }
 }

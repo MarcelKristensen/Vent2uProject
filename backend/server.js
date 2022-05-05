@@ -5,7 +5,7 @@ const app = express();
 
 
 const corsOptions = {
-  origin: `http://localhost:${process.env.PORT || 3316}`,
+  origin: `*`,
 };
 app.use(cors(corsOptions));
 
