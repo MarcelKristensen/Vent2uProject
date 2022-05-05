@@ -10,9 +10,11 @@
 
 <ion-content cdkDropListGroup>
   <app-dropbox></app-dropbox>
-  <div class="maxSize" cdkDropList [cdkDropListData]="gender">
+  <div class="maxSize" cdkDropList [cdkDropListData]="questions">
     <ion-grid>
-      <h1 cdkDrag [cdkDragData]="gender1">What gender do you identify with?</h1>
+      <h1 cdkDrag *ngFor="let question of questions" [cdkDragData]="question">
+        {{question}}
+      </h1>
       <ion-row class="genders">
         <ion-col>
           <ion-card

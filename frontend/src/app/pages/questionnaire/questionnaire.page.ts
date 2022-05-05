@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./questionnaire.page.scss'],
 })
 export class QuestionnairePage implements OnInit {
+  questions = ['What gender do you identify with?'];
   private _storage: Storage | null = null;
   constructor(private storage: Storage) {}
 

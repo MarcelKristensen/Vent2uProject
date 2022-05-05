@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop } from '@angular/cdk/drag-drop';
+import {
+  CdkDragDrop,
+  copyArrayItem,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-dropbox',
@@ -8,13 +12,20 @@ import { CdkDragDrop } from '@angular/cdk/drag-drop';
 })
 export class DropboxComponent implements OnInit {
   displayMessage;
+  answers = [];
   constructor() {}
 
   ngOnInit() {}
 
   dropped(event: CdkDragDrop<string[]>) {
-    console.log(event.currentIndex);
+    console.log(event);
     this.displayMessage = 'this is what it means';
+    copyArrayItem(
+      event.previousContainer.data,
+      event.container.data,
+      event.previousIndex,
+      event.currentIndex
+    );
   }
 }
 

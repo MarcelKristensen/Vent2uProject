@@ -1,5 +1,10 @@
-<ul class="drop-area" cdkDropList (cdkDropListDropped)="dropped($event)">
-  {{
-    displayMessage
-  }}
+<ul
+  class="drop-area"
+  cdkDropList
+  [cdkDropListData]="answers"
+  (cdkDropListDropped)="dropped($event)"
+>
+  <li *ngFor="let answer of answers">
+    {{ answer }}
+  </li>
 </ul>
