@@ -5,10 +5,19 @@
 </ion-header>
 
 <ion-content> 
-  
-  <h1>Rooms</h1>
-  <li *ngFor="let room of uniqueRoom">
-    <b>{{room}} - zone {{room.zone}}</b>
-  </li>
+  <ion-item>
+    <ion-label>CHOOSE ROOM</ion-label>
+    <ion-select [(ngModel)]="selectedRoom">
+      <ion-select-option *ngFor="let room of getRooms">{{room}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <p>Test, selected room: {{selectedRoom}}</p>
 
+  <ion-item>
+    <ion-label>ROOM ZONES</ion-label>
+    <ion-select [(ngModel)]="selectedZone">
+      <ion-select-option *ngFor="let zone of getZones">{{zone}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <p>Test, selected zone: {{selectedZone}}</p>
 </ion-content>
