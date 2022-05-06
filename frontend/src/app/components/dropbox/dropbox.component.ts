@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  CdkDragDrop,
-  copyArrayItem,
-  transferArrayItem,
-} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, copyArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-dropbox',
@@ -18,14 +14,36 @@ export class DropboxComponent implements OnInit {
   ngOnInit() {}
 
   dropped(event: CdkDragDrop<string[]>) {
-    console.log(event);
-    this.displayMessage = 'this is what it means';
+    if (event.container.data.length > 0) {
+      console.log('hi');
+      const newDataArr = event.container.data.splice(
+        0,
+        event.container.data.length
+      );
+      copyArrayItem(
+        event.previousContainer.data,
+        newDataArr,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
     copyArrayItem(
       event.previousContainer.data,
       event.container.data,
       event.previousIndex,
       event.currentIndex
     );
+
+    console.log(event.previousContainer.data);
+    if (event.previousContainer.data[0] === 'What describes you best?') {
+      this.displayMessage = 'temp';
+    } else if (
+      event.previousContainer.data[0] === 'How is your energy level?'
+    ) {
+      this.displayMessage = 'air quality';
+    } else if (event.previousContainer.data[0] === 'How does your skin feel?') {
+      this.displayMessage = 'humidity';
+    }
   }
 }
 
