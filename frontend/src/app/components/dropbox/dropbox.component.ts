@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CdkDragDrop, copyArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -6,12 +6,11 @@ import { CdkDragDrop, copyArrayItem } from '@angular/cdk/drag-drop';
   templateUrl: './dropbox.component.html',
   styleUrls: ['./dropbox.component.scss'],
 })
-export class DropboxComponent implements OnInit {
+export class DropboxComponent {
   displayMessage;
   answers = [];
+  isOpen = false;
   constructor() {}
-
-  ngOnInit() {}
 
   dropped(event: CdkDragDrop<string[]>) {
     if (event.container.data.length > 0) {

@@ -1,13 +1,30 @@
-<ul
-  class="drop-area"
-  cdkDropList
-  [cdkDropListData]="answers"
-  (cdkDropListDropped)="dropped($event)"
+<div class="wrapper">
+  <button
+    (click)="isOpen = !isOpen"
+    type="button"
+    cdkOverlayOrigin
+    #trigger="cdkOverlayOrigin"
+    class="modal-container"
+  >
+    {{ isOpen ? "x" : "?" }}
+  </button>
+</div>
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
 >
-  <li *ngFor="let answer of answers">
-    {{ answer }}
-    <ul>
-      <li>{{ displayMessage }}</li>
-    </ul>
-  </li>
-</ul>
+  <ul
+    class="drop-area"
+    cdkDropList
+    [cdkDropListData]="answers"
+    (cdkDropListDropped)="dropped($event)"
+  >
+    <li *ngFor="let answer of answers">
+      {{ answer }}
+      <ul>
+        <li>{{ displayMessage }}</li>
+      </ul>
+    </li>
+  </ul>
+</ng-template>

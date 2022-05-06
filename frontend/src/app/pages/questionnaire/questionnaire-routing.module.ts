@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { QuestionnairePage } from './questionnaire.page';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), DragDropModule],
-  exports: [RouterModule, DragDropModule],
+  imports: [RouterModule.forChild(routes), DragDropModule, OverlayModule],
+  exports: [RouterModule, DragDropModule, OverlayModule],
 })
 export class QuestionnairePageRoutingModule {}
