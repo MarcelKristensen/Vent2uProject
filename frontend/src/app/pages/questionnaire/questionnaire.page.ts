@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./questionnaire.page.scss'],
 })
 export class QuestionnairePage implements OnInit {
+  gender = ['What gender do you identify with?'];
   temperature = ['What describes you best?'];
   airQuality = ['How is your energy level?'];
   humidity = ['How does your skin feel?'];

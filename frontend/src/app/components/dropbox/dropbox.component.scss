@@ -1,7 +1,6 @@
 .drop-area {
     border: var(--ion-color-primary) dashed 2px;
     padding: 40px;
-    height: 200px;
     background-color: var(--ion-color-primary-contrast);
     width: 100%;
     max-width: 400px;
@@ -21,6 +20,10 @@
     font-size: 18px;
     padding: 6px 10px;
     border-radius: 50%;
+}
+
+.drop-area h2 {
+    font-weight: 700;
 }
 
 @media screen and (min-width: 800px) {

@@ -14,17 +14,15 @@
   [cdkConnectedOverlayOrigin]="trigger"
   [cdkConnectedOverlayOpen]="isOpen"
 >
-  <ul
+  <div
     class="drop-area"
     cdkDropList
-    [cdkDropListData]="answers"
+    [cdkDropListData]="questions"
     (cdkDropListDropped)="dropped($event)"
   >
-    <li *ngFor="let answer of answers">
+    <h2 *ngFor="let answer of questions">
       {{ answer }}
-      <ul>
-        <li>{{ displayMessage }}</li>
-      </ul>
-    </li>
-  </ul>
+    </h2>
+    <p [innerHTML]="displayMessage">{{ displayMessage }}</p>
+  </div>
 </ng-template>

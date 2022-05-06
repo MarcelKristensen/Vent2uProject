@@ -11,8 +11,8 @@
 <ion-content cdkDropListGroup>
   <app-dropbox></app-dropbox>
   <div class="maxSize">
-    <ion-grid>
-      <h1>What gender do you identify with?</h1>
+    <ion-grid cdkDropList [cdkDropListData]="gender">
+      <h1 cdkDrag [cdkDragData]="gender">{{gender}}</h1>
       <ion-row class="genders">
         <ion-col>
           <ion-card
@@ -120,8 +120,8 @@
         </ion-row>
       </ion-grid>
     </ion-grid>
-    <ion-grid class="double" cdkDropList [cdkDropListData]="humidity">
-      <h1 cdkDrag [cdkDragData]="humidity">{{humidity}}</h1>
+    <ion-grid class="double" cdkDropList [cdkDropListData]="airQuality">
+      <h1 cdkDrag [cdkDragData]="airQuality">{{airQuality}}</h1>
       <p>Answer in comparison with your energy on a normal day.</p>
       <ion-grid>
         <ion-row>
@@ -197,8 +197,8 @@
         </ion-row>
       </ion-grid>
     </ion-grid>
-    <ion-grid cdkDropList [cdkDropListData]="airQuality">
-      <h1 cdkDrag [cdkDragData]="airQuality">{{airQuality}}</h1>
+    <ion-grid cdkDropList [cdkDropListData]="humidity">
+      <h1 cdkDrag [cdkDragData]="humidity">{{humidity}}</h1>
       <p>
         Answer in comparison to how your skin usually feels on a normal day.
       </p>
