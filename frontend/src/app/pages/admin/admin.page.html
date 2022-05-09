@@ -16,7 +16,15 @@
   <ion-item>
     <ion-label>ROOM ZONES</ion-label>
     <ion-select [(ngModel)]="selectedZone">
-      <ion-select-option *ngFor="let zone of getZones">{{zone}}</ion-select-option>
+      
+        <ion-select-option *ngFor="let zone of getZones">
+          <!-- Find all zones related to the room if fx D3.05 is present in the string -->
+          <!-- Testing to find if the room just contain the number 1... -->
+          <div *ngIf="getZones.includes(1)">
+            {{zone}}
+          </div>
+        </ion-select-option>       
+        
     </ion-select>
   </ion-item>
   <p>Test, selected zone: {{selectedZone}}</p>
