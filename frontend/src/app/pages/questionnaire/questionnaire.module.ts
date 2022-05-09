@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { QuestionnairePageRoutingModule } from './questionnaire-routing.module';
 
 import { QuestionnairePage } from './questionnaire.page';
+import { DropboxComponent } from 'src/app/components/dropbox/dropbox.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { QuestionnairePage } from './questionnaire.page';
     IonicModule,
     QuestionnairePageRoutingModule,
   ],
-  declarations: [QuestionnairePage],
+  declarations: [QuestionnairePage, DropboxComponent],
 })
 export class QuestionnairePageModule {}
