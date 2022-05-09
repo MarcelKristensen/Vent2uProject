@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   (async () => {
     await sequelize.sync({
-      truncate: true,
+      alter: true,
     });
     admins.map((admin) =>
       Admin.create({

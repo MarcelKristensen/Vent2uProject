@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 
   (async () => {
     await sequelize.sync({
-      truncate: true,
+      truncate: false,
     });
     rooms.map((room) => Room.create({ name: room.name }));
   })();
