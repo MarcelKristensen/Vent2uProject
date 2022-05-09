@@ -13,12 +13,11 @@ const apiURL = 'http://localhost:3316/api/userinputs';
   providedIn: 'root',
 })
 export class UserinputService {
-
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) {}
 
-  getAllUserinputs() {
+  getAllUserInputs() {
     return this.httpClient.get(apiURL);
   }
 
@@ -41,5 +40,4 @@ export class UserinputService {
   getAllUsedZones() {
     return this.httpClient.get(apiURL);
   }
-
 }

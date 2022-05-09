@@ -1,25 +1,25 @@
-module.exports = app => {
-    const UserInputs = require("../controllers/userinput.controller.js");
+module.exports = (app) => {
+  const UserInputs = require("../controllers/userinput.controller.js");
 
-    var router = require("express").Router();
+  var router = require("express").Router();
 
-    // Create a new user input
-    router.post("/", UserInputs.create);
+  // Create a new user input
+  router.post("/", UserInputs.create);
 
-    // Retrieve all user inputs
-    router.get("/", UserInputs.findAll);
+  // Retrieve all user inputs
+  router.get("/", UserInputs.findAll);
 
-    // Retrieve a single user input with id
-    router.get("/:id", UserInputs.findOne);
+  // Retrieve a single user input with id
+  router.get("/:id", UserInputs.findOne);
 
-    // Update a user input with id
-    router.put("/:id", UserInputs.update);
+  // Update a user input with id
+  router.put("/:id", UserInputs.update);
 
-    // Delete a user input with id
-    router.delete("/:id", UserInputs.delete);
+  // Delete a user input with id
+  router.delete("/:id", UserInputs.delete);
 
-    // Create a new user input
-    router.delete("/", UserInputs.deleteAll);
+  // Create a new user input
+  router.delete("/", UserInputs.deleteAll);
 
-    app.use('/api/userInputs', router);
-  };
+  app.use("/api/userinputs", router);
+};

@@ -1,6 +1,6 @@
 import { UserinputService } from './../../services/userinput.service';
 import { Component, OnInit } from '@angular/core';
-import { RoomService } from 'src/app/services/room.service';
+import { ZoneService } from 'src/app/services/zone.service';
 import { UserIdService } from 'src/app/services/userId.service';
 
 @Component({
@@ -14,17 +14,20 @@ export class HomePage implements OnInit {
   roomZones: any = [];
   assignedLocation = '';
 
-  constructor(private roomService: RoomService, private userinputService: UserinputService, public userId: UserIdService) {}
+  constructor(
+    private zoneService: ZoneService,
+    private userinputService: UserinputService,
+    public userId: UserIdService
+  ) {}
 
   ngOnInit() {
-    this.roomService.getAllRooms().subscribe((res) => {
+    this.zoneService.getAllZones().subscribe((res) => {
       this.rooms = res;
-      this.roomZones = Object.values(res).map((room) => room.zone);
+      this.roomZones = Object.values(res).map((room) => room.number);
     });
 
-
-    this.userinputService.getAllUsedZones().subscribe((res) => {
-      this.takenZones = Object.values(res).map((userinput) => userinput.zone);
+    this.userinputService.getAllUserInputs().subscribe((res) => {
+      this.takenZones = Object.values(res).map((userinput) => userinput.zoneId);
 
       this.getUniqueLocation();
     });

@@ -15,7 +15,7 @@ export class ZoneService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAllZone() {
+  getAllZones() {
     return this.httpClient.get(`${this.apiURL}`);
   }
 
