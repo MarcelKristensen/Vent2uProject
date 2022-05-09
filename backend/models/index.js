@@ -16,11 +16,9 @@ connection.query(
   function (err, results) {
     console.log(results);
     console.log(err);
+    connection.end();
   }
 );
-
-// Close the connection
-connection.end();
 
 const sequelize =
   process.env.NODE_ENV === "development"

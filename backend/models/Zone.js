@@ -23,10 +23,6 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
   });
-  (async () => {
-    await sequelize.sync();
-    zones.map((zone) =>
-      Zone.create({ number: zone.number, roomId: zone.roomId })
-    );
-  })();
+
+  return Zone;
 };

@@ -2,6 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
+const db = require("./models");
+const { admin, zone, room } = require("./models");
+const { rooms } = require("./models/rooms.json");
+const { zones } = require("./models/zones.json");
+const { admins } = require("./models/admin.json");
 
 const corsOptions = {
   origin: `*`,
@@ -25,3 +30,24 @@ const PORT = process.env.PORT || 3316;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+(async () => {
+  await db.sequelize.sync();
+  await db.sequelize.query("SET GLOBAL FOREIGN_KEY_CHECKS = 0;", { raw: true });
+  await room.destroy({ truncate: true });
+  await zone.destroy({ truncate: true });
+  await admin.destroy({ truncate: true });
+  rooms.map((eachroom) => room.create({ name: eachroom.name }));
+  zones.map((eachzone) =>
+    zone.create({ number: eachzone.number, roomId: eachzone.roomId })
+  );
+  admins.map((eachadmin) =>
+    admin.create({
+      firstName: eachadmin.firstName,
+      lastName: eachadmin.lastName,
+      email: eachadmin.email,
+      username: eachadmin.username,
+      password: eachadmin.password,
+    })
+  );
+})();

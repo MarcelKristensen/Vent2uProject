@@ -30,18 +30,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   });
-  (async () => {
-    await sequelize.sync({
-      alter: true,
-    });
-    admins.map((admin) =>
-      Admin.create({
-        firstName: admin.firstName,
-        lastName: admin.lastName,
-        email: admin.email,
-        username: admin.username,
-        password: admin.password,
-      })
-    );
-  })();
+
+  return Admin;
 };
