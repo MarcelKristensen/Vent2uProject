@@ -1,12 +1,10 @@
-const { userInput } = require(".");
-
 module.exports = (sequelize, DataTypes) => {
   const UserInput = sequelize.define("UserInput", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false
+      allowNull: false,
     },
     zoneId: {
       type: DataTypes.INTEGER,
@@ -14,27 +12,25 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
 
       references: {
-        model: 'zones',
-        key: 'id'
-      }
+        model: "zones",
+        key: "id",
+      },
     },
     gender: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     temperature: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     energy: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
     humidity: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
   });
-  return UserInput;
 };
-

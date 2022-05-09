@@ -27,7 +27,7 @@ const sequelize =
     ? new Sequelize("mental_shower", "root", process.env.MYSQL_PASSWORD, {
         host: "localhost",
         dialect: "mysql",
-        port: process.env.MYSQL_PORT
+        port: process.env.MYSQL_PORT,
       })
     : new Sequelize("mental_shower", "panopticonism", "thisisit09!", {
         host: "mental-shower.database.windows.net",
