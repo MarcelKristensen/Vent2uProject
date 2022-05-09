@@ -1,8 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const db = require("./models");
 const app = express();
-
+const run = async () => {};
+const Room = require("./models/Room");
 
 const corsOptions = {
   origin: `*`,
@@ -20,8 +22,14 @@ app.get("/", (req, res) => {
 
 require("./routes/room.routes")(app);
 require("./routes/user_input.routes")(app);
+require("./routes/zone.routes")(app);
 
 const PORT = process.env.PORT || 3316;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+db.sequelize.sync({ force: true}).then(() => {
+  console.log("Drop and re-sync db.");
+  run();
+})

@@ -9,13 +9,37 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class QuestionnairePage implements OnInit {
 
-  submitted = false;
+  userinputs: any[];
+  id: any;
+  genderInput: any;
+  temperatureInput: any;
+  energyInput: any;
+  humidityInput: any;
   private _storage: Storage | null = null;
 
   constructor(
-    public storage: Storage
-    ) {
-  }
+    public userinputService: UserinputService,
+    private storage: Storage){}
+
+  async postDataAPI(){
+
+    const postData = {
+      //id: await this.storage.get('id'), Used to post the stored ID
+      gender: this.genderInput,
+      temperature: this.temperatureInput,
+      energy: this.energyInput,
+      humidity: this.humidityInput
+    };
+
+    console.log(postData)
+
+    this.userinputService.createUserinput(postData)
+      .subscribe(data => {
+        console.log('SUCCESS ===', data);
+      }, (error: any) => {
+        console.log('ERROR ===', error);
+      });
+  };
 
   async ngOnInit() {
     const storage = await this.storage.create();

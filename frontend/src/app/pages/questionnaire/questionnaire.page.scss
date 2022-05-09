@@ -1,37 +1,38 @@
+ion-radio{
+
+  position: absolute;
+  opacity: 1;
+
+    }
+
 .male {
-  border-color: #2c682b;
+  border-color: #01C5AA;
 }
 
 .male:hover,
 ion-activated.male,
 .male:active {
-  background-color: #2c682b;
+  background-color: #01C5AA;
 }
 
 .female {
-  border-color: #c70a0a;
+  border-color: #8701F8;
 }
 
 .female:hover,
 ion-activated.female,
 .female:active {
-  background-color: #c70a0a;
+  background-color: #8701F8;
 }
 
 .non-binary {
-  border-color: #77592a;
+  border-color: #FFDD0A;
 }
 
 .non-binary:hover,
 ion-activated.non-binary,
 .non-binary:active {
-  background-color: #77592a;
-}
-
-.male:hover p,
-.female:hover p,
-.non-binary:hover p {
-  color: var(--ion-color-primary-contrast);
+  background-color: #FFDD0A;
 }
 
 ion-grid {

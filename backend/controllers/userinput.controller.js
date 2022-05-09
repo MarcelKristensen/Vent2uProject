@@ -8,7 +8,7 @@ exports.create = (req, res) => {
   console.log(req.body)
   if (!req.body) {
     res.status(400).send({
-      message: "Content cannot be empty"
+      message: "Content cannot be empty."
     });
     return;
   }
@@ -29,7 +29,7 @@ exports.create = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating an user input"
+          err.message || "Some error occurred while creating an user input."
       });
     });
 };
@@ -62,7 +62,7 @@ exports.findOne = (req, res) => {
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error retrieving user input with id=" + id
+          message: "Error retrieving user input with id=" + id+"."
         });
       });
 
@@ -89,7 +89,7 @@ exports.update = (req, res) => {
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error updating user input with id=" + id
+          message: "Error updating user input with id=" + id+"."
         });
       });
 
@@ -115,7 +115,7 @@ exports.delete = (req, res) => {
       })
       .catch(err => {
         res.status(500).send({
-          message: "Could not delete user input with id=" + id
+          message: "Could not delete user input with id=" + id+"."
         });
       });
 

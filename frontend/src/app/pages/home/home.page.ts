@@ -24,11 +24,8 @@ export class HomePage implements OnInit {
 
 
     this.userinputService.getAllUsedZones().subscribe((res) => {
-      this.takenZones = Object.values(res).map((zone) => zone.zone);
-/*
-    this.crudService.getAllUsedZones().subscribe((res) => {
-      this.takenZones = Object.values(res).map((room) => room.zone);
-*/
+      this.takenZones = Object.values(res).map((userinput) => userinput.zone);
+
       this.getUniqueLocation();
     });
   }

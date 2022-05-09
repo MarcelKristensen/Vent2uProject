@@ -8,30 +8,30 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class RoomService {
-  apiURL = 'http://localhost:3316/api/rooms';
+export class ZoneService {
+  apiURL = 'http://localhost:3316/api/zones';
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private httpClient: HttpClient) {}
 
-  getAllRooms() {
+  getAllZone() {
     return this.httpClient.get(`${this.apiURL}`);
   }
 
-  getSpecificRoom(id: any) {
+  getSpecificZone(id: any) {
     return this.httpClient.get(`${this.apiURL}/${id}`);
   }
 
-  createRoom(data: any) {
+  createZone(data: any) {
     return this.httpClient.post(`${this.apiURL}`, data);
   }
 
-  updateRoom(id: any, data: any) {
+  updateZone(id: any, data: any) {
     return this.httpClient.post(`${this.apiURL}/${id}`, data);
   }
 
-  deleteRoom(id: any) {
+  deleteZone(id: any) {
     return this.httpClient.delete(`${this.apiURL}/${id}`);
   }
 }

@@ -1,136 +1,137 @@
 const db = require("../models");
-const Room = db.room;
+const Zone = db.zone;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Room
+// Create and Save a new Zone
 exports.create = (req, res) => {
   // Validate request
   console.log(req.body)
-  if (!req.body.name) {
+  if (!req.body) {
     res.status(400).send({
-      message: "Content cannot be empty"
+      message: "Content cannot be empty."
     });
     return;
   }
 
-  // Create a Room
-  const room = {
-    name: req.body.name,
-    zone: req.body.zone,
+  // Create a Zone
+  const zone = {
+    number: req.body.number,
+    roomId: req.body.roomId,
   };
 
-  // Save Room in the database
-  Room.create(room)
+  // Save a zone in the database
+  Zone.create(zone)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Room."
+          err.message || "Some error occurred while creating a zone."
       });
     });
 };
 
-// Retrieve all Rooms from the database.
+// Retrieve all zones from the database.
 exports.findAll = (req, res) => {
-    const name = req.query.name;
-    var condition = name ? { name: { [Op.like]: `%${name}%` } } : null;
-    console.log(Op.like, "getAll requested")
-    Room.findAll({ where: condition })
+    const input = req.query.input;
+    var condition = input ? { input: { [Op.like]: `%${input}%` } } : null;
+
+    Zone.findAll({ where: condition })
       .then(data => {
         res.send(data);
       })
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving Rooms."
+            err.message || "Some error occurred while retrieving the zone."
         });
       });
 
 };
 
-// Find a single Room with an id
+// Find a single zone with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Room.findByPk(id)
+    Zone.findByPk(id)
       .then(data => {
         res.send(data);
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error retrieving Room with id=" + id+"."
+          message: "Error retrieving zone with id=" + id +"."
         });
       });
 
 };
 
-// Update a Room by the id in the request
+// Update a zone by the id in the request
 exports.update = (req, res) => {
+  console.log(res, req.params.id)
     const id = req.params.id;
 
-    Room.update(req.body, {
+    Zone.update(req.body, {
       where: { id: id }
     })
       .then(num => {
         if (num == 1) {
           res.send({
-            message: "Room was updated successfully."
+            message: "Zone was updated successfully."
           });
         } else {
           res.send({
-            message: `Cannot update Room with id=${id}. Maybe Room was not found or req.body is empty!`
+            message: `Cannot update zone with id=${id}. Maybe the zone was not found or a field is empty!`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error updating Room with id=" + id+"."
+          message: "Error updating zone with id=" + id+"."
         });
       });
 
 };
 
-// Delete a Room with the specified id in the request
+// Delete a zone with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Room.destroy({
+    Zone.destroy({
       where: { id: id }
     })
       .then(num => {
         if (num == 1) {
           res.send({
-            message: "Room was deleted successfully!"
+            message: "Zone was deleted successfully!"
           });
         } else {
           res.send({
-            message: `Cannot delete Room with id=${id}. Maybe Room was not found!`
+            message: `Cannot delete zone with id=${id}. Maybe the zone was not found!`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Could not delete Room with id=" + id+"."
+          message: "Could not delete zone with id=" + id +"."
         });
       });
 
 };
 
-// Delete all Rooms from the database.
+// Delete all zones from the database.
 exports.deleteAll = (req, res) => {
-    Room.destroy({
+    Zone.destroy({
         where: {},
         truncate: false
       })
         .then(nums => {
-          res.send({ message: `${nums} Rooms were deleted successfully!` });
+          res.send({ message: `${nums} Zones were deleted successfully!` });
         })
         .catch(err => {
           res.status(500).send({
             message:
-              err.message || "Some error occurred while removing all Rooms."
+              err.message || "Some error occurred while removing all zones."
           });
         });
 

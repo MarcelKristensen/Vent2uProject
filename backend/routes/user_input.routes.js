@@ -9,9 +9,6 @@ module.exports = app => {
     // Retrieve all user inputs
     router.get("/", UserInputs.findAll);
 
-    // Retrieve all published user inputs
-    //router.get("/published", UserInputs.findAllPublished);
-
     // Retrieve a single user input with id
     router.get("/:id", UserInputs.findOne);
 
