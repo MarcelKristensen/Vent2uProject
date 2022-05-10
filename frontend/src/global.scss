@@ -24,8 +24,7 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-@import '~@angular/cdk/overlay-prebuilt.css';
-
+@import "~@angular/cdk/overlay-prebuilt.css";
 
 * {
   box-sizing: border-box;
@@ -34,6 +33,11 @@
 ion-app {
   margin: 30px;
   margin-bottom: 0;
+}
+
+app-logo {
+  text-align: center;
+  display: block;
 }
 
 h1 {

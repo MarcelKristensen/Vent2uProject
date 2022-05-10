@@ -1,12 +1,6 @@
 <ion-content>
   <ion-grid class="centerScreen">
-    <a href="/home">
-      <ion-img
-        style="width: 200px; height: auto; margin: auto"
-        src="/assets/logo.svg"
-        alt="logo"
-      ></ion-img>
-    </a>
+    <app-logo></app-logo>
     <h1>Ready to get started?</h1>
     <div class="location">
       <ion-img style="width: 40px" src="/assets/walkin.svg"></ion-img>
@@ -19,6 +13,12 @@
     <p>
       Click the button below when you’ve sat down at the location given above.
     </p>
-    <ion-button type="button" class="ready" href="/questionnaire" (click)="userId.createUniqueUserId()">I'M READY</ion-button>
+    <ion-button
+      type="button"
+      class="ready"
+      href="/questionnaire"
+      (click)="userId.createUniqueUserId()"
+      >I'M READY</ion-button
+    >
   </ion-grid>
 </ion-content>
