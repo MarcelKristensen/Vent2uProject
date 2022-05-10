@@ -143,7 +143,7 @@
         </ion-row>
       </ion-grid>
     </ion-grid>
-    <ion-grid class="double">
+    <ion-grid class="double energy">
       <h1>How is your energy level?</h1>
       <p>Answer in comparison with your energy on a normal day.</p>
       <ion-grid>
@@ -179,7 +179,7 @@
           </ion-col>
           <ion-col>
             <input type="radio" value="3" id="refreshed" name="energy" />
-            <label for="energized">
+            <label for="refreshed">
               <ion-card style="box-shadow: none" class="thirdBox">
                 <ion-img
                   src="\assets\energy_refreshed.svg"
@@ -244,7 +244,7 @@
         Answer in comparison to how your skin usually feels on a normal day.
       </p>
 
-      <ion-grid class="double">
+      <ion-grid class="double humidity">
         <ion-row [(ngModel)]="humidityInput" ngDefaultControl>
           <ion-col>
             <input type="radio" value="1" id="sweaty" name="humidity" />
