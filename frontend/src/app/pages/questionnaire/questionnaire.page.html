@@ -8,10 +8,11 @@
   </a>
 </ion-header>
 
-<ion-content>
+<ion-content cdkDropListGroup>
+  <app-dropbox></app-dropbox>
   <div class="maxSize">
-    <ion-grid>
-      <h1>What gender do you identify with?</h1>
+    <ion-grid cdkDropList [cdkDropListData]="gender">
+      <h1 cdkDrag [cdkDragData]="gender">{{gender}}</h1>
       <ion-row class="genders" [(ngModel)]="genderInput" ngDefaultControl>
         <ion-col>
           <input type="radio" id="female" name="gender" value="female" />
@@ -51,8 +52,8 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-grid>
-      <h1>What describes you best?</h1>
+    <ion-grid cdkDropList [cdkDropListData]="temperature">
+      <h1 cdkDrag [cdkDragData]="temperature">{{temperature}}</h1>
       <p>Answer according to your current body temperature.</p>
       <ion-grid class="double temperature">
         <ion-row [(ngModel)]="temperatureInput" ngDefaultControl>
@@ -143,8 +144,8 @@
         </ion-row>
       </ion-grid>
     </ion-grid>
-    <ion-grid class="double energy">
-      <h1>How is your energy level?</h1>
+    <ion-grid class="double energy" cdkDropList [cdkDropListData]="airQuality">
+      <h1 cdkDrag [cdkDragData]="airQuality">{{airQuality}}</h1>
       <p>Answer in comparison with your energy on a normal day.</p>
       <ion-grid>
         <ion-row [(ngModel)]="energyInput" ngDefaultControl>
@@ -235,8 +236,8 @@
         </ion-row>
       </ion-grid>
     </ion-grid>
-    <ion-grid>
-      <h1>How does your skin feel?</h1>
+    <ion-grid cdkDropList [cdkDropListData]="humidity">
+      <h1 cdkDrag [cdkDragData]="humidity">{{humidity}}</h1>
       <p>
         Answer in comparison to how your skin usually feels on a normal day.
       </p>

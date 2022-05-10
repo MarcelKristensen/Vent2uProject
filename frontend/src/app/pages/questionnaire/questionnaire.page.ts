@@ -1,7 +1,6 @@
-import { UserinputService } from './../../services/userinput.service';
+import { UserinputService } from '../../services/userinput.service';
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-
 @Component({
   selector: 'app-questionnaire',
   templateUrl: './questionnaire.page.html',
@@ -14,6 +13,10 @@ export class QuestionnairePage implements OnInit {
   temperatureInput: any;
   energyInput: any;
   humidityInput: any;
+  gender = ['What gender do you identify with?'];
+  temperature = ['What describes you best?'];
+  airQuality = ['How is your energy level?'];
+  humidity = ['How does your skin feel?'];
   private _storage: Storage | null = null;
 
   constructor(

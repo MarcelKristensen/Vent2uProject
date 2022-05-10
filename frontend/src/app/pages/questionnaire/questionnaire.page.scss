@@ -199,3 +199,8 @@ ion-footer .submit p {
     width: 100%;
   }
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+}
