@@ -33,13 +33,13 @@ app.listen(PORT, () => {
 
 (async () => {
   await db.sequelize.sync();
-  if (process.env.NODE_ENV === "development") {
-    await db.sequelize.query("SET GLOBAL FOREIGN_KEY_CHECKS = 0;", {
-      raw: true,
-    });
-    await room.destroy({ truncate: true });
-    await zone.destroy({ truncate: true });
-  }
+  // if (process.env.NODE_ENV === "development") {
+  //   await db.sequelize.query("SET GLOBAL FOREIGN_KEY_CHECKS = 0;", {
+  //     raw: true,
+  //   });
+  //   await room.destroy({ truncate: true });
+  //   await zone.destroy({ truncate: true });
+  // }
   await admin.destroy({ truncate: true });
   rooms.map((eachroom) => room.create({ name: eachroom.name }));
   zones.map((eachzone) =>
