@@ -339,7 +339,7 @@
 <ion-footer class="maxSize">
   <ion-button
     (click)="postDataAPI()"
-    [disabled]="!genderInput + !temperatureInput + !energyInput + !humidityInput"
+    [disabled]="isDataReady()"
     href="thank-you"
     >submit data</ion-button
   >

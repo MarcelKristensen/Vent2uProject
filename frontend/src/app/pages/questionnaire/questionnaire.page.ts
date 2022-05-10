@@ -42,9 +42,17 @@ export class QuestionnairePage implements OnInit {
     );
   }
 
-  // isDataReady() {
-
-  // }
+  isDataReady() {
+    if (
+      this.genderInput &&
+      this.temperatureInput &&
+      this.energyInput &&
+      this.humidityInput
+    ) {
+      return false;
+    }
+    return true;
+  }
 
   async ngOnInit() {
     await this.storage.create();
