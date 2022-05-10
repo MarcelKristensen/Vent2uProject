@@ -1,7 +1,7 @@
 const { zones } = require("./zones.json");
 
 module.exports = (sequelize, DataTypes) => {
-  const Zone = sequelize.define("zone", {
+  const Zone = sequelize.define("Zone", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
