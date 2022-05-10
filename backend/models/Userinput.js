@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     zoneId: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
       allowNull: false,
 
       references: {

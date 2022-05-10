@@ -8,7 +8,6 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['./questionnaire.page.scss'],
 })
 export class QuestionnairePage implements OnInit {
-
   userinputs: any[];
   id: any;
   genderInput: any;
@@ -19,27 +18,28 @@ export class QuestionnairePage implements OnInit {
 
   constructor(
     public userinputService: UserinputService,
-    private storage: Storage){}
+    private storage: Storage
+  ) {}
 
-  async postDataAPI(){
-
+  async postDataAPI() {
     const postData = {
       //id: await this.storage.get('id'), Used to post the stored ID
+      zoneId: 1,
       gender: this.genderInput,
       temperature: this.temperatureInput,
       energy: this.energyInput,
-      humidity: this.humidityInput
+      humidity: this.humidityInput,
     };
 
-    console.log(postData)
-
-    this.userinputService.createUserinput(postData)
-      .subscribe(data => {
+    this.userinputService.createUserinput(postData).subscribe(
+      (data) => {
         console.log('SUCCESS ===', data);
-      }, (error: any) => {
+      },
+      (error: any) => {
         console.log('ERROR ===', error);
-      });
-  };
+      }
+    );
+  }
 
   async ngOnInit() {
     const storage = await this.storage.create();

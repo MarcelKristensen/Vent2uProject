@@ -9,293 +9,369 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-list>
+  <div class="maxSize">
     <ion-grid>
       <h1>What gender do you identify with?</h1>
-    <ion-radio-group [(ngModel)]="genderInput">
-      <ion-row class="genders">
-
-        <ion-item>
-          <ion-col>
-            <ion-card class="male" button="true">
+      <ion-row class="genders" [(ngModel)]="genderInput" ngDefaultControl>
+        <ion-col>
+          <label for="female">
+            <ion-card class="female" button="true" style="box-shadow: none">
+              <ion-img src="/assets/female.svg" style="height: 50px"></ion-img>
+              <p>Female</p>
+            </ion-card>
+          </label>
+          <input type="radio" id="female" name="gender" value="female" />
+        </ion-col>
+        <ion-col>
+          <label for="male">
+            <ion-card
+              class="male"
+              button="true"
+              type="button"
+              style="box-shadow: none"
+            >
               <ion-img src="/assets/male.svg" style="height: 50px"></ion-img>
               <p>Male</p>
             </ion-card>
+            <input type="radio" id="male" name="gender" value="male" />
+          </label>
+        </ion-col>
+        <ion-col>
+          <label for="nonbinary">
+            <ion-card class="non-binary" button="true" style="box-shadow: none">
+              <ion-img
+                src="/assets/non-binary.svg"
+                style="height: 50px"
+              ></ion-img>
+              <p>Non-binary</p>
+            </ion-card>
+            <input
+              type="radio"
+              value="nonbinary"
+              id="nonbinary"
+              name="gender"
+              value="nonbinary"
+            />
+          </label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <h1>What describes you best?</h1>
+      <p>Answer according to your current body temperature.</p>
+      <ion-grid class="double">
+        <ion-row [(ngModel)]="temperatureInput" ngDefaultControl>
+          <ion-col>
+            <label for="melting">
+              <ion-card style="box-shadow: none" button="true" class="firstBox">
+                <ion-img
+                  src="\assets\Temperature_icons\melting.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>I'm melting</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="1" id="melting" name="temperature" />
           </ion-col>
-          <ion-radio value="Male" ngc></ion-radio>
-        </ion-item>
-      <ion-item>
-        <ion-col>
-          <ion-card class="female" button="true">
-            <ion-img src="/assets/female.svg" style="height: 50px"></ion-img>
-            <p>Female</p>
-          </ion-card>
-        </ion-col>
-        <ion-radio value="Female"></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-col>
-          <ion-card class="non-binary" button="true" >
-            <ion-img src="/assets/non-binary.svg" style="height: 50px"></ion-img>
-            <p>Non-binary</p>
-          </ion-card>
-        </ion-col>
-        <ion-radio value="Nonbinary" (ionSelect)="radioChanged($event)"></ion-radio>
-      </ion-item>
-    </ion-row>
-    </ion-radio-group>
-</ion-grid>
-  </ion-list>
-
-  <ion-grid>
-    <h1>What describes you best?</h1>
-    <p>Answer according to your current body temperature.</p>
-  <ion-list>
-    <ion-radio-group [(ngModel)]="temperatureInput">
-      <ion-grid class="double">
-        <ion-row>
-          <ion-item>
-            <ion-col>
-              <ion-card style="box-shadow: none" button="true" class="firstBoxTemp">
-               <ion-img src="\assets\Temperature_icons\melting.svg" style="height: 50px"></ion-img>
-          <div class="ion-text-center">
-            <p>I'm melting</p>
-          </div>
-        </ion-card>
-      </ion-col>
-      <ion-radio value="1"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-col>
-       <ion-card style="box-shadow: none" button="true" class="secondBoxTemp">
-          <ion-img src="\assets\Temperature_icons\sweating.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>I'm sweating</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="2"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="thirdBoxTemp">
-        <ion-img src="\assets\Temperature_icons\warm.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>I'm warm</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="3"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="fourthBoxTemp">
-        <ion-img src="\assets\Temperature_icons\chilly.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>I'm chilly</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="4"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="fifthBoxTemp">
-        <ion-img src="\assets\Temperature_icons\cold.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>I'm cold</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="5"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="sixthBoxTemp">
-        <ion-img src="\assets\Temperature_icons\freezing.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>I'm freezing</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="6"></ion-radio>
-  </ion-item>
-</ion-row>
-</ion-grid>
-    </ion-radio-group>
-  </ion-list>
-</ion-grid>
+          <ion-col>
+            <label for="sweating">
+              <ion-card
+                style="box-shadow: none"
+                button="true"
+                class="secondBox"
+              >
+                <ion-img
+                  src="\assets\Temperature_icons\sweating.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>I'm sweating</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="2" id="sweating" name="temperature" />
+          </ion-col>
+          <ion-col>
+            <label for="warm">
+              <ion-card style="box-shadow: none" button="true" class="thirdBox">
+                <ion-img
+                  src="\assets\Temperature_icons\warm.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>I'm warm</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="3" id="warm" name="temperature" />
+          </ion-col>
+          <ion-col>
+            <label for="chilly">
+              <ion-card
+                style="box-shadow: none"
+                button="true"
+                class="fourthBox"
+              >
+                <ion-img
+                  src="\assets\Temperature_icons\chilly.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>I'm chilly</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="4" id="chilly" name="temperature" />
+          </ion-col>
+          <ion-col>
+            <label for="cold">
+              <ion-card style="box-shadow: none" button="true" class="fifthBox">
+                <ion-img
+                  src="\assets\Temperature_icons\cold.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>I'm cold</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="5" id="cold" name="temperature" />
+          </ion-col>
+          <ion-col>
+            <label for="freezing">
+              <ion-card style="box-shadow: none" button="true" class="sixthBox">
+                <ion-img
+                  src="\assets\Temperature_icons\freezing.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>I'm freezing</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="6" id="freezing" name="temperature" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
     <ion-grid class="double">
-      <ion-row>
-    </ion-row>
-  </ion-grid>
+      <h1>How is your energy level?</h1>
+      <p>Answer in comparison with your energy on a normal day.</p>
+      <ion-grid>
+        <ion-row [(ngModel)]="energyInput" ngDefaultControl>
+          <ion-col>
+            <label for="fullycharged">
+              <ion-card style="box-shadow: none" button="true" class="firstBox">
+                <ion-img
+                  src="\assets\energy_fully_charged.svg"
+                  style="height: 30px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Fully charged</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="1" id="fullycharged" name="energy" />
+          </ion-col>
 
-  <ion-grid>
-    <h1>How is your energy level?</h1>
-    <p>Answer in comparison with your energy on a normal day.</p>
-  <ion-list>
-    <ion-radio-group [(ngModel)]="energyInput">
+          <ion-col>
+            <label for="energized">
+              <ion-card
+                style="box-shadow: none"
+                button="true"
+                class="secondBox"
+              >
+                <ion-img
+                  src="\assets\energy_energized.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Energized</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="2" id="energized" name="energy" />
+          </ion-col>
+          <ion-col>
+            <label for="energized">
+              <ion-card style="box-shadow: none" button="true" class="thirdBox">
+                <ion-img
+                  src="\assets\energy_refreshed.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Refreshed</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="3" id="refreshed" name="energy" />
+          </ion-col>
+
+          <ion-col>
+            <label for="low">
+              <ion-card
+                style="box-shadow: none"
+                button="true"
+                class="fourthBox"
+              >
+                <ion-img
+                  src="\assets\energy_low.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Low</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="4" id="low" name="energy" />
+          </ion-col>
+          <ion-col>
+            <label for="verylow">
+              <ion-card style="box-shadow: none" button="true" class="fifthBox">
+                <ion-img
+                  src="\assets\energy_low.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Very low</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="5" id="verylow" name="energy" />
+          </ion-col>
+
+          <ion-col>
+            <label for="exhausted">
+              <ion-card style="box-shadow: none" button="true" class="sixthBox">
+                <ion-img
+                  src="\assets\energy_exhausted.svg"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Exhausted</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="6" id="exhausted" name="energy" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
+    <ion-grid>
+      <h1>How does your skin feel?</h1>
+      <p>
+        Answer in comparison to how your skin usually feels on a normal day.
+      </p>
+
       <ion-grid class="double">
-        <ion-row>
-          <ion-item>
-            <ion-col>
-              <ion-card style="box-shadow: none" button="true" class="firstBoxEnergy">
-               <ion-img src="\assets\energy_fully_charged.svg" style="height: 50px"></ion-img>
-          <div class="ion-text-center">
-            <p>Fully charged</p>
-          </div>
-        </ion-card>
-      </ion-col>
-      <ion-radio value="1"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-col>
-       <ion-card style="box-shadow: none" button="true" class="secondBoxEnergy">
-          <ion-img src="\assets\energy_energized.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Energized</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="2"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="thirdBoxEnergy">
-        <ion-img src="\assets\energy_refreshed.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Refreshed</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="3"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="fourthBoxEnergy">
-        <ion-img src="\assets\energy_low.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Low</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="4"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="fifthBoxEnergy">
-        <ion-img src="\assets\energy_very_low.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Very low</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="5"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="sixthBoxEnergy">
-        <ion-img src="\assets\energy_exhausted.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Exhausted</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="6"></ion-radio>
-  </ion-item>
-</ion-row>
-</ion-grid>
-    </ion-radio-group>
-  </ion-list>
-</ion-grid>
-    <ion-grid class="double">
-      <ion-row>
-    </ion-row>
-  </ion-grid>
+        <ion-row [(ngModel)]="humidityInput" ngDefaultControl>
+          <ion-col>
+            <label for="sweaty">
+              <ion-card style="box-shadow: none" button="true" class="firstBox">
+                <ion-img
+                  src="\assets\Humidity_icons\sweatyGuy.png"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Sweaty</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="1" id="sweaty" name="humidity" />
+          </ion-col>
 
-  <ion-grid>
-    <h1>How does your skin feel?</h1>
-    <p>Answer in comparison to how your skin usually feels on a normal day.</p>
-  <ion-list>
-    <ion-radio-group [(ngModel)]="humidityInput">
-      <ion-grid class="double">
-        <ion-row>
-          <ion-item>
-            <ion-col>
-              <ion-card style="box-shadow: none" button="true" class="firstBoxHumid">
-               <ion-img src="\assets\Humidity_icons\sweatyGuy.svg" style="height: 50px"></ion-img>
-          <div class="ion-text-center">
-            <p>Sweaty</p>
-          </div>
-        </ion-card>
-      </ion-col>
-      <ion-radio value="1"></ion-radio>
-    </ion-item>
-    <ion-item>
-      <ion-col>
-       <ion-card style="box-shadow: none" button="true" class="secondBoxHumid">
-          <ion-img src="\assets\Humidity_icons\WarmGuy.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Hot</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="2"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="thirdBoxHumid">
-        <ion-img src="\assets\Humidity_icons\UncomfortableGuy.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Not well</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="3"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="fourthBoxHumid">
-        <ion-img src="\assets\Humidity_icons\Damp.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Damp</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="4"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="fifthBoxHumid">
-        <ion-img src="\assets\Humidity_icons\ItchyGuy.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Itchy</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="5"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-col>
-      <ion-card style="box-shadow: none" button="true" class="sixthBoxHumid">
-        <ion-img src="\assets\Humidity_icons\DryHand.svg" style="height: 50px"></ion-img>
-        <div class="ion-text-center">
-          <p>Dry</p>
-        </div>
-      </ion-card>
-    </ion-col>
-    <ion-radio value="6"></ion-radio>
-  </ion-item>
-</ion-row>
-</ion-grid>
-    </ion-radio-group>
-  </ion-list>
-</ion-grid>
-    <ion-grid class="double">
-      <ion-row>
-    </ion-row>
-  </ion-grid>
+          <ion-col>
+            <label for="hot">
+              <ion-card
+                style="box-shadow: none"
+                button="true"
+                class="secondBox"
+              >
+                <ion-img
+                  src="\assets\Humidity_icons\WarmGuy.png"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Hot</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="2" id="hot" name="humidity" />
+          </ion-col>
+          <ion-col>
+            <label for="uncomfortable">
+              <ion-card style="box-shadow: none" button="true" class="thirdBox">
+                <ion-img
+                  src="\assets\Humidity_icons\UncomfortableGuy.png"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Uncomfortable</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="3" id="uncomfortable" name="humidity" />
+          </ion-col>
 
+          <ion-col>
+            <label for="damp">
+              <ion-card
+                style="box-shadow: none"
+                button="true"
+                class="fourthBox"
+              >
+                <ion-img
+                  src="\assets\Humidity_icons\Damp.png"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Damp</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="4" id="damp" name="humidity" />
+          </ion-col>
+          <ion-col>
+            <label for="itchy">
+              <ion-card style="box-shadow: none" button="true" class="fifthBox">
+                <ion-img
+                  src="\assets\Humidity_icons\ItchyGuy.png"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Itchy</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="5" id="itchy" name="humidity" />
+          </ion-col>
+
+          <ion-col>
+            <label for="dry">
+              <ion-card style="box-shadow: none" button="true" class="sixthBox">
+                <ion-img
+                  src="\assets\Humidity_icons\DryHand.png"
+                  style="height: 50px"
+                ></ion-img>
+                <div class="ion-text-center">
+                  <p>Dry</p>
+                </div>
+              </ion-card>
+            </label>
+            <input type="radio" value="6" id="dry" name="humidity" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-grid>
+  </div>
 </ion-content>
-  <ion-button (click)="postDataAPI()" [disabled]="!genderInput + !temperatureInput + !energyInput + !humidityInput" href="thank-you">submit data</ion-button>
+<ion-footer class="maxSize">
+  <ion-button
+    (click)="postDataAPI()"
+    [disabled]="!genderInput + !temperatureInput + !energyInput + !humidityInput"
+    href="thank-you"
+    >submit data</ion-button
+  >
+</ion-footer>
