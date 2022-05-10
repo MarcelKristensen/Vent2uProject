@@ -34,6 +34,26 @@
   color: var(--ion-color-primary-contrast);
 }
 
+.maxSize
+  input:checked
+  + label
+  svg
+  path:not(.male svg path, .non-binary svg path, .temperature
+    .thirdBox
+    svg
+    path, .temperature .fourthBox svg path, .temperature
+    .fifthBox
+    svg
+    path, .energy .firstBox svg path, .energy .secondBox svg path, .energy
+    .thirdBox
+    svg
+    path, .energy .fourthBox svg path, .humidity .thirdBox svg path, .humidity
+    .fourthBox
+    svg
+    path, .humidity .fifthBox svg path) {
+  fill: #fff;
+}
+
 .maxSize label:hover {
   cursor: pointer;
 }
@@ -207,4 +227,14 @@ ion-footer .submit p {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .maxSize input:checked + label p {
+    color: #000;
+  }
+
+  .maxSize input:checked + label svg path {
+    fill: #000;
+  }
 }
