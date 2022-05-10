@@ -9,7 +9,7 @@ const { zones } = require("./models/zones.json");
 const { admins } = require("./models/admin.json");
 
 const corsOptions = {
-  origin: `*`,
+  origin: `http://localhost:${process.env.PORT || 3316}`,
 };
 app.use(cors(corsOptions));
 

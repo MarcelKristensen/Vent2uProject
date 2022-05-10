@@ -6,8 +6,9 @@ import {
   HttpHeaders,
   HttpErrorResponse,
 } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
-const apiURL = 'http://localhost:3316/api/userinputs';
+const apiURL = `${environment.server_url}/api/userinputs`;
 
 @Injectable({
   providedIn: 'root',

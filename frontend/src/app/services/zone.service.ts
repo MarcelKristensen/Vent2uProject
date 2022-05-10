@@ -4,12 +4,13 @@ import {
   HttpHeaders,
   HttpErrorResponse,
 } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ZoneService {
-  apiURL = 'http://localhost:3316/api/zones';
+  apiURL = `${environment.server_url}/api/zones`;
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 

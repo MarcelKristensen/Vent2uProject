@@ -4,12 +4,13 @@ import {
   HttpHeaders,
   HttpErrorResponse,
 } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RoomService {
-  apiURL = 'http://localhost:3316/api/rooms';
+  apiURL = `${environment.server_url}/api/rooms`;
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
 
