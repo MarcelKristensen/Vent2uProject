@@ -24,7 +24,13 @@
 .maxSize
   input:checked
   + label
-  p:not(.non-binary p, .temperature .thirdBox p, .temperature .fourthBox p) {
+  p:not(.male p, .non-binary p, .temperature .thirdBox p, .temperature
+    .fourthBox
+    p, .temperature .fifthBox p, .energy .firstBox p, .energy
+    .secondBox
+    p, .energy .thirdBox p, .energy .fourthBox p, .humidity
+    .thirdBox
+    p, .humidity .fourthBox p, .humidity .fifthBox p) {
   color: var(--ion-color-primary-contrast);
 }
 
