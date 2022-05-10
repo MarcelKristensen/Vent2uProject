@@ -4,10 +4,15 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
-import { LogoComponent } from 'src/app/components/logo/logo/logo.component';
-
+import { LogoModule } from 'src/app/components/logo/logo/logo.module';
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, HomePageRoutingModule],
-  declarations: [HomePage, LogoComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    HomePageRoutingModule,
+    LogoModule,
+  ],
+  declarations: [HomePage],
 })
 export class HomePageModule {}
