@@ -17,7 +17,6 @@ export class QuestionnairePage implements OnInit {
   temperature = ['What describes you best?'];
   airQuality = ['How is your energy level?'];
   humidity = ['How does your skin feel?'];
-  private _storage: Storage | null = null;
 
   constructor(
     public userinputService: UserinputService,
@@ -26,7 +25,6 @@ export class QuestionnairePage implements OnInit {
 
   async postDataAPI() {
     const postData = {
-      //id: await this.storage.get('id'), Used to post the stored ID
       zoneId: 1,
       gender: this.genderInput,
       temperature: this.temperatureInput,
@@ -44,9 +42,12 @@ export class QuestionnairePage implements OnInit {
     );
   }
 
+  // isDataReady() {
+
+  // }
+
   async ngOnInit() {
-    const storage = await this.storage.create();
-    this._storage = storage;
+    await this.storage.create();
 
     const getId = await this.storage.get('id');
     console.log(getId);
