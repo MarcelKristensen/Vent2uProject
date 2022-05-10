@@ -34,6 +34,10 @@
   color: var(--ion-color-primary-contrast);
 }
 
+.maxSize label:hover {
+  cursor: pointer;
+}
+
 .non-binary,
 .temperature .thirdBox,
 .energy .fourthBox,
