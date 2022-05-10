@@ -43,155 +43,10 @@ p {
   font-weight: 500;
 }
 
-.firstBoxTemp {
-  border-color: #C70A0A;
-}
-
-.firstBoxTemp:hover {
-  background-color: #C70A0A;
-}
-
-.secondBoxTemp {
-  border-color: #FB6D0C;
-}
-
-.secondBoxTemp:hover {
-  background-color: #FB6D0C;
-}
-
-.thirdBoxTemp {
-  border-color: #FFDD0A;
-}
-
-.thirdBoxTemp:hover {
-  background-color: #FFDD0A;
-}
-
-.fourthBoxTemp {
-  border-color: #8ED5F5;
-}
-
-.fourthBoxTemp:hover {
-  background-color: #8ED5F5;
-}
-
-.fifthBoxTemp {
-  border-color: #4fc3f7;
-}
-
-.fifthBoxTemp:hover {
-  background-color: #4FC3F7;
-}
-
-.sixthBoxTemp {
-  border-color: #1C78C9;
-}
-
-.sixthBoxTemp:hover {
-  background-color: #1C78C9;
-}
-
-
-.firstBoxEnergy {
-  border-color: #29ED25;
-}
-
-.firstBoxEnergy:hover {
-  background-color: #29ED25;
-}
-
-.secondBoxEnergy {
-  border-color: #30D5C8;
-}
-
-.secondBoxEnergy:hover {
-  background-color: #30D5C8;
-}
-
-.thirdBoxEnergy {
-  border-color: #8ED5F5;
-}
-
-.thirdBoxEnergy:hover {
-  background-color: #8ED5F5;
-}
-
-.fourthBoxEnergy {
-  border-color: #FFDD0A;
-}
-
-.fourthBoxEnergy:hover {
-  background-color: #FFDD0A;
-}
-
-.fifthBoxEnergy {
-  border-color: #FB6D0C;
-}
-
-.fifthBoxEnergy:hover {
-  background-color: #FB6D0C;
-}
-
-.sixthBoxEnergy {
-  border-color: #C70A0A;
-}
-
-.sixthBoxEnergy:hover {
-  background-color: #C70A0A;
-}
-
-
-.firstBoxHumid {
-  border-color: #C70A0A;
-}
-
-.firstBoxHumid:hover {
-  background-color: #C70A0A;
-}
-
-.secondBoxHumid {
-  border-color: #FB6D0C;
-}
-
-.secondBoxHumid:hover {
-  background-color: #FB6D0C;
-}
-
-.thirdBoxHumid {
-  border-color: #FFDD0A;
-}
-
-.thirdBoxHumid:hover {
-  background-color: #FFDD0A;
-}
-
-.fourthBoxHumid {
-  border-color: #EAC998;
-}
-
-.fourthBoxHumid:hover {
-  background-color: #EAC998;
-}
-
-.fifthBoxHumid {
-  border-color: #BBA17A;
-}
-
-.fifthBoxHumid:hover {
-  background-color: #BBA17A;
-}
-
-.sixthBoxHumid {
-  border-color: #974B00;
-}
-
-.sixthBoxHumid:hover {
-  background-color: #974B00;
-}
-
 ion-card p {
   text-align: center;
   font-size: 16px;
+  color: var(--ion-color-primary);
 }
 
 ion-col {
@@ -208,6 +63,9 @@ ion-card {
   border-style: solid;
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;

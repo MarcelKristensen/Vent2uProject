@@ -14,44 +14,39 @@
       <h1>What gender do you identify with?</h1>
       <ion-row class="genders" [(ngModel)]="genderInput" ngDefaultControl>
         <ion-col>
+          <input type="radio" id="female" name="gender" value="female" />
           <label for="female">
-            <ion-card class="female" button="true" style="box-shadow: none">
+            <ion-card class="female" style="box-shadow: none">
               <ion-img src="/assets/female.svg" style="height: 50px"></ion-img>
               <p>Female</p>
             </ion-card>
           </label>
-          <input type="radio" id="female" name="gender" value="female" />
         </ion-col>
         <ion-col>
+          <input type="radio" id="male" name="gender" value="male" />
           <label for="male">
-            <ion-card
-              class="male"
-              button="true"
-              type="button"
-              style="box-shadow: none"
-            >
+            <ion-card class="male" style="box-shadow: none">
               <ion-img src="/assets/male.svg" style="height: 50px"></ion-img>
               <p>Male</p>
             </ion-card>
-            <input type="radio" id="male" name="gender" value="male" />
           </label>
         </ion-col>
         <ion-col>
+          <input
+            type="radio"
+            value="nonbinary"
+            id="nonbinary"
+            name="gender"
+            value="nonbinary"
+          />
           <label for="nonbinary">
-            <ion-card class="non-binary" button="true" style="box-shadow: none">
+            <ion-card class="non-binary" style="box-shadow: none">
               <ion-img
                 src="/assets/non-binary.svg"
                 style="height: 50px"
               ></ion-img>
               <p>Non-binary</p>
             </ion-card>
-            <input
-              type="radio"
-              value="nonbinary"
-              id="nonbinary"
-              name="gender"
-              value="nonbinary"
-            />
           </label>
         </ion-col>
       </ion-row>
@@ -59,11 +54,12 @@
     <ion-grid>
       <h1>What describes you best?</h1>
       <p>Answer according to your current body temperature.</p>
-      <ion-grid class="double">
+      <ion-grid class="double temperature">
         <ion-row [(ngModel)]="temperatureInput" ngDefaultControl>
           <ion-col>
+            <input type="radio" value="1" id="melting" name="temperature" />
             <label for="melting">
-              <ion-card style="box-shadow: none" button="true" class="firstBox">
+              <ion-card style="box-shadow: none" class="firstBox">
                 <ion-img
                   src="\assets\Temperature_icons\melting.svg"
                   style="height: 50px"
@@ -73,15 +69,11 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="1" id="melting" name="temperature" />
           </ion-col>
           <ion-col>
+            <input type="radio" value="2" id="sweating" name="temperature" />
             <label for="sweating">
-              <ion-card
-                style="box-shadow: none"
-                button="true"
-                class="secondBox"
-              >
+              <ion-card style="box-shadow: none" class="secondBox">
                 <ion-img
                   src="\assets\Temperature_icons\sweating.svg"
                   style="height: 50px"
@@ -91,11 +83,11 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="2" id="sweating" name="temperature" />
           </ion-col>
           <ion-col>
+            <input type="radio" value="3" id="warm" name="temperature" />
             <label for="warm">
-              <ion-card style="box-shadow: none" button="true" class="thirdBox">
+              <ion-card style="box-shadow: none" class="thirdBox">
                 <ion-img
                   src="\assets\Temperature_icons\warm.svg"
                   style="height: 50px"
@@ -105,15 +97,11 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="3" id="warm" name="temperature" />
           </ion-col>
           <ion-col>
+            <input type="radio" value="4" id="chilly" name="temperature" />
             <label for="chilly">
-              <ion-card
-                style="box-shadow: none"
-                button="true"
-                class="fourthBox"
-              >
+              <ion-card style="box-shadow: none" class="fourthBox">
                 <ion-img
                   src="\assets\Temperature_icons\chilly.svg"
                   style="height: 50px"
@@ -123,11 +111,11 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="4" id="chilly" name="temperature" />
           </ion-col>
           <ion-col>
+            <input type="radio" value="5" id="cold" name="temperature" />
             <label for="cold">
-              <ion-card style="box-shadow: none" button="true" class="fifthBox">
+              <ion-card style="box-shadow: none" class="fifthBox">
                 <ion-img
                   src="\assets\Temperature_icons\cold.svg"
                   style="height: 50px"
@@ -137,11 +125,11 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="5" id="cold" name="temperature" />
           </ion-col>
           <ion-col>
+            <input type="radio" value="6" id="freezing" name="temperature" />
             <label for="freezing">
-              <ion-card style="box-shadow: none" button="true" class="sixthBox">
+              <ion-card style="box-shadow: none" class="sixthBox">
                 <ion-img
                   src="\assets\Temperature_icons\freezing.svg"
                   style="height: 50px"
@@ -151,7 +139,6 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="6" id="freezing" name="temperature" />
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -162,8 +149,9 @@
       <ion-grid>
         <ion-row [(ngModel)]="energyInput" ngDefaultControl>
           <ion-col>
+            <input type="radio" value="1" id="fullycharged" name="energy" />
             <label for="fullycharged">
-              <ion-card style="box-shadow: none" button="true" class="firstBox">
+              <ion-card style="box-shadow: none" class="firstBox">
                 <ion-img
                   src="\assets\energy_fully_charged.svg"
                   style="height: 30px"
@@ -173,16 +161,12 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="1" id="fullycharged" name="energy" />
           </ion-col>
 
           <ion-col>
+            <input type="radio" value="2" id="energized" name="energy" />
             <label for="energized">
-              <ion-card
-                style="box-shadow: none"
-                button="true"
-                class="secondBox"
-              >
+              <ion-card style="box-shadow: none" class="secondBox">
                 <ion-img
                   src="\assets\energy_energized.svg"
                   style="height: 50px"
@@ -192,11 +176,11 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="2" id="energized" name="energy" />
           </ion-col>
           <ion-col>
+            <input type="radio" value="3" id="refreshed" name="energy" />
             <label for="energized">
-              <ion-card style="box-shadow: none" button="true" class="thirdBox">
+              <ion-card style="box-shadow: none" class="thirdBox">
                 <ion-img
                   src="\assets\energy_refreshed.svg"
                   style="height: 50px"
@@ -206,16 +190,12 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="3" id="refreshed" name="energy" />
           </ion-col>
 
           <ion-col>
+            <input type="radio" value="4" id="low" name="energy" />
             <label for="low">
-              <ion-card
-                style="box-shadow: none"
-                button="true"
-                class="fourthBox"
-              >
+              <ion-card style="box-shadow: none" class="fourthBox">
                 <ion-img
                   src="\assets\energy_low.svg"
                   style="height: 50px"
@@ -225,11 +205,11 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="4" id="low" name="energy" />
           </ion-col>
           <ion-col>
+            <input type="radio" value="5" id="verylow" name="energy" />
             <label for="verylow">
-              <ion-card style="box-shadow: none" button="true" class="fifthBox">
+              <ion-card style="box-shadow: none" class="fifthBox">
                 <ion-img
                   src="\assets\energy_low.svg"
                   style="height: 50px"
@@ -239,12 +219,12 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="5" id="verylow" name="energy" />
           </ion-col>
 
           <ion-col>
+            <input type="radio" value="6" id="exhausted" name="energy" />
             <label for="exhausted">
-              <ion-card style="box-shadow: none" button="true" class="sixthBox">
+              <ion-card style="box-shadow: none" class="sixthBox">
                 <ion-img
                   src="\assets\energy_exhausted.svg"
                   style="height: 50px"
@@ -254,7 +234,6 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="6" id="exhausted" name="energy" />
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -268,8 +247,9 @@
       <ion-grid class="double">
         <ion-row [(ngModel)]="humidityInput" ngDefaultControl>
           <ion-col>
+            <input type="radio" value="1" id="sweaty" name="humidity" />
             <label for="sweaty">
-              <ion-card style="box-shadow: none" button="true" class="firstBox">
+              <ion-card style="box-shadow: none" class="firstBox">
                 <ion-img
                   src="\assets\Humidity_icons\sweatyGuy.png"
                   style="height: 50px"
@@ -279,16 +259,12 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="1" id="sweaty" name="humidity" />
           </ion-col>
 
           <ion-col>
+            <input type="radio" value="2" id="hot" name="humidity" />
             <label for="hot">
-              <ion-card
-                style="box-shadow: none"
-                button="true"
-                class="secondBox"
-              >
+              <ion-card style="box-shadow: none" class="secondBox">
                 <ion-img
                   src="\assets\Humidity_icons\WarmGuy.png"
                   style="height: 50px"
@@ -298,11 +274,11 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="2" id="hot" name="humidity" />
           </ion-col>
           <ion-col>
+            <input type="radio" value="3" id="uncomfortable" name="humidity" />
             <label for="uncomfortable">
-              <ion-card style="box-shadow: none" button="true" class="thirdBox">
+              <ion-card style="box-shadow: none" class="thirdBox">
                 <ion-img
                   src="\assets\Humidity_icons\UncomfortableGuy.png"
                   style="height: 50px"
@@ -312,16 +288,12 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="3" id="uncomfortable" name="humidity" />
           </ion-col>
 
           <ion-col>
+            <input type="radio" value="4" id="damp" name="humidity" />
             <label for="damp">
-              <ion-card
-                style="box-shadow: none"
-                button="true"
-                class="fourthBox"
-              >
+              <ion-card style="box-shadow: none" class="fourthBox">
                 <ion-img
                   src="\assets\Humidity_icons\Damp.png"
                   style="height: 50px"
@@ -331,11 +303,11 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="4" id="damp" name="humidity" />
           </ion-col>
           <ion-col>
+            <input type="radio" value="5" id="itchy" name="humidity" />
             <label for="itchy">
-              <ion-card style="box-shadow: none" button="true" class="fifthBox">
+              <ion-card style="box-shadow: none" class="fifthBox">
                 <ion-img
                   src="\assets\Humidity_icons\ItchyGuy.png"
                   style="height: 50px"
@@ -345,12 +317,12 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="5" id="itchy" name="humidity" />
           </ion-col>
 
           <ion-col>
+            <input type="radio" value="6" id="dry" name="humidity" />
             <label for="dry">
-              <ion-card style="box-shadow: none" button="true" class="sixthBox">
+              <ion-card style="box-shadow: none" class="sixthBox">
                 <ion-img
                   src="\assets\Humidity_icons\DryHand.png"
                   style="height: 50px"
@@ -360,7 +332,6 @@
                 </div>
               </ion-card>
             </label>
-            <input type="radio" value="6" id="dry" name="humidity" />
           </ion-col>
         </ion-row>
       </ion-grid>

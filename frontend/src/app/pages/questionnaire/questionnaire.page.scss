@@ -1,38 +1,36 @@
-ion-radio{
-
-  position: absolute;
-  opacity: 1;
-
-    }
-
-.male {
-  border-color: #01C5AA;
+.genders input,
+.temperature input,
+.humidity input,
+.energy input {
+  display: none;
 }
 
-.male:hover,
-ion-activated.male,
-.male:active {
-  background-color: #01C5AA;
+.male {
+  border-color: #01c5aa;
+}
+
+.maxSize input:checked + label .male {
+  background-color: #01c5aa;
 }
 
 .female {
-  border-color: #8701F8;
+  border-color: #8701f8;
 }
 
-.female:hover,
-ion-activated.female,
-.female:active {
-  background-color: #8701F8;
+.maxSize input:checked + label .female {
+  background-color: #8701f8;
+}
+
+.maxSize input:checked + label p:not(.non-binary p) {
+  color: var(--ion-color-primary-contrast);
 }
 
 .non-binary {
-  border-color: #FFDD0A;
+  border-color: #ffdd0a;
 }
 
-.non-binary:hover,
-ion-activated.non-binary,
-.non-binary:active {
-  background-color: #FFDD0A;
+.maxSize input:checked + label .non-binary {
+  background-color: #ffdd0a;
 }
 
 ion-grid {
