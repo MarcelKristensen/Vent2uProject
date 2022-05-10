@@ -1,0 +1,68 @@
+{
+  "zones": [
+    {
+      "number": "1",
+      "roomId": "1"
+    },
+    {
+      "number": "2",
+      "roomId": "1"
+    },
+    {
+      "number": "3",
+      "roomId": "1"
+    },
+    {
+      "number": "4",
+      "roomId": "1"
+    },
+    {
+      "number": "5",
+      "roomId": "1"
+    },
+    {
+      "number": "6",
+      "roomId": "1"
+    },
+    {
+      "number": "7",
+      "roomId": "1"
+    },
+    {
+      "number": "8",
+      "roomId": "1"
+    },
+    {
+      "number": "9",
+      "roomId": "2"
+    },
+    {
+      "number": "10",
+      "roomId": "2"
+    },
+    {
+      "number": "11",
+      "roomId": "2"
+    },
+    {
+      "number": "12",
+      "roomId": "2"
+    },
+    {
+      "number": "13",
+      "roomId": "2"
+    },
+    {
+      "number": "14",
+      "roomId": "2"
+    },
+    {
+      "number": "15",
+      "roomId": "2"
+    },
+    {
+      "number": "16",
+      "roomId": "2"
+    }
+  ]
+}

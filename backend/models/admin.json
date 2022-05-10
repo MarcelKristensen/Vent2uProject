@@ -1,0 +1,18 @@
+{
+  "admins": [
+    {
+      "firstName": "Marcel",
+      "lastName": "Kristensen",
+      "email": "Marc1495@edu.zealand.dk",
+      "username": "Raz",
+      "password": "12345"
+    },
+    {
+      "firstName": "Maria",
+      "lastName": "Almeida",
+      "email": "mari9d91@edu.zealand.dk",
+      "username": "panopticonism",
+      "password": "5435"
+    }
+  ]
+}

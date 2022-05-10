@@ -1,141 +1,138 @@
 const db = require("../models");
-const UserInput = db.userInput;
+const Zone = db.zone;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new User Input
+// Create and Save a new Zone
 exports.create = (req, res) => {
   // Validate request
   console.log(req.body)
-  if (!req.body.title) {
+  if (!req.body) {
     res.status(400).send({
-      message: "Content cannot be empty"
+      message: "Content cannot be empty."
     });
     return;
   }
 
-  // Create a User Input
-  const userinput = {
-    gender: req.body.gender,
-    location: req.body.location,
-    temperature: req.body.temperature,
-    energy: req.body.energy,
-    humidity: req.body.humidity
+  // Create a Zone
+  const zone = {
+    number: req.body.number,
+    roomId: req.body.roomId,
   };
 
-  // Save user input in the database
-  UserInput.create(userinput)
+  // Save a zone in the database
+  Zone.create(zone)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating an user input"
+          err.message || "Some error occurred while creating a zone."
       });
     });
 };
 
-// Retrieve all user input from the database.
+// Retrieve all zones from the database.
 exports.findAll = (req, res) => {
     const input = req.query.input;
     var condition = input ? { input: { [Op.like]: `%${input}%` } } : null;
-  
-    UserInput.findAll({ where: condition })
+
+    Zone.findAll({ where: condition })
       .then(data => {
         res.send(data);
       })
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving the user inputs."
+            err.message || "Some error occurred while retrieving the zone."
         });
       });
-  
+
 };
 
-// Find a single user input with an id
+// Find a single zone with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    UserInput.findByPk(id)
+    Zone.findByPk(id)
       .then(data => {
         res.send(data);
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error retrieving user input with id=" + id
+          message: "Error retrieving zone with id=" + id +"."
         });
       });
-  
+
 };
 
-// Update a user input by the id in the request
+// Update a zone by the id in the request
 exports.update = (req, res) => {
   console.log(res, req.params.id)
     const id = req.params.id;
 
-    UserInput.update(req.body, {
+    Zone.update(req.body, {
       where: { id: id }
     })
       .then(num => {
         if (num == 1) {
           res.send({
-            message: "User input was updated successfully."
+            message: "Zone was updated successfully."
           });
         } else {
           res.send({
-            message: `Cannot update user input with id=${id}. Maybe user input was not found or a field is empty!`
+            message: `Cannot update zone with id=${id}. Maybe the zone was not found or a field is empty!`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error updating user input with id=" + id
+          message: "Error updating zone with id=" + id+"."
         });
       });
-  
+
 };
 
-// Delete an user input with the specified id in the request
+// Delete a zone with the specified id in the request
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    UserInput.destroy({
+    Zone.destroy({
       where: { id: id }
     })
       .then(num => {
         if (num == 1) {
           res.send({
-            message: "User input was deleted successfully!"
+            message: "Zone was deleted successfully!"
           });
         } else {
           res.send({
-            message: `Cannot delete user input with id=${id}. Maybe the user input was not found!`
+            message: `Cannot delete zone with id=${id}. Maybe the zone was not found!`
           });
         }
       })
       .catch(err => {
         res.status(500).send({
-          message: "Could not delete user input with id=" + id
+          message: "Could not delete zone with id=" + id +"."
         });
       });
-  
+
 };
 
-// Delete all user inputs from the database.
+// Delete all zones from the database.
 exports.deleteAll = (req, res) => {
-    UserInput.destroy({
+    Zone.destroy({
         where: {},
         truncate: false
       })
         .then(nums => {
-          res.send({ message: `${nums} User input were deleted successfully!` });
+          res.send({ message: `${nums} Zones were deleted successfully!` });
         })
         .catch(err => {
           res.status(500).send({
             message:
-              err.message || "Some error occurred while removing all user inputs."
+              err.message || "Some error occurred while removing all zones."
           });
         });
-    
+
 };

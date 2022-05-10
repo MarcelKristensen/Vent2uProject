@@ -36,15 +36,22 @@ export class DropboxComponent {
     console.log(event.previousContainer.data);
     if (event.previousContainer.data[0] === 'What describes you best?') {
       this.displayMessage =
-        "The most known factor about climate as a whole is <b>temperature</b>, and that's where this question comes in. Temperature affects every single person differently, and can exhaust people's health unknowingly, but could we achieve the perfect indoor climate?!";
+        'The most known factor about climate as a whole is <b>temperature</b>, \
+        and that is where this question comes in. Temperature affects every single person differently, \
+        and can affect your health unknowingly, but could we achieve the perfect indoor climate?!';
     } else if (
       event.previousContainer.data[0] === 'How is your energy level?'
     ) {
       this.displayMessage =
-        'Another indoor climate factor is <b>air quality</b>. This is something that we might not often consider, but poor air quality within rooms can affect your mood, your energy levels, and cause other serious health issues down the line.';
+        'Another indoor climate factor is <b>air quality</b>. \
+        This is something that we might not often consider, \
+        but poor air quality within rooms can affect your mood, your energy levels, and cause other serious health issues down the line.';
     } else if (event.previousContainer.data[0] === 'How does your skin feel?') {
       this.displayMessage =
-        'This question might sound a bit peculiar, but it is actually being used to give us an insight about <b>humidity</b>. As a factor in indoor climate, humidity is known as the amount of water vapour in a given space, and is able to affect your health in tremendous ways.';
+        'This question might sound a bit peculiar, \
+        but it is actually being used to give us an insight about <b>humidity</b>. \
+        As a factor in indoor climate, humidity is known as the amount of water vapour in a given space, \
+        and is able to affect your health in tremendous ways.';
     } else if (
       event.previousContainer.data[0] === 'What gender do you identify with?'
     ) {

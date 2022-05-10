@@ -1,37 +1,141 @@
-.male {
-  border-color: #2c682b;
+.genders input,
+.temperature input,
+.humidity input,
+.energy input {
+  display: none;
 }
 
-.male:hover,
-ion-activated.male,
-.male:active {
-  background-color: #2c682b;
+.male {
+  border-color: #01c5aa;
+}
+
+.maxSize input:checked + label .male {
+  background-color: #01c5aa;
 }
 
 .female {
+  border-color: #8701f8;
+}
+
+.maxSize input:checked + label .female {
+  background-color: #8701f8;
+}
+
+.maxSize
+  input:checked
+  + label
+  p:not(.male p, .non-binary p, .temperature .thirdBox p, .temperature
+    .fourthBox
+    p, .temperature .fifthBox p, .energy .firstBox p, .energy
+    .secondBox
+    p, .energy .thirdBox p, .energy .fourthBox p, .humidity
+    .thirdBox
+    p, .humidity .fourthBox p, .humidity .fifthBox p) {
+  color: var(--ion-color-primary-contrast);
+}
+
+.non-binary,
+.temperature .thirdBox,
+.energy .fourthBox,
+.humidity .thirdBox {
+  border-color: #ffdd0a;
+}
+
+.maxSize input:checked + label .non-binary,
+.maxSize .temperature input:checked + label .thirdBox,
+.maxSize .energy input:checked + label .fourthBox,
+.maxSize .humidity input:checked + label .thirdBox {
+  background-color: #ffdd0a;
+}
+
+.temperature .firstBox,
+.energy .sixthBox,
+.humidity .firstBox {
   border-color: #c70a0a;
 }
 
-.female:hover,
-ion-activated.female,
-.female:active {
+.maxSize .temperature input:checked + label .firstBox,
+.maxSize .energy input:checked + label .sixthBox,
+.maxSize .humidity input:checked + label .firstBox {
   background-color: #c70a0a;
 }
 
-.non-binary {
-  border-color: #77592a;
+.temperature .secondBox,
+.energy .fifthBox,
+.humidity .secondBox {
+  border-color: #fb6d0c;
 }
 
-.non-binary:hover,
-ion-activated.non-binary,
-.non-binary:active {
-  background-color: #77592a;
+.maxSize .temperature input:checked + label .secondBox,
+.maxSize .energy input:checked + label .fifthBox,
+.maxSize .humidity input:checked + label .secondBox {
+  background-color: #fb6d0c;
 }
 
-.male:hover p,
-.female:hover p,
-.non-binary:hover p {
-  color: var(--ion-color-primary-contrast);
+.temperature .fourthBox,
+.energy .thirdBox {
+  border-color: #8ed5f5;
+}
+
+.maxSize .temperature input:checked + label .fourthBox,
+.maxSize .energy input:checked + label .thirdBox {
+  background-color: #8ed5f5;
+}
+
+.temperature .fifthBox {
+  border-color: #4fc3f7;
+}
+
+.maxSize .temperature input:checked + label .fifthBox {
+  background-color: #4fc3f7;
+}
+
+.temperature .sixthBox {
+  border-color: #1c78c9;
+}
+
+.maxSize .temperature input:checked + label .sixthBox {
+  background-color: #1c78c9;
+}
+
+.energy .firstBox {
+  border-color: #29ed25;
+}
+
+.maxSize .energy input:checked + label .firstBox {
+  background-color: #29ed25;
+}
+
+.energy .secondBox {
+  border-color: #30d5c8;
+}
+
+.maxSize .energy input:checked + label .secondBox {
+  background-color: #30d5c8;
+}
+
+.humidity .fourthBox {
+  border-color: #eac998;
+}
+
+.maxSize .humidity input:checked + label .fourthBox {
+  background-color: #eac998;
+}
+
+.humidity .fifthBox {
+  border-color: #bba17a;
+}
+
+.maxSize .humidity input:checked + label .fifthBox {
+  background-color: #bba17a;
+}
+
+.humidity .sixthBox {
+  border-color: #974b00;
+}
+
+.maxSize .humidity input:checked + label .sixthBox {
+  background-color: #974b00;
 }
 
 ion-grid {

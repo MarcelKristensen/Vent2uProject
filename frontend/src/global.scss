@@ -45,57 +45,10 @@ p {
   font-weight: 500;
 }
 
-.firstBox {
-  border-color: #c70a0a;
-}
-
-.firstBox:hover {
-  background-color: #c70a0a;
-}
-
-.secondBox {
-  border-color: #fb6d0c;
-}
-
-.secondBox:hover {
-  background-color: #fb6d0c;
-}
-
-.thirdBox {
-  border-color: #ffdd0a;
-}
-
-.thirdBox:hover {
-  background-color: #ffdd0a;
-}
-
-.fourthBox {
-  border-color: #29ed25;
-}
-
-.fourthBox:hover {
-  background-color: #29ed25;
-}
-
-.fifthBox {
-  border-color: #4fc3f7;
-}
-
-.fifthBox:hover {
-  background-color: #4fc3f7;
-}
-
-.sixthBox {
-  border-color: #1c78c9;
-}
-
-.sixthBox:hover {
-  background-color: #1c78c9;
-}
-
 ion-card p {
   text-align: center;
   font-size: 16px;
+  color: var(--ion-color-primary);
 }
 
 ion-col {
@@ -112,6 +65,9 @@ ion-card {
   border-style: solid;
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 0;
   margin-right: 0;
   margin-bottom: 0;

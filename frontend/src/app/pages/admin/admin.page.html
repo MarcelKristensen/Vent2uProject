@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Rooms</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button *ngFor="let room of rooms">
+      <ion-label>
+        <h2>{{room.name}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-button href="home">Go back</ion-button>

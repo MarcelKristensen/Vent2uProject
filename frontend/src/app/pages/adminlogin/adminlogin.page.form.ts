@@ -1,14 +1,14 @@
-import { FormBuilder, FormGroup, RequiredValidator, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, RequiredValidator, Validators } from '@angular/forms';
 
 export class Adminloginpageform {
-    private formBuilder:FormBuilder;
+    private formBuilder: FormBuilder;
 
-    constructor(formBuilder:FormBuilder)
+    constructor(formBuilder: FormBuilder)
     {
         this.formBuilder=formBuilder;
     }
 
-    createForm():FormGroup{
+    createForm(): FormGroup{
         return this.formBuilder.group({
             admin:['',[Validators.required]],
             password:['',[Validators.required]]
