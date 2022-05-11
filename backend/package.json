@@ -21,7 +21,7 @@
     "tedious": "^14.4.0"
   },
   "devDependencies": {
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.0.1",
     "json-loader": "^0.5.7",
     "nodemon": "^2.0.15"
   },
