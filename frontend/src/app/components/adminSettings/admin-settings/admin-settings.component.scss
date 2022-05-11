@@ -1,0 +1,17 @@
+.noBG ion-button{
+    --background: transparent;
+    --border-color: transparent;
+    --box-shadow: transparent;
+}
+
+div.noBG{
+    text-align: right;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul{
+    padding: 0;
+}

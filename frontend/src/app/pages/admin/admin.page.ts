@@ -9,24 +9,22 @@ import { Component, OnInit } from '@angular/core';
 export class AdminPage implements OnInit {
   rooms: any[];
   userinputs: any[];
-  openform=false;
-
-  constructor(
-    public roomService: RoomService,
-    ){
-      this.getAllRooms();
-    }
-
-  getAllRooms(){
-    this.roomService.getAllRooms().subscribe((res: any) => {
-      console.log('SUCCESS ====',res);
-      this.rooms = res;
-    }, (error: any) => {
-      console.log('ERRROR ===', error);
-    });
+  openform = false;
+  constructor(public roomService: RoomService) {
+    this.getAllRooms();
   }
 
-  ngOnInit() {
+  getAllRooms() {
+    this.roomService.getAllRooms().subscribe(
+      (res: any) => {
+        console.log('SUCCESS ====', res);
+        this.rooms = res;
+      },
+      (error: any) => {
+        console.log('ERRROR ===', error);
+      }
+    );
   }
 
+  ngOnInit() {}
 }
