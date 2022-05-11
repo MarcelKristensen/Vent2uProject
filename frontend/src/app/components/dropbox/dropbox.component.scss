@@ -1,38 +1,38 @@
 .drop-area {
-    border: var(--ion-color-primary) dashed 2px;
-    padding: 40px;
-    background-color: var(--ion-color-primary-contrast);
-    width: 100%;
-    max-width: 400px;
-    width: calc(100vw - 60px);
-    right: -40px;
-    position: absolute;
+  border: var(--body-text-colour) dashed 2px;
+  padding: 40px;
+  background-color: var(--background-colour);
+  width: 100%;
+  max-width: 400px;
+  width: calc(100vw - 60px);
+  right: -40px;
+  position: absolute;
 }
 
 .wrapper {
-    margin: auto; 
-    margin-right: 10px;
-    text-align: right;
+  margin: auto;
+  margin-right: 10px;
+  text-align: right;
 }
 
 .wrapper button {
-    font-weight: 700;
-    font-size: 18px;
-    padding: 6px 10px;
-    border-radius: 50%;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 50%;
 }
 
 .drop-area h2 {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 800px) {
-    .wrapper {
-        max-width: 1000px; 
-        margin: auto;
-    }
+  .wrapper {
+    max-width: 1000px;
+    margin: auto;
+  }
 
-    .drop-area {
-        right: -30px;
-    }
+  .drop-area {
+    right: -30px;
+  }
 }
