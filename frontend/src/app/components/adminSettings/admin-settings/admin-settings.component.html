@@ -1,0 +1,18 @@
+<!-- This button triggers the overlay and is it's origin -->
+<div class="noBG">
+<ion-button (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+  <ion-img src="/assets/DropDown/cogWheel.svg"></ion-img>
+</ion-button>
+</div>
+
+<!-- This template displays the overlay content and is connected to the button -->
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+>
+  <ul class="example-list">
+    <li>Edit</li>
+    <li>Delete</li>
+  </ul>
+</ng-template>
