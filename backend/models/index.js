@@ -1,25 +1,6 @@
 require("dotenv").config();
 const Sequelize = require("sequelize");
 
-const mysql = require("mysql2");
-
-// Open the connection to MySQL server
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: process.env.MYSQL_PASSWORD,
-});
-
-// Run create database statement
-connection.query(
-  `CREATE DATABASE IF NOT EXISTS mental_shower`,
-  function (err, results) {
-    console.log(results);
-    console.log(err);
-    connection.end();
-  }
-);
-
 const sequelize =
   process.env.NODE_ENV === "development"
     ? new Sequelize("mental_shower", "root", process.env.MYSQL_PASSWORD, {
