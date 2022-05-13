@@ -1,8 +1,6 @@
 require("dotenv").config();
 const Sequelize = require("sequelize");
 
-const mysql = require("mysql2");
-
 const sequelize =
   process.env.NODE_ENV === "development"
     ? new Sequelize("mental_shower", "root", process.env.MYSQL_PASSWORD, {
