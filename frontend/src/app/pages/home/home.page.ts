@@ -15,6 +15,7 @@ export class HomePage implements OnInit {
   takenZones: any = [];
   roomZones: any = [];
   assignedLocation = '';
+  isUserId=true;
 
   constructor(
     private zoneService: ZoneService,
@@ -42,6 +43,7 @@ export class HomePage implements OnInit {
     console.log(getId);
 
     if (getId){
+      this.isUserId=false;
       setTimeout(()=>
       {
         this.router.navigateByUrl('/questionnaire')
