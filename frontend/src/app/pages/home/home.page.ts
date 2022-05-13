@@ -10,6 +10,7 @@ import { UserIdService } from 'src/app/services/userId.service';
 })
 export class HomePage implements OnInit {
   rooms: any = [];
+  zones: any = [];
   takenZones: any = [];
   roomZones: any = [];
   assignedLocation = '';
@@ -21,13 +22,15 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.zoneService.getAllZones().subscribe((res) => {
+    this.userinputService.getAllUserInputs().subscribe((res) => {
       this.rooms = res;
-      this.roomZones = Object.values(res).map((room) => room.number);
+      this.roomZones = Object.values(res).map((userinputs) => (userinputs.zoneId));
+      console.log(this.roomZones)
     });
 
-    this.userinputService.getAllUserInputs().subscribe((res) => {
-      this.takenZones = Object.values(res).map((userinput) => userinput.zoneId);
+      this.userinputService.getAllUserInputs().subscribe((res) => {
+        this.takenZones = Object.values(res).map((userinputs) => userinputs.zoneId);
+        console.log(this.takenZones)
 
       this.getUniqueLocation();
     });
@@ -43,5 +46,7 @@ export class HomePage implements OnInit {
     } else {
       this.assignedLocation = `Room D3.06, Zone ${freeZone}`;
     }
+    console.log(this.assignedLocation)
+    console.log(freeZone)
   }
 }
