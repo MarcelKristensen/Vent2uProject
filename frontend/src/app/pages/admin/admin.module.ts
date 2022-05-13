@@ -7,14 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { AdminPageRoutingModule } from './admin-routing.module';
 
 import { AdminPage } from './admin.page';
+import { AdminSettingsComponent } from 'src/app/components/adminSettings/admin-settings/admin-settings.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    AdminPageRoutingModule
-  ],
-  declarations: [AdminPage]
+  imports: [CommonModule, FormsModule, IonicModule, AdminPageRoutingModule],
+  declarations: [AdminPage, AdminSettingsComponent],
 })
 export class AdminPageModule {}

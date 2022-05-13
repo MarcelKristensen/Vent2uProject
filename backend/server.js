@@ -40,6 +40,7 @@ app.listen(PORT, () => {
     await room.destroy({ truncate: true });
     await zone.destroy({ truncate: true });
   }
+  console.log(process.env.NODE_ENV, "environment");
   await admin.destroy({ truncate: true });
   rooms.map((eachroom) => room.create({ name: eachroom.name }));
   zones.map((eachzone) =>
