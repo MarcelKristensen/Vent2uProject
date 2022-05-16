@@ -1,4 +1,4 @@
-const Zone =  require("./Zone")
+const Zone = require("./Zone");
 
 module.exports = (sequelize, DataTypes) => {
   const UserInput = sequelize.define("UserInput", {
@@ -33,10 +33,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-})
-
-UserInput.associate = function(models) {
-  User.belongsTo(models.Zone)};
+  });
 
   return UserInput;
 };

@@ -1,5 +1,3 @@
-const { rooms } = require("./rooms.json");
-
 module.exports = (sequelize, DataTypes) => {
   const Room = sequelize.define("Room", {
     id: {

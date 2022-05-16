@@ -1,7 +1,6 @@
 require("dotenv").config();
 const Sequelize = require("sequelize");
 
-
 const sequelize =
   process.env.NODE_ENV === "development"
     ? new Sequelize("mental_shower", "root", process.env.MYSQL_PASSWORD, {
@@ -30,9 +29,9 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-  db.admin = require("./Admin.js")(sequelize, Sequelize);
-  db.room = require("./Room.js")(sequelize, Sequelize);
-  db.zone = require("./Zone.js")(sequelize, Sequelize);
-  db.userInput = require("./Userinput.js")(sequelize, Sequelize);
+db.admin = require("./Admin.js")(sequelize, Sequelize);
+db.room = require("./Room.js")(sequelize, Sequelize);
+db.zone = require("./Zone.js")(sequelize, Sequelize);
+db.userInput = require("./Userinput.js")(sequelize, Sequelize);
 
 module.exports = db;

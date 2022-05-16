@@ -7,6 +7,9 @@ const { admin, zone, room } = require("./models");
 const { rooms } = require("./models/rooms.json");
 const { zones } = require("./models/zones.json");
 const { admins } = require("./models/admin.json");
+const Userinput = require("./models/Userinput");
+const Zone = require("./models/Zone");
+const { devNull } = require("os");
 
 const corsOptions = {
   origin: `*`,
@@ -32,7 +35,6 @@ app.listen(PORT, () => {
 });
 
 (async () => {
-  await db.sequelize.sync();
   if (process.env.NODE_ENV === "development") {
     await db.sequelize.query("SET GLOBAL FOREIGN_KEY_CHECKS = 0;", {
       raw: true,
@@ -55,4 +57,10 @@ app.listen(PORT, () => {
       password: eachadmin.password,
     })
   );
+
+  db.zone.hasMany(db.userInput);
+  db.userInput.belongsTo(db.zone);
+  db.room.hasMany(db.zone);
+  db.zone.belongsTo(db.room);
+  await db.sequelize.sync();
 })();

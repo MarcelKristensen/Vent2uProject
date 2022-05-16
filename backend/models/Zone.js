@@ -1,5 +1,4 @@
 const Room = require("./Room");
-const UserInput = require("./Userinput");
 
 module.exports = (sequelize, DataTypes) => {
   const Zone = sequelize.define("Zone", {
@@ -21,12 +20,9 @@ module.exports = (sequelize, DataTypes) => {
       references: {
         model: Room,
         key: "id",
-      }
-    }
-    })
+      },
+    },
+  });
 
-    Zone.associate = function(models) {
-      Zone.hasMany(models.UserInput, {foreignKey: 'zoneId'})};
-
-    return Zone;
-  };
+  return Zone;
+};
