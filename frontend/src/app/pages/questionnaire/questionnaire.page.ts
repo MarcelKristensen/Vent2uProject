@@ -24,13 +24,16 @@ export class QuestionnairePage implements OnInit {
   ) {}
 
   async postDataAPI() {
+    const getAssignedZoneId = await this.storage.get('assignedZone');
+
     const postData = {
-      zoneId: 1,
+      zoneId: getAssignedZoneId,
       gender: this.genderInput,
       temperature: this.temperatureInput,
       energy: this.energyInput,
       humidity: this.humidityInput,
     };
+    console.log(getAssignedZoneId, 'yo');
 
     this.userinputService.createUserinput(postData).subscribe(
       (data) => {

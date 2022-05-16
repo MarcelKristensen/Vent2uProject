@@ -1,5 +1,3 @@
-import { Userinput } from './../../models/userinput';
-import { Zone } from './../../models/zone';
 import { UserinputService } from './../../services/userinput.service';
 import { Component, OnInit } from '@angular/core';
 import { ZoneService } from 'src/app/services/zone.service';
@@ -18,26 +16,26 @@ export class HomePage implements OnInit {
   takenZones: any = [];
   roomZones: any = [];
   assignedLocation = '';
-  isUserId=true;
+  isUserId = true;
 
   constructor(
     private zoneService: ZoneService,
     private userinputService: UserinputService,
     public userId: UserIdService,
     private router: Router,
-    private storage: Storage,
+    private storage: Storage
   ) {}
 
   async ngOnInit() {
     this.zoneService.getAllZones().subscribe((res) => {
       this.rooms = res;
-      this.roomZones = Object.values(res).map((zones) => (zones.number));
-      console.log(this.roomZones)
+      this.roomZones = Object.values(res).map((zones) => zones);
     });
 
-      this.userinputService.getAllUserInputs().subscribe((res) => {
-        this.takenZones = Object.values(res).map((userinputs) => userinputs.zoneId);
-        console.log(this.takenZones)
+    this.userinputService.getAllUserInputs().subscribe((res) => {
+      this.takenZones = Object.values(res).map(
+        (userinputs) => userinputs.Zone.number
+      );
 
       this.getUniqueLocation();
     });
@@ -47,26 +45,28 @@ export class HomePage implements OnInit {
     const getId = await this.storage.get('id');
     console.log(getId);
 
-    if (getId){
-      this.isUserId=false;
-      setTimeout(()=>
-      {
-        this.router.navigateByUrl('/questionnaire')
-      },3000)
+    if (getId) {
+      this.isUserId = false;
+      setTimeout(() => {
+        this.router.navigateByUrl('/questionnaire');
+      }, 3000);
     }
   }
 
-  getUniqueLocation() {
-    const freeZone = this.roomZones.find(
-      (roomZone) => !this.takenZones.includes(roomZone)
-    );
+  async getUniqueLocation() {
+    const getAssignedZoneId = await this.storage.get('assignedZone');
+    if (!getAssignedZoneId) {
+      const freeZone = await this.roomZones.find(
+        (roomZone) => !this.takenZones.includes(roomZone.number)
+      );
 
-    if (freeZone >= 1 && freeZone <= 8) {
-      this.assignedLocation = `Room D3.05, Zone ${freeZone}`;
-    } else {
-      this.assignedLocation = `Room D3.06, Zone ${freeZone}`;
+      if (freeZone >= 1 && freeZone <= 8) {
+        this.assignedLocation = `Room D3.05, Zone ${freeZone.number}`;
+      } else {
+        this.assignedLocation = `Room D3.06, Zone ${freeZone.number}`;
+      }
+
+      this.storage.set('assignedZone', freeZone.id);
     }
-    console.log(this.assignedLocation)
-    console.log(freeZone)
   }
 }
