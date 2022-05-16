@@ -1,3 +1,5 @@
+const Zone =  require("./Zone")
+
 module.exports = (sequelize, DataTypes) => {
   const UserInput = sequelize.define("UserInput", {
     id: {
@@ -11,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
 
       references: {
-        model: "zones",
+        model: Zone,
         key: "id",
       },
     },
@@ -31,6 +33,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-  });
+})
+
+UserInput.associate = function(models) {
+  User.belongsTo(models.Zone)};
+
   return UserInput;
 };

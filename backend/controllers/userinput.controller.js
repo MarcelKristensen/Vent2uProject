@@ -1,4 +1,6 @@
+const { zone } = require("../models");
 const db = require("../models");
+const Zone = db.zone;
 const UserInput = db.userInput;
 const Op = db.Sequelize.Op;
 
@@ -40,7 +42,13 @@ exports.findAll = (req, res) => {
   const input = req.query.input;
   var condition = input ? { input: { [Op.like]: `%${input}%` } } : null;
 
-  UserInput.findAll({ where: condition })
+  UserInput.findAll({ where: condition
+    /*include: [{
+      model: Zone,
+      as: 'zones',
+      required: true
+    }]*/
+  })
     .then((data) => {
       res.send(data);
     })
@@ -52,6 +60,7 @@ exports.findAll = (req, res) => {
       });
     });
 };
+
 
 // Find a single user input with an id
 exports.findOne = (req, res) => {

@@ -1,3 +1,5 @@
+import { Userinput } from './../../models/userinput';
+import { Zone } from './../../models/zone';
 import { UserinputService } from './../../services/userinput.service';
 import { Component, OnInit } from '@angular/core';
 import { ZoneService } from 'src/app/services/zone.service';
@@ -29,7 +31,7 @@ export class HomePage implements OnInit {
   async ngOnInit() {
     this.zoneService.getAllZones().subscribe((res) => {
       this.rooms = res;
-      this.roomZones = Object.values(res).map((userinputs) => (userinputs.zoneId));
+      this.roomZones = Object.values(res).map((zones) => (zones.number));
       console.log(this.roomZones)
     });
 
@@ -53,7 +55,6 @@ export class HomePage implements OnInit {
       },3000)
     }
   }
-
 
   getUniqueLocation() {
     const freeZone = this.roomZones.find(
