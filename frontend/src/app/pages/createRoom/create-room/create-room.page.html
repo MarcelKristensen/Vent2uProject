@@ -1,0 +1,27 @@
+<ion-header class="ion-no-border">
+  <app-logo></app-logo>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formRoom" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label for="name">Name: </ion-label>
+      <ion-input id="name" type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label for="startZone">(start number) </ion-label>
+      <ion-input
+        id="startZone"
+        type="text"
+        formControlName="startZone"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label for="endZone">(end number) </ion-label>
+      <ion-input id="endZone" type="text" formControlName="endZone"></ion-input>
+    </ion-item>
+    <button ion-button type="submit" [disabled]="!formRoom.valid">
+      Submit
+    </button>
+  </form>
+</ion-content>

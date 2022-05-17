@@ -34,7 +34,11 @@ const routes: Routes = [
   },
   {
   path: 'adminlogin',
-    loadChildren: () => import('./pages/adminlogin/adminlogin.module').then( m => m.AdminloginPageModule)}
+    loadChildren: () => import('./pages/adminlogin/adminlogin.module').then( m => m.AdminloginPageModule)},
+  {
+    path: 'create-room',
+    loadChildren: () => import('./pages/createRoom/create-room/create-room.module').then( m => m.CreateRoomPageModule)
+  }
 ];
 
 @NgModule({
