@@ -54,19 +54,26 @@ export class HomePage implements OnInit {
   }
 
   async getUniqueLocation() {
-    const getAssignedZoneId = await this.storage.get('assignedZone');
-    if (!getAssignedZoneId) {
+    const getAssignedZoneArr = await this.storage.get('assignedZone');
+
+    if (!getAssignedZoneArr) {
       const freeZone = await this.roomZones.find(
         (roomZone) => !this.takenZones.includes(roomZone.number)
       );
 
-      if (freeZone >= 1 && freeZone <= 8) {
+      if (freeZone.number >= 1 && freeZone.number <= 8) {
         this.assignedLocation = `Room D3.05, Zone ${freeZone.number}`;
       } else {
         this.assignedLocation = `Room D3.06, Zone ${freeZone.number}`;
       }
 
-      this.storage.set('assignedZone', freeZone.id);
+      this.storage.set('assignedZone', freeZone);
+    } else {
+      if (getAssignedZoneArr.number >= 1 && getAssignedZoneArr.number <= 8) {
+        this.assignedLocation = `Room D3.05, Zone ${getAssignedZoneArr.number}`;
+      } else {
+        this.assignedLocation = `Room D3.06, Zone ${getAssignedZoneArr.number}`;
+      }
     }
   }
 }

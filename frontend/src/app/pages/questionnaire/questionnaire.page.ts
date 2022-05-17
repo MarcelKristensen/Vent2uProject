@@ -24,16 +24,15 @@ export class QuestionnairePage implements OnInit {
   ) {}
 
   async postDataAPI() {
-    const getAssignedZoneId = await this.storage.get('assignedZone');
+    const getAssignedZoneArr = await this.storage.get('assignedZone');
 
     const postData = {
-      zoneId: getAssignedZoneId,
+      zoneId: getAssignedZoneArr.id,
       gender: this.genderInput,
       temperature: this.temperatureInput,
       energy: this.energyInput,
       humidity: this.humidityInput,
     };
-    console.log(getAssignedZoneId, 'yo');
 
     this.userinputService.createUserinput(postData).subscribe(
       (data) => {
@@ -59,8 +58,5 @@ export class QuestionnairePage implements OnInit {
 
   async ngOnInit() {
     await this.storage.create();
-
-    const getId = await this.storage.get('id');
-    console.log(getId);
   }
 }
