@@ -35,6 +35,7 @@ app.listen(PORT, () => {
 });
 
 (async () => {
+  await db.sequelize.sync();
   if (process.env.NODE_ENV === "development") {
     await db.sequelize.query("SET GLOBAL FOREIGN_KEY_CHECKS = 0;", {
       raw: true,
@@ -62,5 +63,4 @@ app.listen(PORT, () => {
   db.userInput.belongsTo(db.zone);
   db.room.hasMany(db.zone);
   db.zone.belongsTo(db.room);
-  await db.sequelize.sync();
 })();
