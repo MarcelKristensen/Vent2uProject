@@ -6,49 +6,76 @@
 
 <ion-content>
   <ion-grid class="AdminCenterScreen">
+    <ion-row class="itemRow">
+      <ion-col>
+        <select
+          [(ngModel)]="selectedRoom.id"
+          (change)="onSelect($event.target)"
+        >
+          <option value="0">ALL ROOMS</option>
+          <option *ngFor="let room of rooms" [value]="room.id">
+            {{room.name}}
+          </option>
+        </select>
+      </ion-col>
+      <ion-col *ngIf="isZones">
+        <select name="zones" id="zones">
+          <option value="0">ALL ZONES</option>
+          <option *ngFor="let zone of zones" [value]="zone.id">
+            {{zone.number}}
+          </option>
+        </select>
+      </ion-col>
+    </ion-row>
+    <ion-row class="border">
+      <h1>USER DATA</h1>
+    </ion-row>
+    <ion-row>
+      <ion-col>ID</ion-col>
+      <ion-col>gender</ion-col>
+      <ion-col>temperature</ion-col>
+      <ion-col>air quality</ion-col>
+      <ion-col>humidity</ion-col>
+      <ion-col>zone</ion-col>
+      <ion-col>date</ion-col>
+    </ion-row>
 
-<ion-row class="itemRow">
-<ion-col>  
-    <select name="rooms" id="rooms">      
-      <option value="" selected disabled hidden>CHOOSE ROOMS</option>
-      <option value="room1">Hardcoded room 1</option>
-      <option value="room2">Hardcoded room 2</option>        
-    </select>
-</ion-col>
-<ion-col>
-    <select name="rooms" id="rooms">      
-      <option value="" selected disabled hidden>ROOM ZONES</option>
-      <option value="zone1">Zone 1</option>
-      <option value="zone2">Zone 2</option>        
-    </select>
-  </ion-col>
-</ion-row>
-<ion-row class="border">
-  <h1>USER DATA</h1>
-</ion-row>
-<ion-row class="border">
-  <ion-col>
-    <h4>ID</h4>
-    <ul>      
-      <li>ID</li>
-      <li>1</li>
-      <li>2</li>
-    </ul>
-  </ion-col>
-  <ion-col>
-    <h4>gender</h4>
-    <ul>      
-      <li>Male</li>
-      <li>Female</li>
-      <li>Non-binary</li>
-    </ul>
-  </ion-col>
-  <!-- Same thing with ul li with all the stuff... -->
-  <ion-col>temperature</ion-col>
-  <ion-col>air quality</ion-col>
-  <ion-col>humidity</ion-col>
-  <ion-col>zone</ion-col>
-  <ion-col>date</ion-col>
-</ion-row>
-</ion-grid>
+    <ion-row class="border" *ngFor="let userinput of userinputs">
+      <ion-col>
+        <ul>
+          <li>{{userinput.id}}</li>
+        </ul>
+      </ion-col>
+      <ion-col>
+        <ul>
+          <li>{{userinput.gender}}</li>
+        </ul>
+      </ion-col>
+      <ion-col>
+        <ul>
+          <li>{{userinput.temperature}}</li>
+        </ul>
+      </ion-col>
+      <ion-col>
+        <ul>
+          <li>{{userinput.energy}}</li>
+        </ul>
+      </ion-col>
+      <ion-col>
+        <ul>
+          <li>{{userinput.humidity}}</li>
+        </ul>
+      </ion-col>
+      <ion-col>
+        <ul>
+          <li>{{userinput.Zone.number}}</li>
+        </ul>
+      </ion-col>
+      <ion-col>
+        <ul>
+          <li>{{userinput.createdAt}}</li>
+        </ul>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
