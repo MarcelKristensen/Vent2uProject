@@ -1,6 +1,8 @@
 <ion-content>
   <ion-grid class="centerScreen">
     <app-logo></app-logo>
+     <ng-template [ngIf]="isUserId">
+
     <h1>Ready to get started?</h1>
     <div class="location">
       <svg
@@ -62,12 +64,13 @@
     <p>
       Click the button below when you’ve sat down at the location given above.
     </p>
+
     <ion-button
       type="button"
       class="ready"
       href="/questionnaire"
       (click)="userId.createUniqueUserId()"
-      >I'M READY</ion-button
-    >
+      >I'M READY</ion-button>
+  </ng-template>
   </ion-grid>
 </ion-content>

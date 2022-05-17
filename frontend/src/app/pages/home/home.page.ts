@@ -2,6 +2,8 @@ import { UserinputService } from './../../services/userinput.service';
 import { Component, OnInit } from '@angular/core';
 import { ZoneService } from 'src/app/services/zone.service';
 import { UserIdService } from 'src/app/services/userId.service';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-home',
@@ -10,38 +12,60 @@ import { UserIdService } from 'src/app/services/userId.service';
 })
 export class HomePage implements OnInit {
   rooms: any = [];
+  zones: any = [];
   takenZones: any = [];
   roomZones: any = [];
   assignedLocation = '';
+  isUserId = true;
 
   constructor(
     private zoneService: ZoneService,
     private userinputService: UserinputService,
-    public userId: UserIdService
+    public userId: UserIdService,
+    private router: Router,
+    private storage: Storage
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.zoneService.getAllZones().subscribe((res) => {
       this.rooms = res;
-      this.roomZones = Object.values(res).map((room) => room.number);
+      this.roomZones = Object.values(res).map((zones) => zones);
     });
 
     this.userinputService.getAllUserInputs().subscribe((res) => {
-      this.takenZones = Object.values(res).map((userinput) => userinput.zoneId);
+      this.takenZones = Object.values(res).map(
+        (userinputs) => userinputs.Zone.number
+      );
 
       this.getUniqueLocation();
     });
+
+    await this.storage.create();
+
+    const getId = await this.storage.get('id');
+    console.log(getId);
+
+    if (getId) {
+      this.isUserId = false;
+      setTimeout(() => {
+        this.router.navigateByUrl('/questionnaire');
+      }, 3000);
+    }
   }
 
-  getUniqueLocation() {
-    const freeZone = this.roomZones.find(
-      (roomZone) => !this.takenZones.includes(roomZone)
-    );
+  async getUniqueLocation() {
+    const getAssignedZoneArr = await this.storage.get('assignedZone');
 
-    if (freeZone >= 1 && freeZone <= 8) {
-      this.assignedLocation = `Room D3.05, Zone ${freeZone}`;
+    if (!getAssignedZoneArr) {
+      const freeZone = await this.roomZones.find(
+        (roomZone) => !this.takenZones.includes(roomZone.number)
+      );
+
+      this.assignedLocation = `Room ${freeZone.Room.name}, Zone ${freeZone.number}`;
+
+      this.storage.set('assignedZone', freeZone);
     } else {
-      this.assignedLocation = `Room D3.06, Zone ${freeZone}`;
+      this.assignedLocation = `Room ${getAssignedZoneArr.Room.name}, Zone ${getAssignedZoneArr.number}`;
     }
   }
 }
