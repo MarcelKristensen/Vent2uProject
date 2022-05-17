@@ -40,17 +40,6 @@
       <ion-col>date</ion-col>
     </ion-row>
 
-    <!--
-<ion-row>
-  <ion-list *ngFor="let userinput of userinputs">
-    <ion-col>
-    <ion-item>{{userinput.id}}</ion-item>
-  </ion-col>
-    <ion-item>{{userinput.gender}}</ion-item>
-  </ion-list>
-</ion-row>
--->
-
     <ion-row class="border" *ngFor="let userinput of userinputs">
       <ion-col>
         <ul>
@@ -79,7 +68,7 @@
       </ion-col>
       <ion-col>
         <ul>
-          <li>{{userinput.zoneId}}</li>
+          <li>{{userinput.Zone.number}}</li>
         </ul>
       </ion-col>
       <ion-col>
