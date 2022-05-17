@@ -10,7 +10,12 @@ import { ZoneService } from 'src/app/services/zone.service';
 })
 export class AdminPage implements OnInit {
   rooms: any[];
+  selectedRoom = {
+    id: 0,
+    zone: '',
+  };
   zones: any[];
+  isZones = false;
   userinputs: any[];
   openform = false;
   constructor(
@@ -19,27 +24,14 @@ export class AdminPage implements OnInit {
     public userService: UserinputService
   ) {
     this.getAllRooms();
-    this.getAllZones();
     this.getAllUserInputs();
   }
 
   getAllRooms() {
     this.roomService.getAllRooms().subscribe(
       (res: any) => {
-        console.log('SUCCESS ====', res);
         this.rooms = res;
-      },
-      (error: any) => {
-        console.log('ERRROR ===', error);
-      }
-    );
-  }
-
-  getAllZones() {
-    this.zoneService.getAllZones().subscribe(
-      (res: any) => {
         console.log('SUCCESS ====', res);
-        this.zones = res;
       },
       (error: any) => {
         console.log('ERRROR ===', error);
@@ -59,5 +51,22 @@ export class AdminPage implements OnInit {
     );
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.onSelect(this.selectedRoom.id);
+  }
+
+  onSelect(roomIdSelec) {
+    this.roomService.getAllRooms().subscribe((res: any) => {
+      const filterZones = res.map((room) =>
+        room.Zones.filter(
+          (zone) => Number(roomIdSelec.value) === Number(zone.roomId)
+        )
+      );
+
+      this.zones = filterZones[0].concat(filterZones[1]);
+      if (this.zones.length > 1) {
+        this.isZones = true;
+      }
+    });
+  }
 }
