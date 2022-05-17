@@ -61,19 +61,11 @@ export class HomePage implements OnInit {
         (roomZone) => !this.takenZones.includes(roomZone.number)
       );
 
-      if (freeZone.number >= 1 && freeZone.number <= 8) {
-        this.assignedLocation = `Room D3.05, Zone ${freeZone.number}`;
-      } else {
-        this.assignedLocation = `Room D3.06, Zone ${freeZone.number}`;
-      }
+      this.assignedLocation = `Room ${freeZone.Room.name}, Zone ${freeZone.number}`;
 
       this.storage.set('assignedZone', freeZone);
     } else {
-      if (getAssignedZoneArr.number >= 1 && getAssignedZoneArr.number <= 8) {
-        this.assignedLocation = `Room D3.05, Zone ${getAssignedZoneArr.number}`;
-      } else {
-        this.assignedLocation = `Room D3.06, Zone ${getAssignedZoneArr.number}`;
-      }
+      this.assignedLocation = `Room ${getAssignedZoneArr.Room.name}, Zone ${getAssignedZoneArr.number}`;
     }
   }
 }
