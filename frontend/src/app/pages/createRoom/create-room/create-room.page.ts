@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RoomService } from 'src/app/services/room.service';
+import { ZoneService } from 'src/app/services/zone.service';
 
 @Component({
   selector: 'app-create-room',
@@ -22,10 +24,50 @@ export class CreateRoomPage implements OnInit {
     ]),
   });
 
-  constructor() {}
+  constructor(
+    public roomService: RoomService,
+    public zoneService: ZoneService
+  ) {}
 
   onSubmit() {
     console.warn(this.formRoom.value);
+
+    const roomData = {
+      name: this.formRoom.value.name,
+    };
+
+    this.roomService.createRoom(roomData).subscribe(
+      (data) => {
+        console.log('SUCCESS ===', data);
+        this.createZone(data);
+      },
+      (error: any) => {
+        console.log('ERROR ===', error);
+      }
+    );
+  }
+
+  createZone(room) {
+    const listOfZones = [];
+
+    for (
+      let i = this.formRoom.value.startZone;
+      i <= this.formRoom.value.endZone;
+      i++
+    ) {
+      listOfZones.push(i);
+    }
+
+    listOfZones.map((zone) => {
+      this.zoneService.createZone({ number: zone, roomId: room.id }).subscribe(
+        (data) => {
+          console.log('SUCCESS ===', data);
+        },
+        (error: any) => {
+          console.log('ERROR ===', error);
+        }
+      );
+    });
   }
 
   ngOnInit() {}
