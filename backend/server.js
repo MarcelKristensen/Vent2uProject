@@ -33,23 +33,25 @@ app.listen(PORT, () => {
 
 (async () => {
   await db.sequelize.sync();
-  await room.destroy({ truncate: true });
-  await zone.destroy({ truncate: true });
+  if (process.env.NODE_ENV === "development") {
+    await room.destroy({ truncate: true });
+    await zone.destroy({ truncate: true });
+    rooms.map((eachroom) => room.create({ name: eachroom.name }));
+    zones.map((eachzone) =>
+      zone.create({ number: eachzone.number, roomId: eachzone.roomId })
+    );
+    admins.map((eachadmin) =>
+      admin.create({
+        firstName: eachadmin.firstName,
+        lastName: eachadmin.lastName,
+        email: eachadmin.email,
+        username: eachadmin.username,
+        password: eachadmin.password,
+      })
+    );
+  }
   console.log(process.env.NODE_ENV, "environment");
   await admin.destroy({ truncate: true });
-  rooms.map((eachroom) => room.create({ name: eachroom.name }));
-  zones.map((eachzone) =>
-    zone.create({ number: eachzone.number, roomId: eachzone.roomId })
-  );
-  admins.map((eachadmin) =>
-    admin.create({
-      firstName: eachadmin.firstName,
-      lastName: eachadmin.lastName,
-      email: eachadmin.email,
-      username: eachadmin.username,
-      password: eachadmin.password,
-    })
-  );
 
   db.zone.hasMany(db.userInput);
   db.userInput.belongsTo(db.zone);
