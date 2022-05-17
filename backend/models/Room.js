@@ -10,6 +10,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(20),
       allowNull: false,
     },
+  },
+  {
+    tableName: 'rooms',
   });
   return Room;
 };

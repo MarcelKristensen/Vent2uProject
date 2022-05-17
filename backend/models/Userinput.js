@@ -1,5 +1,6 @@
 const Zone = require("./Zone");
 
+
 module.exports = (sequelize, DataTypes) => {
   const UserInput = sequelize.define("UserInput", {
     id: {
@@ -13,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
 
       references: {
-        model: Zone,
+        model: "zones",
         key: "id",
       },
     },
@@ -33,6 +34,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+  },
+  {
+    tableName: 'userinputs',
   });
 
   return UserInput;

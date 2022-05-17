@@ -1,5 +1,6 @@
 const Room = require("./Room");
 
+
 module.exports = (sequelize, DataTypes) => {
   const Zone = sequelize.define("Zone", {
     id: {
@@ -18,10 +19,13 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
 
       references: {
-        model: Room,
+        model: "rooms",
         key: "id",
       },
     },
+  },
+  {
+    tableName: 'zones',
   });
 
   return Zone;
