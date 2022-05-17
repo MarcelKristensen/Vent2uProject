@@ -6,7 +6,7 @@ name: Build and deploy Node.js app to Azure Web App - Vent2Ubackend
 on:
   push:
     branches:
-      - master
+      - azure-cors
   workflow_dispatch:
 
 jobs:
