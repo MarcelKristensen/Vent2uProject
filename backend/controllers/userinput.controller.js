@@ -40,7 +40,10 @@ exports.findAll = (req, res) => {
   const input = req.query.input;
   var condition = input ? { input: { [Op.like]: `%${input}%` } } : null;
 
-  UserInput.findAll({ where: condition })
+  UserInput.findAll({
+    where: condition,
+    include: db.zone,
+  })
     .then((data) => {
       res.send(data);
     })

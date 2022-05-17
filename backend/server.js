@@ -7,9 +7,12 @@ const { admin, zone, room } = require("./models");
 const { rooms } = require("./models/rooms.json");
 const { zones } = require("./models/zones.json");
 const { admins } = require("./models/admin.json");
+const Userinput = require("./models/Userinput");
+const Zone = require("./models/Zone");
+const { devNull } = require("os");
 
 const corsOptions = {
-  origin: `http://localhost:${process.env.PORT || 3316}`,
+  origin: `*`,
 };
 app.use(cors(corsOptions));
 
@@ -55,4 +58,9 @@ app.listen(PORT, () => {
       password: eachadmin.password,
     })
   );
+
+  db.zone.hasMany(db.userInput);
+  db.userInput.belongsTo(db.zone);
+  db.room.hasMany(db.zone);
+  db.zone.belongsTo(db.room);
 })();

@@ -1,4 +1,5 @@
-const { zones } = require("./zones.json");
+const Room = require("./Room");
+
 
 module.exports = (sequelize, DataTypes) => {
   const Zone = sequelize.define("Zone", {
@@ -22,6 +23,9 @@ module.exports = (sequelize, DataTypes) => {
         key: "id",
       },
     },
+  },
+  {
+    tableName: 'zones',
   });
 
   return Zone;
