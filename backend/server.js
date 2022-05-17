@@ -8,13 +8,9 @@ const { rooms } = require("./models/rooms.json");
 const { zones } = require("./models/zones.json");
 const { admins } = require("./models/admin.json");
 
-const corsOptions = {
-  origin: `http://localhost:${process.env.PORT || 3316}`,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(bodyParser.json());
-app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -29,6 +25,7 @@ require("./routes/zone.routes")(app);
 const PORT = process.env.PORT || 3316;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
+  console.log(process.env.NODE_ENV, "environment");
 });
 
 (async () => {
@@ -50,7 +47,6 @@ app.listen(PORT, () => {
       })
     );
   }
-  console.log(process.env.NODE_ENV, "environment");
   await admin.destroy({ truncate: true });
 
   db.zone.hasMany(db.userInput);
