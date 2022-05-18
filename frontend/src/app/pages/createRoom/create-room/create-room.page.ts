@@ -10,6 +10,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./create-room.page.scss'],
 })
 export class CreateRoomPage implements OnInit {
+  isCreated = false;
   numberRegEx = /\-?\d*\.?\d{1,2}/;
   formRoom = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
@@ -42,6 +43,8 @@ export class CreateRoomPage implements OnInit {
       (data) => {
         console.log('SUCCESS ===', data);
         this.createZone(data);
+        this.isCreated = true;
+        this.presentOnCreateAlert();
       },
       (error: any) => {
         console.log('ERROR ===', error);
@@ -64,33 +67,26 @@ export class CreateRoomPage implements OnInit {
       this.zoneService.createZone({ number: zone, roomId: room.id }).subscribe(
         (data) => {
           console.log('SUCCESS ===', data);
-          this.presentSuccessAlert();
         },
         (error: any) => {
           console.log('ERROR ===', error);
-          this.presentFailAlert();
         }
       );
     });
   }
 
-  async presentSuccessAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      animated: true,
-      message: 'Room with new zones created successfully!',
-      buttons: ['OK'],
-    });
-
-    await alert.present();
-  }
-
-  async presentFailAlert() {
-    const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
-      message: 'Error 101: Room not created, please try again later.',
-      buttons: ['OK'],
-    });
+  async presentOnCreateAlert() {
+    const alert = this.isCreated
+      ? await this.alertController.create({
+          cssClass: 'my-custom-class',
+          message: 'Room with new zones created successfully!',
+          buttons: ['OK'],
+        })
+      : await this.alertController.create({
+          cssClass: 'my-custom-class',
+          message: 'Error 101: Room not created, please try again later.',
+          buttons: ['OK'],
+        });
 
     await alert.present();
   }
