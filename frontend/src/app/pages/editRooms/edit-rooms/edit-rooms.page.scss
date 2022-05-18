@@ -24,4 +24,14 @@ ion-col {
 
 a {
   text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+a svg {
+  margin-right: 8px;
+}
+
+button {
+  background: none;
 }
