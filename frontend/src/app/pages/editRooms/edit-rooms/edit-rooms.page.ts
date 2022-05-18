@@ -9,12 +9,7 @@ import { EditRoomModalComponent } from 'src/app/components/editRoomModal/edit-ro
   styleUrls: ['./edit-rooms.page.scss'],
 })
 export class EditRoomsPage implements OnInit {
-  entryForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    zone: new FormControl('', [Validators.required]),
-  });
   zones;
-  isOpen = false;
 
   constructor(
     private zoneService: ZoneService,
@@ -71,15 +66,13 @@ export class EditRoomsPage implements OnInit {
   }
 
   async editZoneEntry(zone) {
-    console.log(zone);
     const modal = await this.modalCtrl.create({
       component: EditRoomModalComponent,
       cssClass: 'edit-room-modal',
+      componentProps: {
+        zone,
+      },
     });
     await modal.present();
-  }
-
-  async onSubmit() {
-    console.warn(this.entryForm.value);
   }
 }
