@@ -71,7 +71,7 @@ export class AdminPage implements OnInit {
       if (this.zones?.length > 1) {
         this.isZones = true;
       }
-      console.log(this.selectedRoom);
+
       if (Number(this.selectedRoom.id) === 0) {
         this.isZones = false;
       }
