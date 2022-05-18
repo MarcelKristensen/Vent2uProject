@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ZoneService } from 'src/app/services/zone.service';
 
 @Component({
   selector: 'app-edit-rooms',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-rooms.page.scss'],
 })
 export class EditRoomsPage implements OnInit {
+  zones;
 
-  constructor() { }
+  constructor(private zoneService: ZoneService) {}
 
   ngOnInit() {
+    this.zoneService.getAllZones().subscribe((res) => {
+      this.zones = res;
+      console.log(this.zones);
+    });
   }
-
 }

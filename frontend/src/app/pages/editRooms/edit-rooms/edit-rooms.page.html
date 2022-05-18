@@ -2,4 +2,24 @@
   <app-logo></app-logo>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <ion-grid>
+    <ion-row class="title">
+      <ion-col><h1>Rooms</h1></ion-col>
+    </ion-row>
+    <div>
+      <ion-row>
+        <ion-col style="font-weight: 700" size="2.395">id</ion-col>
+        <ion-col style="font-weight: 700" size="2.4">name</ion-col>
+        <ion-col style="font-weight: 700" size="2.4">zone</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let zone of zones">
+        <ion-col>{{zone.id}}</ion-col>
+        <ion-col>{{zone.Room.name}}</ion-col>
+        <ion-col>{{zone.number}}</ion-col>
+        <ion-col><a routerLink="/create-room">Edit</a></ion-col>
+        <ion-col><a routerLink="/create-room">Delete</a></ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
