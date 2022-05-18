@@ -7,11 +7,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./edit-room-modal.component.scss'],
 })
 export class EditRoomModalComponent implements OnInit {
-  isOpen = false;
   entryForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    startZone: new FormControl('', [Validators.required]),
-    endZone: new FormControl('', [Validators.required]),
+    zone: new FormControl('', [Validators.required]),
   });
 
   constructor() {}

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ZoneService } from 'src/app/services/zone.service';
-import { AlertController } from '@ionic/angular';
-import { Overlay, OverlayPositionBuilder } from '@angular/cdk/overlay';
-import { ComponentPortal } from '@angular/cdk/portal';
+import { AlertController, ModalController } from '@ionic/angular';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EditRoomModalComponent } from 'src/app/components/editRoomModal/edit-room-modal/edit-room-modal.component';
 @Component({
   selector: 'app-edit-rooms',
@@ -10,14 +9,17 @@ import { EditRoomModalComponent } from 'src/app/components/editRoomModal/edit-ro
   styleUrls: ['./edit-rooms.page.scss'],
 })
 export class EditRoomsPage implements OnInit {
+  entryForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    zone: new FormControl('', [Validators.required]),
+  });
   zones;
   isOpen = false;
 
   constructor(
     private zoneService: ZoneService,
     private alertController: AlertController,
-    private overlay: Overlay,
-    private positionBuilder: OverlayPositionBuilder
+    private modalCtrl: ModalController
   ) {}
 
   ngOnInit() {
@@ -70,18 +72,14 @@ export class EditRoomsPage implements OnInit {
 
   async editZoneEntry(zone) {
     console.log(zone);
+    const modal = await this.modalCtrl.create({
+      component: EditRoomModalComponent,
+      cssClass: 'edit-room-modal',
+    });
+    await modal.present();
   }
 
-  createDialog() {
-    const overlayRef = this.overlay.create({
-      hasBackdrop: true,
-      positionStrategy: this.positionBuilder
-        .global()
-        .centerHorizontally()
-        .centerVertically(),
-    });
-    const dialogPortal = new ComponentPortal(EditRoomModalComponent);
-    overlayRef.attach(dialogPortal);
-    overlayRef.backdropClick().subscribe(() => overlayRef.detach());
+  async onSubmit() {
+    console.warn(this.entryForm.value);
   }
 }
