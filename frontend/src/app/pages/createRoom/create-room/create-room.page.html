@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <app-logo></app-logo>
+</ion-header>
+
+<ion-content>
+  <form class="formRoom" [formGroup]="formRoom" (ngSubmit)="onSubmit()">
+    <h1>Create room</h1>
+    <ion-item>
+      <div class="flex">
+        <ion-label for="name">Name of the room</ion-label>
+        <ion-input
+          id="name"
+          type="text"
+          formControlName="name"
+          required
+        ></ion-input>
+      </div>
+    </ion-item>
+
+    <h5>How many zones?</h5>
+    <div class="zones">
+      <ion-item>
+        <div class="flex">
+          <ion-label for="startZone">(start number) </ion-label>
+          <ion-input
+            id="startZone"
+            type="text"
+            formControlName="startZone"
+            required
+          ></ion-input>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div class="flex">
+          <ion-label for="endZone">(end number) </ion-label>
+          <ion-input
+            id="endZone"
+            type="text"
+            formControlName="endZone"
+            required
+          ></ion-input>
+        </div>
+      </ion-item>
+    </div>
+    <ion-button type="submit" [disabled]="!formRoom.valid"> CREATE </ion-button>
+  </form>
+</ion-content>
