@@ -63,9 +63,17 @@ export class AdminPage implements OnInit {
         )
       );
 
-      this.zones = filterZones[0].concat(filterZones[1]);
-      if (this.zones.length > 1) {
+      const removeEmptyArrs = filterZones.filter(
+        (zoneArr) => zoneArr.length > 0
+      );
+      this.zones = removeEmptyArrs?.[0]?.sort((a, b) => a.number - b.number);
+
+      if (this.zones?.length > 1) {
         this.isZones = true;
+      }
+      console.log(this.selectedRoom);
+      if (Number(this.selectedRoom.id) === 0) {
+        this.isZones = false;
       }
     });
   }
