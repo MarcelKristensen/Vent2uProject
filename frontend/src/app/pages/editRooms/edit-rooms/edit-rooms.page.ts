@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ZoneService } from 'src/app/services/zone.service';
 import { AlertController } from '@ionic/angular';
+import { Overlay, OverlayPositionBuilder } from '@angular/cdk/overlay';
+import { ComponentPortal } from '@angular/cdk/portal';
+import { EditRoomModalComponent } from 'src/app/components/editRoomModal/edit-room-modal/edit-room-modal.component';
 @Component({
   selector: 'app-edit-rooms',
   templateUrl: './edit-rooms.page.html',
@@ -8,10 +11,13 @@ import { AlertController } from '@ionic/angular';
 })
 export class EditRoomsPage implements OnInit {
   zones;
+  isOpen = false;
 
   constructor(
     private zoneService: ZoneService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private overlay: Overlay,
+    private positionBuilder: OverlayPositionBuilder
   ) {}
 
   ngOnInit() {
@@ -60,5 +66,22 @@ export class EditRoomsPage implements OnInit {
         console.log('ERROR ===', error);
       }
     );
+  }
+
+  async editZoneEntry(zone) {
+    console.log(zone);
+  }
+
+  createDialog() {
+    const overlayRef = this.overlay.create({
+      hasBackdrop: true,
+      positionStrategy: this.positionBuilder
+        .global()
+        .centerHorizontally()
+        .centerVertically(),
+    });
+    const dialogPortal = new ComponentPortal(EditRoomModalComponent);
+    overlayRef.attach(dialogPortal);
+    overlayRef.backdropClick().subscribe(() => overlayRef.detach());
   }
 }

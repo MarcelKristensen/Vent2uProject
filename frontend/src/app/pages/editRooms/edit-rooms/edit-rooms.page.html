@@ -17,8 +17,8 @@
         <ion-col>{{zone.id}}</ion-col>
         <ion-col>{{zone.Room.name}}</ion-col>
         <ion-col>{{zone.number}}</ion-col>
-        <ion-col
-          ><a routerLink="/create-room">
+        <ion-col>
+          <button (click)="createDialog()" type="button">
             <svg
               width="19"
               height="19"
@@ -31,11 +31,11 @@
                 fill="black"
               />
             </svg>
-            Edit</a
-          ></ion-col
-        >
-        <ion-col
-          ><button (click)="alertDeleteZoneEntry(zone)">
+            Edit
+          </button>
+        </ion-col>
+        <ion-col>
+          <button (click)="alertDeleteZoneEntry(zone)">
             <svg
               width="16"
               height="18"
@@ -49,8 +49,8 @@
               />
             </svg>
             Delete
-          </button></ion-col
-        >
+          </button>
+        </ion-col>
       </ion-row>
     </div>
   </ion-grid>
