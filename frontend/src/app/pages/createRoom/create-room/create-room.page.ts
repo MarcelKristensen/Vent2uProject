@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RoomService } from 'src/app/services/room.service';
 import { ZoneService } from 'src/app/services/zone.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-create-room',
@@ -26,7 +27,8 @@ export class CreateRoomPage implements OnInit {
 
   constructor(
     public roomService: RoomService,
-    public zoneService: ZoneService
+    public zoneService: ZoneService,
+    public alertController: AlertController
   ) {}
 
   onSubmit() {
@@ -62,12 +64,35 @@ export class CreateRoomPage implements OnInit {
       this.zoneService.createZone({ number: zone, roomId: room.id }).subscribe(
         (data) => {
           console.log('SUCCESS ===', data);
+          this.presentSuccessAlert();
         },
         (error: any) => {
           console.log('ERROR ===', error);
+          this.presentFailAlert();
         }
       );
     });
+  }
+
+  async presentSuccessAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      animated: true,
+      message: 'Room with new zones created successfully!',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  async presentFailAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      message: 'Error 101: Room not created, please try again later.',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
   }
 
   ngOnInit() {}
