@@ -29,7 +29,7 @@ export class RoomService {
   }
 
   updateRoom(id: any, data: any) {
-    return this.httpClient.post(`${this.apiURL}/${id}`, data);
+    return this.httpClient.put(`${this.apiURL}/${id}`, data);
   }
 
   deleteRoom(id: any) {

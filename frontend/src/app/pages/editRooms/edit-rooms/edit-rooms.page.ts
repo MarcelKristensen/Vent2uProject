@@ -66,11 +66,13 @@ export class EditRoomsPage implements OnInit {
   }
 
   async editZoneEntry(zone) {
-    const modal = await this.modalCtrl.create({
+    let modal;
+    modal = await this.modalCtrl.create({
       component: EditRoomModalComponent,
       cssClass: 'edit-room-modal',
       componentProps: {
         zone,
+        modal,
       },
     });
     await modal.present();

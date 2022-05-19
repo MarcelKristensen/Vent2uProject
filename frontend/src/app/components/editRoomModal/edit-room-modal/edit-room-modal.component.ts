@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NavParams } from '@ionic/angular';
+import { ZoneService } from 'src/app/services/zone.service';
 
 @Component({
   selector: 'app-edit-room-modal',
@@ -8,18 +10,32 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class EditRoomModalComponent implements OnInit {
   zone;
+  modal;
   entryForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
     zone: new FormControl('', [Validators.required]),
   });
 
-  constructor() {}
+  constructor(private zoneService: ZoneService) {}
 
   onSubmit() {
-    console.warn(this.entryForm.value);
+    const zoneObject = {
+      id: this.zone.id,
+      number: this.entryForm.value.zone,
+    };
+
+    this.zoneService.updateZone(this.zone.id, zoneObject).subscribe(
+      (data) => {
+        console.log('SUCCESS ===', data);
+        this.modal.dismiss();
+      },
+      (error: any) => {
+        console.log('ERROR ===', error);
+      }
+    );
   }
   ngOnInit() {
-    console.log(this.zone);
+    console.log(this.modal);
     this.entryForm = new FormGroup({
       name: new FormControl(this.zone.Room.name, [
         Validators.required,

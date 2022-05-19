@@ -5,9 +5,10 @@
       <ion-label for="name">Name of the room</ion-label>
       <ion-input
         id="name"
+        value="{{ zone.Room.name }}"
         type="text"
-        formControlName="name"
         required
+        disabled
       ></ion-input>
     </div>
   </ion-item>
@@ -23,7 +24,9 @@
     </div>
   </ion-item>
   <div class="buttons">
-    <ion-button fill="outline" type="submit"> RETURN </ion-button>
+    <ion-button fill="outline" type="submit" (click)="modal.dismiss()">
+      RETURN
+    </ion-button>
     <ion-button type="submit" [disabled]="!entryForm.valid">
       UPDATE
     </ion-button>
