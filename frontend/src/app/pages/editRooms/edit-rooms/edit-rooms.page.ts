@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ZoneService } from 'src/app/services/zone.service';
 import { AlertController, ModalController } from '@ionic/angular';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { EditRoomModalComponent } from 'src/app/components/editRoomModal/edit-room-modal/edit-room-modal.component';
 @Component({
   selector: 'app-edit-rooms',
@@ -74,6 +73,11 @@ export class EditRoomsPage implements OnInit {
         zone,
         modal,
       },
+    });
+    modal.onDidDismiss().then((data) => {
+      if (data?.data?.isZoneUpdated) {
+        this.ngOnInit();
+      }
     });
     await modal.present();
   }

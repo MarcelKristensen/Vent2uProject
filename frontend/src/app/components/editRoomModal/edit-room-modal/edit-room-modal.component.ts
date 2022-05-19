@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { NavParams } from '@ionic/angular';
 import { ZoneService } from 'src/app/services/zone.service';
 
 @Component({
@@ -27,7 +26,7 @@ export class EditRoomModalComponent implements OnInit {
     this.zoneService.updateZone(this.zone.id, zoneObject).subscribe(
       (data) => {
         console.log('SUCCESS ===', data);
-        this.modal.dismiss();
+        this.modal.dismiss({ isZoneUpdated: true });
       },
       (error: any) => {
         console.log('ERROR ===', error);
@@ -35,7 +34,6 @@ export class EditRoomModalComponent implements OnInit {
     );
   }
   ngOnInit() {
-    console.log(this.modal);
     this.entryForm = new FormGroup({
       name: new FormControl(this.zone.Room.name, [
         Validators.required,
