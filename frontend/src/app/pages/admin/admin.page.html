@@ -20,7 +20,12 @@
         </select>
       </ion-col>
       <ion-col *ngIf="isZones">
-        <select name="zones" id="zones">
+        <select
+          name="zones"
+          id="zones"
+          [(ngModel)]="selectedRoom.zone"
+          (change)="onSelectZone($event.target)"
+        >
           <option value="0">ALL ZONES</option>
           <option *ngFor="let zone of zones" [value]="zone.id">
             {{zone.number}}

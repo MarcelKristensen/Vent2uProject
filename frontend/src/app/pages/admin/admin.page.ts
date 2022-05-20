@@ -12,7 +12,7 @@ export class AdminPage implements OnInit {
   rooms: any[];
   selectedRoom = {
     id: 0,
-    zone: '',
+    zone: 0,
   };
   zones: any[];
   isZones = false;
@@ -55,6 +55,7 @@ export class AdminPage implements OnInit {
 
   ngOnInit() {
     this.onSelect(this.selectedRoom.id);
+    this.onSelectZone(this.selectedRoom.zone);
   }
 
   onSelect(roomIdSelec) {
@@ -79,15 +80,28 @@ export class AdminPage implements OnInit {
       }
     });
 
-    console.log(roomIdSelec.value, 'select id');
+    console.log(roomIdSelec.value, 'select id', this.selectedRoom.zone);
 
-    const filteredInputs = this.userinputsFilter?.filter((input) => {
+    const filterInputsByRoom = this.userinputsFilter?.filter((input) => {
       if (roomIdSelec.value === '0') {
         return input;
       } else if (input.Zone.roomId === Number(roomIdSelec.value)) {
         return input;
       }
+      this.selectedRoom.zone = 0;
     });
-    this.userinputs = filteredInputs;
+    this.userinputs = filterInputsByRoom;
+  }
+
+  onSelectZone(zoneNumberSelect) {
+    const filterInputsByZone = this.userinputsFilter?.filter((input) => {
+      if (zoneNumberSelect.value === '0') {
+        return input;
+      } else if (input.Zone.number === Number(zoneNumberSelect.value)) {
+        return input;
+      }
+    });
+
+    this.userinputs = filterInputsByZone;
   }
 }
