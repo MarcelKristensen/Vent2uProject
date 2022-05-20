@@ -27,6 +27,7 @@ h1 {
   border: solid 1px grey;
   margin: 30px auto;
   padding: 0;
+  width: 1050px;
 }
 
 ion-col {
@@ -35,4 +36,11 @@ ion-col {
 
 .inputs {
   padding: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  ion-content div {
+    width: 100%;
+    overflow: auto;
+  }
 }

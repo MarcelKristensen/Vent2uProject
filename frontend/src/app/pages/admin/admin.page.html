@@ -32,32 +32,34 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <ion-grid class="adminCenterScreen">
-    <ion-row class="title">
-      <ion-col>
-        <h1>User data</h1>
-      </ion-col>
-    </ion-row>
-    <ion-grid class="inputs">
-      <ion-row>
-        <ion-col style="font-weight: 700">ID</ion-col>
-        <ion-col style="font-weight: 700">gender</ion-col>
-        <ion-col style="font-weight: 700">temperature</ion-col>
-        <ion-col style="font-weight: 700">air quality</ion-col>
-        <ion-col style="font-weight: 700">humidity</ion-col>
-        <ion-col style="font-weight: 700">zone</ion-col>
-        <ion-col style="font-weight: 700">date</ion-col>
+  <div>
+    <ion-grid class="adminCenterScreen">
+      <ion-row class="title">
+        <ion-col>
+          <h1>User data</h1>
+        </ion-col>
       </ion-row>
+      <ion-grid class="inputs">
+        <ion-row>
+          <ion-col style="font-weight: 700">ID</ion-col>
+          <ion-col style="font-weight: 700">gender</ion-col>
+          <ion-col style="font-weight: 700">temperature</ion-col>
+          <ion-col style="font-weight: 700">air quality</ion-col>
+          <ion-col style="font-weight: 700">humidity</ion-col>
+          <ion-col style="font-weight: 700">zone</ion-col>
+          <ion-col style="font-weight: 700">date</ion-col>
+        </ion-row>
 
-      <ion-row *ngFor="let userinput of userinputs">
-        <ion-col> {{userinput.id}} </ion-col>
-        <ion-col> {{userinput.gender}} </ion-col>
-        <ion-col> {{userinput.temperature}} </ion-col>
-        <ion-col> {{userinput.energy}} </ion-col>
-        <ion-col> {{userinput.humidity}} </ion-col>
-        <ion-col> {{userinput.Zone.number}} </ion-col>
-        <ion-col> {{userinput.createdAt}} </ion-col>
-      </ion-row>
+        <ion-row *ngFor="let userinput of userinputs">
+          <ion-col> {{userinput.id}} </ion-col>
+          <ion-col> {{userinput.gender}} </ion-col>
+          <ion-col> {{userinput.temperature}} </ion-col>
+          <ion-col> {{userinput.energy}} </ion-col>
+          <ion-col> {{userinput.humidity}} </ion-col>
+          <ion-col> {{userinput.Zone.number}} </ion-col>
+          <ion-col> {{formatDate(userinput.createdAt)}} </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-grid>
-  </ion-grid>
+  </div>
 </ion-content>

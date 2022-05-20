@@ -57,6 +57,11 @@ export class AdminPage implements OnInit {
     this.onSelectZone(this.selectedRoom.zone);
   }
 
+  formatDate(date) {
+    const strDate = date.substring(0, 10).split('-').reverse().join('-');
+    return strDate;
+  }
+
   onSelect(roomIdSelec) {
     this.roomService.getAllRooms().subscribe((res: any) => {
       const filterZones = res.map((room) =>
@@ -70,8 +75,6 @@ export class AdminPage implements OnInit {
       );
       this.zones = removeEmptyArrs?.[0]?.sort((a, b) => a.number - b.number);
     });
-
-    console.log(roomIdSelec.value, 'select id', this.selectedRoom.zone);
 
     const filterInputsByRoom = this.userinputsFilter?.filter((input) => {
       if (roomIdSelec.value === '0') {
