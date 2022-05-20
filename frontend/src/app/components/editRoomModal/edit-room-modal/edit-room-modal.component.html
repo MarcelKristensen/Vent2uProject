@@ -1,0 +1,36 @@
+<form class="entryForm" [formGroup]="entryForm" (ngSubmit)="onSubmit()">
+  <h1>Edit Zone</h1>
+  <ion-item>
+    <div class="flex">
+      <ion-label style="font-weight: 700" for="name"
+        >Name of the room</ion-label
+      >
+      <ion-input
+        id="name"
+        value="{{ zone.Room.name }}"
+        type="text"
+        required
+        disabled
+      ></ion-input>
+    </div>
+  </ion-item>
+  <ion-item>
+    <div class="flex">
+      <ion-label style="font-weight: 700" for="zone">Zone's number </ion-label>
+      <ion-input
+        id="zone"
+        type="text"
+        formControlName="zone"
+        required
+      ></ion-input>
+    </div>
+  </ion-item>
+  <div class="buttons">
+    <ion-button fill="outline" type="submit" (click)="modal.dismiss()">
+      RETURN
+    </ion-button>
+    <ion-button type="submit" [disabled]="!entryForm.valid">
+      UPDATE
+    </ion-button>
+  </div>
+</form>

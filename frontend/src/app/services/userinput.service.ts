@@ -31,7 +31,7 @@ export class UserinputService {
   }
 
   updateUserinput(id: any, data: any) {
-    return this.httpClient.post(`${apiURL}/${id}`, data);
+    return this.httpClient.put(`${apiURL}/${id}`, data);
   }
 
   deleteUserinput(id: any) {

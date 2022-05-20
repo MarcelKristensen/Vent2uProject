@@ -99,6 +99,11 @@ ion-button {
   max-width: 350px;
 }
 
+.edit-room-modal {
+  --max-height: 340px;
+  --max-width: 500px;
+}
+
 @media screen and (min-width: 600px) {
   .maxSize {
     max-width: 1000px;

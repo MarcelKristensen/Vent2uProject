@@ -74,7 +74,7 @@ exports.update = (req, res) => {
     .then((num) => {
       if (num == 1) {
         res.send({
-          message: "Zone was updated successfully.",
+          message: `Zone was updated successfully.`,
         });
       } else {
         res.send({

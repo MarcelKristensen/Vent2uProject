@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'create-room',
     loadChildren: () => import('./pages/createRoom/create-room/create-room.module').then( m => m.CreateRoomPageModule)
+  },
+  {
+    path: 'edit-rooms',
+    loadChildren: () => import('./pages/editRooms/edit-rooms/edit-rooms.module').then( m => m.EditRoomsPageModule)
   }
 ];
 
