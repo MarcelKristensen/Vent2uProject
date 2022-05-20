@@ -17,6 +17,7 @@ export class AdminPage implements OnInit {
   zones: any[];
   isZones = false;
   userinputs: any[];
+  userinputsFilter: any[];
   openform = false;
   constructor(
     public roomService: RoomService,
@@ -42,8 +43,9 @@ export class AdminPage implements OnInit {
   getAllUserInputs() {
     this.userService.getAllUserInputs().subscribe(
       (res: any) => {
-        console.log('SUCCESS ====', res);
+        console.log('SUCCESS USER INPUTS ====', res);
         this.userinputs = res;
+        this.userinputsFilter = res;
       },
       (error: any) => {
         console.log('ERRROR ===', error);
@@ -76,5 +78,16 @@ export class AdminPage implements OnInit {
         this.isZones = false;
       }
     });
+
+    console.log(roomIdSelec.value, 'select id');
+
+    const filteredInputs = this.userinputsFilter?.filter((input) => {
+      if (roomIdSelec.value === '0') {
+        return input;
+      } else if (input.Zone.roomId === Number(roomIdSelec.value)) {
+        return input;
+      }
+    });
+    this.userinputs = filteredInputs;
   }
 }
