@@ -15,7 +15,6 @@ export class AdminPage implements OnInit {
     zone: 0,
   };
   zones: any[];
-  isZones = false;
   userinputs: any[];
   userinputsFilter: any[];
   openform = false;
@@ -70,20 +69,13 @@ export class AdminPage implements OnInit {
         (zoneArr) => zoneArr.length > 0
       );
       this.zones = removeEmptyArrs?.[0]?.sort((a, b) => a.number - b.number);
-
-      if (this.zones?.length > 1) {
-        this.isZones = true;
-      }
-
-      if (Number(this.selectedRoom.id) === 0) {
-        this.isZones = false;
-      }
     });
 
     console.log(roomIdSelec.value, 'select id', this.selectedRoom.zone);
 
     const filterInputsByRoom = this.userinputsFilter?.filter((input) => {
       if (roomIdSelec.value === '0') {
+        this.selectedRoom.zone = 0;
         return input;
       } else if (input.Zone.roomId === Number(roomIdSelec.value)) {
         return input;

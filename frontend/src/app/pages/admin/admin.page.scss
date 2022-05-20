@@ -1,7 +1,38 @@
-ul li{
-    list-style: none;
+.title {
+  border-bottom: solid 1px grey;
 }
 
-ul{
-    padding: 0;
+h1 {
+  margin: 0;
+  padding: 20px;
+}
+
+.filters {
+  text-align: center;
+}
+
+.filters select {
+  padding: 10px;
+  border: 1px solid var(--body-text-colour);
+}
+
+.filters ion-col {
+  display: grid;
+  grid-template-columns: 140px 130px;
+  gap: 15px;
+  justify-content: center;
+}
+
+.adminCenterScreen {
+  border: solid 1px grey;
+  margin: 30px auto;
+  padding: 0;
+}
+
+ion-col {
+  padding: 10px;
+}
+
+.inputs {
+  padding: 20px;
 }
