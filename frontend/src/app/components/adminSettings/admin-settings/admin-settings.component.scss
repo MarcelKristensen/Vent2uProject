@@ -1,17 +1,37 @@
-.noBG ion-button{
-    --background: transparent;
-    --border-color: transparent;
-    --box-shadow: transparent;
+.noBG ion-button {
+  --background: transparent;
+  --border-color: transparent;
+  --box-shadow: transparent;
 }
 
-div.noBG{
-    text-align: right;
+div.noBG {
+  text-align: right;
 }
 
-ul li{
-    list-style: none;
+ul li {
+  list-style: none;
 }
 
-ul{
-    padding: 0;
+ul li a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+.settingsLinks {
+  border: 1px solid var(--body-text-colour);
+  padding: 10px 30px;
+  width: 190px;
+  background-color: var(--background-colour);
+}
+
+.settingsLinks li a {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+}
+.settingsLinks svg {
+  margin-right: 4px;
 }
