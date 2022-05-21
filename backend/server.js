@@ -23,6 +23,7 @@ app.get("/", (req, res) => {
 require("./routes/room.routes")(app);
 require("./routes/user_input.routes")(app);
 require("./routes/zone.routes")(app);
+require("./routes/admin.routes")(app);
 
 const PORT = process.env.PORT || 3316;
 app.listen(PORT, () => {

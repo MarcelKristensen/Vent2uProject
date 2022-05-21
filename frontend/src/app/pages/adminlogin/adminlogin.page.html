@@ -9,7 +9,6 @@
       <ion-item>
         <ion-label position="floating" color="primary">username</ion-label>
         <ion-input
-          [(ngModel)]="login.admin"
           name="admin"
           type="admin"
           formControlName="admin"
@@ -22,12 +21,7 @@
       >
       <ion-item>
         <ion-label position="floating" color="primary">password</ion-label>
-        <ion-input
-          [(ngModel)]="login.password"
-          name="password"
-          type="password"
-          formControlName="password"
-        >
+        <ion-input name="password" type="password" formControlName="password">
         </ion-input>
       </ion-item>
       <ion-label

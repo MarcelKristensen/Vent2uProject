@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-adminlogin',
@@ -18,7 +19,8 @@ export class AdminloginPage implements OnInit {
 
   constructor(
     private router: Router,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private adminService: AdminService
   ) {}
 
   showAlert() {
@@ -35,6 +37,7 @@ export class AdminloginPage implements OnInit {
   }
 
   loginadmin() {
+    console.log(this.formLogin.value);
     if (this.login.admin === 'admin' && this.login.password === 'password') {
       this.router.navigateByUrl('/admin');
     } else {
@@ -42,5 +45,14 @@ export class AdminloginPage implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.adminService.getAllAdmins().subscribe(
+      (res: any) => {
+        console.log('SUCCESS USER INPUTS ====', res);
+      },
+      (error: any) => {
+        console.log('ERRROR ===', error);
+      }
+    );
+  }
 }
