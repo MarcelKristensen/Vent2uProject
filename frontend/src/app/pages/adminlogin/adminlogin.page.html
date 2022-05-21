@@ -3,44 +3,37 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    <form [formGroup]="form">
-      <ion-list>
-        <ion-item>
-          <ion-label position="stacked" color="primary">Username</ion-label>
-          <ion-input
-            [(ngModel)]="login.admin"
-            name="admin"
-            type="admin"
-            formControlName="admin"
-          ></ion-input>
-        </ion-item>
-        <ion-label
-          color="danger"
-          *ngIf="form.get('admin').touched && form.get('admin').errors?.required"
-          >Username is mandatory</ion-label
-        >
-        <ion-item>
-          <ion-label position="stacked" color="primary">Password</ion-label>
-          <ion-input
-            [(ngModel)]="login.password"
-            name="password"
-            type="password"
-            formControlName="password"
-          >
-          </ion-input>
-        </ion-item>
-        <ion-label
-          color="danger"
-          *ngIf="form.get('password').touched && form.get('password').errors?.required"
-          >Password is mandatory</ion-label
-        >
-      </ion-list>
-      <ion-col>
-        <ion-button (click)="loginadmin()" type="submit" expand="block"
-          >Login</ion-button
-        >
-      </ion-col>
-    </form>
-  </div>
+  <form class="login" [formGroup]="formLogin" (ngSubmit)="loginadmin()">
+    <h1>Admin login</h1>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating" color="primary">username</ion-label>
+        <ion-input
+          name="admin"
+          type="admin"
+          formControlName="admin"
+        ></ion-input>
+      </ion-item>
+      <ion-label
+        color="danger"
+        *ngIf="formLogin.get('admin').touched && formLogin.get('admin').errors?.required"
+        >Username is mandatory</ion-label
+      >
+      <ion-item>
+        <ion-label position="floating" color="primary">password</ion-label>
+        <ion-input name="password" type="password" formControlName="password">
+        </ion-input>
+      </ion-item>
+      <ion-label
+        color="danger"
+        *ngIf="formLogin.get('password').touched && formLogin.get('password').errors?.required"
+        >Password is mandatory</ion-label
+      >
+    </ion-list>
+    <ion-col>
+      <ion-button type="submit" expand="block" [disabled]="!formLogin.valid"
+        >Login</ion-button
+      >
+    </ion-col>
+  </form>
 </ion-content>

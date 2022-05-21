@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { Adminloginpageform } from './adminlogin.page.form';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-adminlogin',
@@ -11,19 +11,24 @@ import { Adminloginpageform } from './adminlogin.page.form';
 })
 export class AdminloginPage implements OnInit {
   login: any = { admin: '', password: '' };
-  form: FormGroup;
+  admins;
+
+  formLogin = new FormGroup({
+    admin: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+  });
 
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private adminService: AdminService
   ) {}
 
   showAlert() {
     this.alertController
       .create({
-        header: 'You have 1 more attempt or we are calling 112',
-        subHeader: 'Incorrect username or password',
+        header: 'ERROR #198',
+        subHeader: 'Your username or password is incorrect',
         message: 'Please input the correct username and password',
         buttons: ['OK'],
       })
@@ -33,7 +38,22 @@ export class AdminloginPage implements OnInit {
   }
 
   loginadmin() {
-    if (this.login.admin === 'admin' && this.login.password === 'password') {
+    let isUserCorrect;
+    // eslint-disable-next-line @typescript-eslint/prefer-for-of
+    for (let i = 0; i < this.admins.length; i++) {
+      const user = this.admins[i].username.toString();
+      const password = this.admins[i].password.toString();
+      if (
+        this.formLogin.value.admin === user &&
+        this.formLogin.value.password === password
+      ) {
+        isUserCorrect = true;
+      } else {
+        isUserCorrect = false;
+      }
+    }
+
+    if (isUserCorrect) {
       this.router.navigateByUrl('/admin');
     } else {
       this.showAlert();
@@ -41,6 +61,14 @@ export class AdminloginPage implements OnInit {
   }
 
   ngOnInit() {
-    this.form = new Adminloginpageform(this.formBuilder).createForm();
+    this.adminService.getAllAdmins().subscribe(
+      (res: any) => {
+        console.log('SUCCESS GET ALL ADMINS ====');
+        this.admins = res;
+      },
+      (error: any) => {
+        console.log('ERRROR ===', error);
+      }
+    );
   }
 }

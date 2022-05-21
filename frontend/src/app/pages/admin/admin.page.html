@@ -25,7 +25,7 @@
           (change)="onSelectZone($event.target)"
         >
           <option value="0">ALL ZONES</option>
-          <option *ngFor="let zone of zones" [value]="zone.id">
+          <option *ngFor="let zone of zones" [value]="zone.number">
             {{zone.number}}
           </option>
         </select>
@@ -39,27 +39,36 @@
           <h1>User data</h1>
         </ion-col>
       </ion-row>
-      <ion-grid class="inputs">
-        <ion-row>
-          <ion-col style="font-weight: 700">ID</ion-col>
-          <ion-col style="font-weight: 700">gender</ion-col>
-          <ion-col style="font-weight: 700">temperature</ion-col>
-          <ion-col style="font-weight: 700">air quality</ion-col>
-          <ion-col style="font-weight: 700">humidity</ion-col>
-          <ion-col style="font-weight: 700">zone</ion-col>
-          <ion-col style="font-weight: 700">date</ion-col>
-        </ion-row>
+      <ion-list>
+        <ion-grid class="inputs">
+          <ion-row>
+            <ion-col style="font-weight: 700">ID</ion-col>
+            <ion-col style="font-weight: 700">gender</ion-col>
+            <ion-col style="font-weight: 700">temperature</ion-col>
+            <ion-col style="font-weight: 700">air quality</ion-col>
+            <ion-col style="font-weight: 700">humidity</ion-col>
+            <ion-col style="font-weight: 700">zone</ion-col>
+            <ion-col style="font-weight: 700">date</ion-col>
+          </ion-row>
 
-        <ion-row *ngFor="let userinput of userinputs">
-          <ion-col> {{userinput.id}} </ion-col>
-          <ion-col> {{userinput.gender}} </ion-col>
-          <ion-col> {{userinput.temperature}} </ion-col>
-          <ion-col> {{userinput.energy}} </ion-col>
-          <ion-col> {{userinput.humidity}} </ion-col>
-          <ion-col> {{userinput.Zone.number}} </ion-col>
-          <ion-col> {{formatDate(userinput.createdAt)}} </ion-col>
-        </ion-row>
-      </ion-grid>
+          <ion-row *ngFor="let userinput of userInputsScroll">
+            <ion-col> {{userinput.id}} </ion-col>
+            <ion-col> {{userinput.gender}} </ion-col>
+            <ion-col> {{userinput.temperature}} </ion-col>
+            <ion-col> {{userinput.energy}} </ion-col>
+            <ion-col> {{userinput.humidity}} </ion-col>
+            <ion-col> {{userinput.Zone.number}} </ion-col>
+            <ion-col> {{formatDate(userinput.createdAt)}} </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
     </ion-grid>
+    <ion-infinite-scroll threshold="5%" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data..."
+      >
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </div>
 </ion-content>

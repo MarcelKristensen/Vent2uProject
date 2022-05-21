@@ -1,60 +1,676 @@
 {
-    "userinput": [
-      {
-        "zoneId": "2",
-        "gender": "male",
-        "temperature": "2",
-        "energy": "4",
-        "humidity": "2"
-      },
-      {
-        "zoneId": "2",
-        "gender": "female",
-        "temperature": "3",
-        "energy": "3",
-        "humidity": "5"
-      },
-      {
-        "zoneId": "13",
-        "gender": "male",
-        "temperature": "1",
-        "energy": "6",
-        "humidity": "2"
-      },
-      {
-        "zoneId": "12",
-        "gender": "nonbinary",
-        "temperature": "1",
-        "energy": "3",
-        "humidity": "3"
-      },
-      {
-        "zoneId": "7",
-        "gender": "female",
-        "temperature": "4",
-        "energy": "2",
-        "humidity": "4"
-      },
-      {
-        "zoneId": "7",
-        "gender": "female",
-        "temperature": "1",
-        "energy": "6",
-        "humidity": "2"
-      },
-      {
-        "zoneId": "4",
-        "gender": "nonbinary",
-        "temperature": "1",
-        "energy": "3",
-        "humidity": "3"
-      },
-      {
-        "zoneId": "2",
-        "gender": "male",
-        "temperature": "4",
-        "energy": "2",
-        "humidity": "4"
-      }
-    ]
-  }
+  "userInputs": [
+    {
+      "zoneId": "1",
+      "gender": "male",
+      "temperature": "2",
+      "energy": "4",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "2",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "3",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "4",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "6",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "13",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "12",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "1",
+      "gender": "male",
+      "temperature": "2",
+      "energy": "4",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "2",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "3",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "4",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "6",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "13",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "12",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "1",
+      "gender": "male",
+      "temperature": "2",
+      "energy": "4",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "2",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "3",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "4",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "6",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "13",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "12",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "1",
+      "gender": "male",
+      "temperature": "2",
+      "energy": "4",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "2",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "3",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "4",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "6",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "13",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "12",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "1",
+      "gender": "male",
+      "temperature": "2",
+      "energy": "4",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "2",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "3",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "4",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "6",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "13",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "12",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "1",
+      "gender": "male",
+      "temperature": "2",
+      "energy": "4",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "2",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "3",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "4",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "6",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "13",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "12",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "1",
+      "gender": "male",
+      "temperature": "2",
+      "energy": "4",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "2",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "3",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "4",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "6",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "13",
+      "gender": "female",
+      "temperature": "3",
+      "energy": "3",
+      "humidity": "5"
+    },
+    {
+      "zoneId": "12",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "7",
+      "gender": "female",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    },
+    {
+      "zoneId": "15",
+      "gender": "female",
+      "temperature": "1",
+      "energy": "6",
+      "humidity": "2"
+    },
+    {
+      "zoneId": "16",
+      "gender": "nonbinary",
+      "temperature": "1",
+      "energy": "3",
+      "humidity": "3"
+    },
+    {
+      "zoneId": "13",
+      "gender": "male",
+      "temperature": "4",
+      "energy": "2",
+      "humidity": "4"
+    }
+  ]
+}

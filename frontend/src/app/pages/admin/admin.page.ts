@@ -17,6 +17,9 @@ export class AdminPage implements OnInit {
   zones: any[];
   userinputs: any[];
   userinputsFilter: any[];
+  isInputsFiltered = false;
+  userInputsScroll: any[];
+  moreInputs = 20;
   openform = false;
   constructor(
     public roomService: RoomService,
@@ -43,8 +46,9 @@ export class AdminPage implements OnInit {
     this.userService.getAllUserInputs().subscribe(
       (res: any) => {
         console.log('SUCCESS USER INPUTS ====', res);
+        this.userInputsScroll = res.slice(0, this.moreInputs);
+        this.userinputsFilter = res.slice(0, this.moreInputs);
         this.userinputs = res;
-        this.userinputsFilter = res;
       },
       (error: any) => {
         console.log('ERRROR ===', error);
@@ -76,20 +80,23 @@ export class AdminPage implements OnInit {
       this.zones = removeEmptyArrs?.[0]?.sort((a, b) => a.number - b.number);
     });
 
-    const filterInputsByRoom = this.userinputsFilter?.filter((input) => {
+    const filterInputsByRoom = this.userinputs?.filter((input) => {
       if (roomIdSelec.value === '0') {
         this.selectedRoom.zone = 0;
+        this.isInputsFiltered = false;
         return input;
       } else if (input.Zone.roomId === Number(roomIdSelec.value)) {
+        this.isInputsFiltered = true;
         return input;
       }
       this.selectedRoom.zone = 0;
     });
-    this.userinputs = filterInputsByRoom;
+    this.userInputsScroll = filterInputsByRoom;
+    this.userinputsFilter = filterInputsByRoom;
   }
 
   onSelectZone(zoneNumberSelect) {
-    const filterInputsByZone = this.userinputsFilter?.filter((input) => {
+    const filterInputsByZone = this.userinputs?.filter((input) => {
       if (zoneNumberSelect.value === '0') {
         return input;
       } else if (input.Zone.number === Number(zoneNumberSelect.value)) {
@@ -97,6 +104,26 @@ export class AdminPage implements OnInit {
       }
     });
 
-    this.userinputs = filterInputsByZone;
+    this.userInputsScroll = filterInputsByZone;
+    this.userinputsFilter = filterInputsByZone;
+  }
+
+  loadData(event) {
+    setTimeout(() => {
+      this.moreInputs += 10;
+      if (this.isInputsFiltered) {
+        this.userInputsScroll = this.userinputsFilter.slice(0, this.moreInputs);
+      } else {
+        this.userInputsScroll = this.userinputs.slice(0, this.moreInputs);
+      }
+      event.target.complete();
+
+      if (
+        this.userinputs.length === this.userInputsScroll.length ||
+        this.userInputsScroll.length === this.userinputsFilter.length
+      ) {
+        event.target.disabled = true;
+      }
+    }, 500);
   }
 }
