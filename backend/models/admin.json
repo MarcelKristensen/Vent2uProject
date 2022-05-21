@@ -12,7 +12,28 @@
       "lastName": "Almeida",
       "email": "mari9d91@edu.zealand.dk",
       "username": "panopticonism",
-      "password": "5435"
+      "password": "1234"
+    },
+    {
+      "firstName": "Tiberiu-Vlad",
+      "lastName": "Polec",
+      "email": "tibe0078@edu.zealand.dk",
+      "username": "dimant",
+      "password": "1243"
+    },
+    {
+      "firstName": "Nikolaj",
+      "lastName": "Hansen",
+      "email": "niko9946@edu.zealand.dk",
+      "username": "niko",
+      "password": "1243"
+    },
+    {
+      "firstName": "Neutral",
+      "lastName": "User",
+      "email": "testing@panopticonism.com",
+      "username": "test",
+      "password": "1234"
     }
   ]
 }

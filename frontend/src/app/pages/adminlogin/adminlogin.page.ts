@@ -11,6 +11,7 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AdminloginPage implements OnInit {
   login: any = { admin: '', password: '' };
+  admins;
 
   formLogin = new FormGroup({
     admin: new FormControl('', [Validators.required]),
@@ -37,8 +38,22 @@ export class AdminloginPage implements OnInit {
   }
 
   loginadmin() {
-    console.log(this.formLogin.value);
-    if (this.login.admin === 'admin' && this.login.password === 'password') {
+    let isUserCorrect;
+    // eslint-disable-next-line @typescript-eslint/prefer-for-of
+    for (let i = 0; i < this.admins.length; i++) {
+      const user = this.admins[i].username.toString();
+      const password = this.admins[i].password.toString();
+      if (
+        this.formLogin.value.admin === user &&
+        this.formLogin.value.password === password
+      ) {
+        isUserCorrect = true;
+      } else {
+        isUserCorrect = false;
+      }
+    }
+
+    if (isUserCorrect) {
       this.router.navigateByUrl('/admin');
     } else {
       this.showAlert();
@@ -48,7 +63,8 @@ export class AdminloginPage implements OnInit {
   ngOnInit() {
     this.adminService.getAllAdmins().subscribe(
       (res: any) => {
-        console.log('SUCCESS USER INPUTS ====', res);
+        console.log('SUCCESS GET ALL ADMINS ====');
+        this.admins = res;
       },
       (error: any) => {
         console.log('ERRROR ===', error);
