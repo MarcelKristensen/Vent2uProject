@@ -3,10 +3,12 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const db = require("./models");
-const { admin, zone, room } = require("./models");
+const { admin, zone, room, userInput } = require("./models");
 const { rooms } = require("./models/rooms.json");
 const { zones } = require("./models/zones.json");
 const { admins } = require("./models/admin.json");
+const { userInputs } = require("./models/userinputs.json");
+const { env } = require("process");
 
 app.use(cors());
 
@@ -43,6 +45,18 @@ app.listen(PORT, () => {
       password: eachadmin.password,
     })
   );
+
+  if (env.NODE_ENV === "development") {
+    userInputs.map((input) =>
+      userInput.create({
+        zoneId: input.zoneId,
+        gender: input.gender,
+        temperature: input.temperature,
+        energy: input.energy,
+        humidity: input.humidity,
+      })
+    );
+  }
 
   db.zone.hasMany(db.userInput);
   db.userInput.belongsTo(db.zone);
