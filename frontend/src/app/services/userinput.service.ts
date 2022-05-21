@@ -1,11 +1,5 @@
-import { Userinput } from '../models/userinput';
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpErrorResponse,
-} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 const apiURL = `${environment.server_url}/api/userinputs`;

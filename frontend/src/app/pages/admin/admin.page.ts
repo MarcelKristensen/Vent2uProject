@@ -12,11 +12,11 @@ export class AdminPage implements OnInit {
   rooms: any[];
   selectedRoom = {
     id: 0,
-    zone: '',
+    zone: 0,
   };
   zones: any[];
-  isZones = false;
   userinputs: any[];
+  userinputsFilter: any[];
   openform = false;
   constructor(
     public roomService: RoomService,
@@ -42,8 +42,9 @@ export class AdminPage implements OnInit {
   getAllUserInputs() {
     this.userService.getAllUserInputs().subscribe(
       (res: any) => {
-        console.log('SUCCESS ====', res);
+        console.log('SUCCESS USER INPUTS ====', res);
         this.userinputs = res;
+        this.userinputsFilter = res;
       },
       (error: any) => {
         console.log('ERRROR ===', error);
@@ -53,6 +54,12 @@ export class AdminPage implements OnInit {
 
   ngOnInit() {
     this.onSelect(this.selectedRoom.id);
+    this.onSelectZone(this.selectedRoom.zone);
+  }
+
+  formatDate(date) {
+    const strDate = date.substring(0, 10).split('-').reverse().join('-');
+    return strDate;
   }
 
   onSelect(roomIdSelec) {
@@ -67,14 +74,29 @@ export class AdminPage implements OnInit {
         (zoneArr) => zoneArr.length > 0
       );
       this.zones = removeEmptyArrs?.[0]?.sort((a, b) => a.number - b.number);
+    });
 
-      if (this.zones?.length > 1) {
-        this.isZones = true;
+    const filterInputsByRoom = this.userinputsFilter?.filter((input) => {
+      if (roomIdSelec.value === '0') {
+        this.selectedRoom.zone = 0;
+        return input;
+      } else if (input.Zone.roomId === Number(roomIdSelec.value)) {
+        return input;
       }
+      this.selectedRoom.zone = 0;
+    });
+    this.userinputs = filterInputsByRoom;
+  }
 
-      if (Number(this.selectedRoom.id) === 0) {
-        this.isZones = false;
+  onSelectZone(zoneNumberSelect) {
+    const filterInputsByZone = this.userinputsFilter?.filter((input) => {
+      if (zoneNumberSelect.value === '0') {
+        return input;
+      } else if (input.Zone.number === Number(zoneNumberSelect.value)) {
+        return input;
       }
     });
+
+    this.userinputs = filterInputsByZone;
   }
 }
