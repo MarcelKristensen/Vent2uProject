@@ -48,8 +48,6 @@ export class AdminloginPage implements OnInit {
         this.formLogin.value.password === password
       ) {
         isUserCorrect = true;
-      } else {
-        isUserCorrect = false;
       }
     }
 
